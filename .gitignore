@@ -1,0 +1,58 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ============================
+# Virtual Environment
+# ============================
+.env
+.venv/
+venv/
+
+# ============================
+# IDE
+# ============================
+.vscode/
+.idea/
+
+# ============================
+# macOS
+# ============================
+.DS_Store
+
+# ============================
+# Logs
+# ============================
+logs/
+*.log
+
+# ============================
+# Generated Molecular Files
+# ============================
+proteins/raw/
+proteins/metadata/
+ligands/prepared/
+ligands/pdbqt/
+docking/results/
+reports/
+
+# ============================
+# Temporary Files
+# ============================
+*.tmp
+*.bak
+
+# ============================
+# Molecular File Formats
+# (Keep only source files under version control)
+# ============================
+*.pdbqt
+*.mol2
+
+# ============================
+# Jupyter
+# ============================
+.ipynb_checkpoints/
