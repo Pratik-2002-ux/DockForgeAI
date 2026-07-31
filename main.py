@@ -6,6 +6,10 @@ import argparse
 import logging
 import sys
 
+from src.proteins.cleaner import (
+    ProteinCleaningError,
+    clean_protein,
+)
 from src.proteins.downloader import (
     ProteinDownloadError,
     retrieve_protein,
@@ -26,14 +30,27 @@ def configure_logging() -> None:
     )
 
 
+def parse_comma_separated(value: str | None) -> list[str]:
+    """Convert a comma-separated CLI value into a clean list."""
+
+    if not value:
+        return []
+
+    return [
+        item.strip()
+        for item in value.split(",")
+        if item.strip()
+    ]
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Create the command-line argument parser."""
 
     parser = argparse.ArgumentParser(
         prog="DockForgeAI",
         description=(
-            "Download and inspect protein structures for "
-            "molecular docking."
+            "Download, inspect and clean protein structures "
+            "for molecular docking."
         ),
     )
 
@@ -46,13 +63,46 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--overwrite",
         action="store_true",
-        help="Replace previously downloaded files.",
+        help="Replace previously generated files.",
     )
 
     parser.add_argument(
         "--inspect",
         action="store_true",
         help="Inspect chains, residues, ligands, waters and metals.",
+    )
+
+    parser.add_argument(
+        "--clean",
+        action="store_true",
+        help="Create an intermediate cleaned receptor PDB.",
+    )
+
+    parser.add_argument(
+        "--chains",
+        default="",
+        help=(
+            "Comma-separated chains to retain, for example A,B. "
+            "Required when --clean is used."
+        ),
+    )
+
+    parser.add_argument(
+        "--extract-ligands",
+        default="",
+        help=(
+            "Comma-separated residue names to extract, "
+            "for example MK1."
+        ),
+    )
+
+    parser.add_argument(
+        "--retain-hetero",
+        default="",
+        help=(
+            "Comma-separated hetero-residue names to retain "
+            "in the receptor."
+        ),
     )
 
     return parser
@@ -62,7 +112,7 @@ def print_inspection_summary(
     report: dict,
     report_path: str,
 ) -> None:
-    """Display a concise protein inspection summary."""
+    """Display a concise inspection summary."""
 
     metadata = report.get("experimental_metadata", {})
 
@@ -81,13 +131,21 @@ def print_inspection_summary(
     resolution = metadata.get("resolution_angstrom") or []
 
     print(
-        f"Experimental method: "
-        f"{', '.join(methods) if methods else 'Not available'}"
+        "Experimental method: "
+        + (
+            ", ".join(methods)
+            if methods
+            else "Not available"
+        )
     )
 
     print(
-        f"Resolution:          "
-        f"{resolution if resolution else 'Not available'}"
+        "Resolution:          "
+        + (
+            str(resolution)
+            if resolution
+            else "Not available"
+        )
     )
 
     print("\nChain summary:")
@@ -100,9 +158,9 @@ def print_inspection_summary(
             f"{chain['waters']} waters"
         )
 
-    ligand_summary = report.get("ligand_summary", {})
-
     print("\nDetected ligands/cofactors:")
+
+    ligand_summary = report.get("ligand_summary", {})
 
     if ligand_summary:
         for name, count in ligand_summary.items():
@@ -110,9 +168,9 @@ def print_inspection_summary(
     else:
         print("  None")
 
-    metal_summary = report.get("metal_summary", {})
-
     print("\nDetected metals:")
+
+    metal_summary = report.get("metal_summary", {})
 
     if metal_summary:
         for name, count in metal_summary.items():
@@ -121,6 +179,56 @@ def print_inspection_summary(
         print("  None")
 
     print(f"\nFull report: {report_path}")
+
+
+def print_cleaning_summary(report: dict) -> None:
+    """Display protein-cleaning results."""
+
+    print("\nProtein cleaning summary")
+    print("-" * 55)
+    print(f"PDB ID:               {report['pdb_id']}")
+    print(
+        "Selected chains:      "
+        + ", ".join(report["selected_chains"])
+    )
+    print(
+        f"Protein residues kept: "
+        f"{report['protein_residues_retained']}"
+    )
+    print(
+        f"Water molecules removed: "
+        f"{report['waters_removed']}"
+    )
+    print(
+        f"Extracted ligands:     "
+        f"{len(report['extracted_ligands'])}"
+    )
+    print(
+        f"Retained hetero-residues: "
+        f"{len(report['retained_hetero_residues'])}"
+    )
+    print(
+        f"Removed hetero-residues: "
+        f"{len(report['removed_hetero_residues'])}"
+    )
+
+    print(
+        f"\nClean receptor: "
+        f"{report['clean_receptor_file']}"
+    )
+
+    if report["extracted_ligands"]:
+        print("\nExtracted ligand files:")
+
+        for ligand in report["extracted_ligands"]:
+            print(
+                f"  {ligand['name']} "
+                f"chain {ligand['chain']} "
+                f"residue {ligand['residue_number']}: "
+                f"{ligand['output_file']}"
+            )
+
+    print(f"\nPreparation report: {report['report_file']}")
 
 
 def main() -> int:
@@ -133,7 +241,7 @@ def main() -> int:
     try:
         files = retrieve_protein(
             pdb_id=arguments.pdb_id,
-            overwrite=arguments.overwrite,
+            overwrite=False,
         )
 
         print("\nProtein retrieval completed successfully.")
@@ -141,21 +249,48 @@ def main() -> int:
         print(f"Metadata:  {files['metadata']}")
 
         if arguments.inspect:
-            report, report_path = inspect_protein_by_id(
-                arguments.pdb_id
+            inspection_report, inspection_path = (
+                inspect_protein_by_id(arguments.pdb_id)
             )
 
             print_inspection_summary(
-                report=report,
-                report_path=str(report_path),
+                report=inspection_report,
+                report_path=str(inspection_path),
             )
+
+        if arguments.clean:
+            chains = parse_comma_separated(
+                arguments.chains
+            )
+
+            if not chains:
+                raise ValueError(
+                    "--chains is required when --clean is used. "
+                    "Example: --chains A,B"
+                )
+
+            cleaning_report = clean_protein(
+                pdb_id=arguments.pdb_id,
+                selected_chains=chains,
+                extract_ligands=parse_comma_separated(
+                    arguments.extract_ligands
+                ),
+                retain_hetero=parse_comma_separated(
+                    arguments.retain_hetero
+                ),
+                overwrite=arguments.overwrite,
+            )
+
+            print_cleaning_summary(cleaning_report)
 
     except (
         ValueError,
+        FileExistsError,
         FileNotFoundError,
         KeyError,
         ProteinDownloadError,
         ProteinInspectionError,
+        ProteinCleaningError,
     ) as error:
         logging.error("%s", error)
         return 1

@@ -1,0 +1,35 @@
+{
+  "pdb_id": "1HSG",
+  "input_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/raw/proteins/1HSG.pdb",
+  "clean_receptor_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/proteins/1HSG_chains-A-B_clean.pdb",
+  "selected_chains": [
+    "A",
+    "B"
+  ],
+  "protein_residues_retained": 198,
+  "waters_removed": 127,
+  "ligands_requested_for_extraction": [
+    "MK1"
+  ],
+  "extracted_ligands": [
+    {
+      "name": "MK1",
+      "chain": "B",
+      "residue_number": 902,
+      "insertion_code": null,
+      "output_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/extracted_ligands/1HSG_MK1_chain-B_res-902.pdb",
+      "atom_count": 45
+    }
+  ],
+  "retained_hetero_residues": [],
+  "removed_hetero_residues": [
+    {
+      "name": "MK1",
+      "chain": "B",
+      "residue_number": 902,
+      "insertion_code": null,
+      "atom_count": 45
+    }
+  ],
+  "important_note": "This is an intermediate cleaned PDB. Hydrogens, protonation states, partial charges and PDBQT preparation have not yet been performed."
+}

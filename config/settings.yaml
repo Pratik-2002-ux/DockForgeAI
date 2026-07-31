@@ -6,6 +6,9 @@ directories:
   raw_proteins: data/raw/proteins
   protein_metadata: data/raw/protein_metadata
   protein_reports: data/processed/protein_reports
+  prepared_proteins: data/processed/proteins
+  extracted_ligands: data/processed/extracted_ligands
+  preparation_reports: data/processed/preparation_reports
   raw_ligands: data/raw/ligands
   processed_data: data/processed
   external_data: data/external
