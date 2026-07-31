@@ -9,6 +9,9 @@ directories:
   prepared_proteins: data/processed/proteins
   extracted_ligands: data/processed/extracted_ligands
   preparation_reports: data/processed/preparation_reports
+  standardized_ligands: data/processed/standardized_ligands
+  minimized_ligands: data/processed/minimized_ligands
+  ligand_reports: data/processed/ligand_reports
   raw_ligands: data/raw/ligands
   processed_data: data/processed
   external_data: data/external

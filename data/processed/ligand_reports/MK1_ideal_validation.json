@@ -1,0 +1,23 @@
+{
+  "source_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/raw/ligands/MK1_ideal.sdf",
+  "ligand_name": "MK1_ideal",
+  "sanitization_status": "passed",
+  "number_of_conformers": 1,
+  "has_3d_coordinates": true,
+  "properties": {
+    "molecular_formula": "C36H47N5O4",
+    "molecular_weight": 613.803,
+    "exact_molecular_weight": 613.363,
+    "heavy_atoms": 45,
+    "total_atoms": 92,
+    "formal_charge": 0,
+    "hydrogen_bond_donors": 4,
+    "hydrogen_bond_acceptors": 7,
+    "rotatable_bonds": 13,
+    "rings": 5,
+    "aromatic_rings": 3,
+    "tpsa": 118.03,
+    "logp": 2.867,
+    "canonical_smiles": "CC(C)(C)NC(=O)[C@@H]1CN(Cc2cccnc2)CCN1C[C@@H](O)C[C@@H](Cc1ccccc1)C(=O)N[C@H]1c2ccccc2C[C@H]1O"
+  }
+}

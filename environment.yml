@@ -1,0 +1,23 @@
+name: dockforge
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
+  - notebook
+  - pip
+  - jupyter
+  - pyyaml
+  - tqdm
+  - requests
+  - biopython
+  - openbabel
+  - rdkit
+prefix: /Library/anaconda3/envs/dockforge
