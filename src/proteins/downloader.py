@@ -21,7 +21,7 @@ import yaml
 
 LOGGER = logging.getLogger(__name__)
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SETTINGS_PATH = PROJECT_ROOT / "config" / "settings.yaml"
 
 
@@ -88,7 +88,7 @@ def create_output_directories(
         PROJECT_ROOT / settings["directories"]["raw_proteins"]
     )
     metadata_directory = (
-        PROJECT_ROOT / settings["directories"]["metadata"]
+        PROJECT_ROOT / settings["directories"]["protein_metadata"]
     )
 
     raw_directory.mkdir(parents=True, exist_ok=True)

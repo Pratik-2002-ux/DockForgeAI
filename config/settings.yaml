@@ -3,9 +3,13 @@ project:
   version: "1.0.0"
 
 directories:
-  raw_proteins: proteins/raw
-  metadata: proteins/metadata
+  raw_proteins: data/raw/proteins
+  protein_metadata: data/raw/protein_metadata
+  raw_ligands: data/raw/ligands
+  processed_data: data/processed
+  external_data: data/external
   logs: logs
+  reports: reports
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"

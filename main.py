@@ -6,7 +6,7 @@ import argparse
 import logging
 import sys
 
-from proteins.downloader import (
+from src.proteins.downloader import (
     ProteinDownloadError,
     retrieve_protein,
 )
