@@ -1,0 +1,74 @@
+{
+  "structure_id": "1HSG",
+  "source_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/raw/proteins/1HSG.pdb",
+  "number_of_models": 1,
+  "number_of_chains": 2,
+  "total_atoms": 1686,
+  "protein_residues": 198,
+  "water_molecules": 127,
+  "ligand_instances": 1,
+  "metal_instances": 0,
+  "chains": [
+    {
+      "chain_id": "A",
+      "protein_residues": 99,
+      "atoms": 801,
+      "waters": 44,
+      "hetero_residues": 0
+    },
+    {
+      "chain_id": "B",
+      "protein_residues": 99,
+      "atoms": 885,
+      "waters": 83,
+      "hetero_residues": 1
+    }
+  ],
+  "ligand_summary": {
+    "MK1": 1
+  },
+  "metal_summary": {},
+  "ligands": [
+    {
+      "name": "MK1",
+      "chain": "B",
+      "residue_number": 902,
+      "insertion_code": null,
+      "atom_count": 45
+    }
+  ],
+  "metals": [],
+  "protein_residue_composition": {
+    "ALA": 6,
+    "ARG": 8,
+    "ASN": 6,
+    "ASP": 8,
+    "CYS": 4,
+    "GLN": 12,
+    "GLU": 8,
+    "GLY": 26,
+    "HIS": 2,
+    "ILE": 26,
+    "LEU": 24,
+    "LYS": 12,
+    "MET": 4,
+    "PHE": 4,
+    "PRO": 12,
+    "SER": 2,
+    "THR": 16,
+    "TRP": 4,
+    "TYR": 2,
+    "VAL": 12
+  },
+  "experimental_metadata": {
+    "title": "CRYSTAL STRUCTURE AT 1.9 ANGSTROMS RESOLUTION OF HUMAN IMMUNODEFICIENCY VIRUS (HIV) II PROTEASE COMPLEXED WITH L-735,524, AN ORALLY BIOAVAILABLE INHIBITOR OF THE HIV PROTEASES",
+    "experimental_methods": [
+      "X-RAY DIFFRACTION"
+    ],
+    "resolution_angstrom": [
+      2.0
+    ],
+    "deposit_date": "1995-03-31T00:00:00.000+00:00",
+    "initial_release_date": "1996-04-03T00:00:00.000+00:00"
+  }
+}
