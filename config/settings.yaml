@@ -1,0 +1,15 @@
+project:
+  name: DockForgeAI
+  version: "1.0.0"
+
+directories:
+  raw_proteins: proteins/raw
+  metadata: proteins/metadata
+  logs: logs
+
+rcsb:
+  structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"
+  metadata_url: "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
+
+network:
+  timeout_seconds: 30
