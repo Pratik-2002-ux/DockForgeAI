@@ -38,6 +38,8 @@ from app.components.export_center import (  # noqa: E402
     generate_reports,
     load_manifest,
 )
+from app.components.xai_loaders import load_xai_csv, load_xai_json  # noqa: E402
+from app.components.xai_export import xai_bundle  # noqa: E402
 
 
 st.set_page_config(
@@ -1806,6 +1808,29 @@ def render_export_center() -> None:
     st.info("Docking scores are approximate ranking values. Demo compounds are not validated inhibitors, RDKit descriptors are not full ADMET predictions, and all predictions require experimental validation.")
 
 
+def render_xai_page(page: str) -> None:
+    """Render cached XAI artifacts without launching training."""
+    st.header(page)
+    best = load_xai_json("data/processed/xai_benchmarks/best_model.json")
+    metrics = load_xai_csv("data/processed/xai_benchmarks/model_comparison.csv")
+    dataset = load_xai_csv("data/processed/xai_dataset/hivpr_xai_2000_compounds.csv")
+    if not best or dataset.empty:
+        st.warning("XAI artifacts are unavailable. Run the local XAI pipeline explicitly from the command line.")
+        return
+    if page == "XAI Overview":
+        columns = st.columns(4); columns[0].metric("Compounds", len(dataset)); columns[1].metric("Scaffolds", dataset.scaffold_id.nunique()); columns[2].metric("Best model", best["model_id"]); columns[3].metric("Test PR-AUC", f"{best['locked_test_metrics']['pr_auc']:.3f}")
+        st.dataframe(dataset.groupby(["dataset_split", "binary_label"]).size().rename("count").reset_index(), hide_index=True)
+    elif page == "Model Performance": st.dataframe(metrics, hide_index=True)
+    elif page == "Global Explanations": st.dataframe(load_xai_csv("data/processed/xai_explanations/global/global_feature_importance.csv").head(30), hide_index=True)
+    elif page == "Compound Explanation":
+        explanations = load_xai_csv("data/processed/xai_explanations/local/compound_explanations.csv"); st.dataframe(explanations, hide_index=True)
+    elif page == "Applicability Domain": st.dataframe(load_xai_csv("data/processed/xai_predictions/applicability_domain.csv"), hide_index=True)
+    elif page == "Benchmarking": st.dataframe(load_xai_csv("data/processed/xai_benchmarks/feature_family_comparison.csv"), hide_index=True)
+    else:
+        st.download_button("Download complete XAI bundle", xai_bundle(PROJECT_ROOT), "DockForgeAI_XAI_bundle.zip", "application/zip")
+    st.warning("DUD-E decoys are not experimentally proven inactive. Source shortcuts may inflate performance. Explanations describe model behaviour, not biological causality; classification does not prove binding or therapeutic activity.")
+
+
 def main() -> None:
     """Run the Streamlit application."""
 
@@ -1818,6 +1843,13 @@ def main() -> None:
             "Redocking",
             "3D viewer",
             "Reports & Exports",
+            "XAI Overview",
+            "Model Performance",
+            "Global Explanations",
+            "Compound Explanation",
+            "Applicability Domain",
+            "Benchmarking",
+            "XAI Reports",
             "Interactions",
             "Virtual screening",
             "Hit prioritization",
@@ -1836,6 +1868,8 @@ def main() -> None:
         render_structure_viewer()
     elif page == "Reports & Exports":
         render_export_center()
+    elif page in {"XAI Overview", "Model Performance", "Global Explanations", "Compound Explanation", "Applicability Domain", "Benchmarking", "XAI Reports"}:
+        render_xai_page(page)
     elif page == "Interactions":
         render_interactions()
     elif page == "Virtual screening":
