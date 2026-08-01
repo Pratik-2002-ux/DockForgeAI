@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import json
+
 import sys
 from pathlib import Path
 
+import altair as alt
 import pandas as pd
 import streamlit as st
 
@@ -20,6 +23,13 @@ from app.components.loaders import (  # noqa: E402
     load_csv,
     load_json,
     load_text,
+)
+from app.components.protein_viewer import (  # noqa: E402
+    available_pose_files,
+    build_view,
+    import_py3dmol,
+    load_viewer_settings,
+    structure_files,
 )
 
 
@@ -57,9 +67,20 @@ SCREENING_REPORT_PATH = (
     "data/processed/screening_reports/screening_report.md"
 )
 
+
+SCREENING_JSON_PATH = (
+    "data/processed/screening_reports/screening_report.json"
+)
+
 PRIORITIZATION_REPORT_PATH = (
     "data/processed/prioritization_reports/"
     "hit_prioritization_report.md"
+)
+
+
+PRIORITIZATION_JSON_PATH = (
+    "data/processed/prioritization_reports/"
+    "hit_prioritization_report.json"
 )
 
 PRIORITIZATION_TABLE_CANDIDATES = [
@@ -198,9 +219,13 @@ def render_home() -> None:
 
 
 def render_redocking() -> None:
-    """Render redocking results."""
+    """Render a concise and user-friendly redocking dashboard."""
 
     st.header("Redocking validation")
+    st.caption(
+        "Comparison of AutoDock Vina poses with the corrected "
+        "crystallographic MK1 reference pose."
+    )
 
     summary = load_json(REDOCKING_SUMMARY_PATH)
     table = load_csv(REDOCKING_TABLE_PATH)
@@ -210,95 +235,241 @@ def render_redocking() -> None:
         return
 
     if summary:
-        columns = st.columns(4)
+        best_affinity = summary.get("best_affinity_kcal_mol", "N/A")
+        minimum_rmsd = summary.get("min_rmsd_angstrom", "N/A")
+        best_rmsd_rank = summary.get("min_rmsd_pose_rank", "N/A")
+        interpretation = summary.get("interpretation", "N/A")
 
-        possible_metrics = {
-            "Best affinity": [
-                "best_affinity_kcal_mol",
-            ],
-            "Minimum RMSD": [
-                "min_rmsd_angstrom",
-            ],
-            "Best RMSD rank": [
-                "min_rmsd_pose_rank",
-            ],
-            "Validation": [
-                "interpretation",
-            ],
-        }
+        metric_columns = st.columns(4)
 
-        metric_values = {
-            "Best affinity": f"{summary.get('best_affinity_kcal_mol', 'N/A')} kcal/mol",
-            "Minimum RMSD": f"{summary.get('min_rmsd_angstrom', 'N/A')} Å",
-            "Best RMSD rank": summary.get("min_rmsd_pose_rank", "N/A"),
-            "Validation": summary.get("interpretation", "N/A"),
-        }
+        metric_columns[0].metric(
+            "Best affinity",
+            (
+                f"{best_affinity:.3f} kcal/mol"
+                if isinstance(best_affinity, (int, float))
+                else best_affinity
+            ),
+        )
 
-        for column, (label, value) in zip(
-            columns,
-            metric_values.items(),
+        metric_columns[1].metric(
+            "Minimum RMSD",
+            (
+                f"{minimum_rmsd:.3f} Å"
+                if isinstance(minimum_rmsd, (int, float))
+                else minimum_rmsd
+            ),
+        )
+
+        metric_columns[2].metric(
+            "Best RMSD rank",
+            best_rmsd_rank,
+        )
+
+        metric_columns[3].metric(
+            "Validation",
+            interpretation,
+        )
+
+        pose_count = summary.get("pose_count", "N/A")
+        passing_count = summary.get("passing_pose_count", "N/A")
+        passing_percentage = summary.get(
+            "passing_pose_percentage",
+            "N/A",
+        )
+        threshold = summary.get("threshold_angstrom", 2.0)
+
+        summary_table = pd.DataFrame(
+            {
+                "Metric": [
+                    "Generated poses",
+                    "Best-affinity pose",
+                    "RMSD of best-affinity pose",
+                    "Minimum-RMSD pose",
+                    "Passing poses",
+                    "Passing percentage",
+                    "RMSD threshold",
+                    "Top-ranked pose passed",
+                    "Overall pose reproduction",
+                ],
+                "Value": [
+                    str(pose_count),
+                    str(summary.get("best_affinity_pose_rank", "N/A")),
+                    f"{summary.get('rmsd_best_affinity_pose_angstrom', 'N/A')} Å",
+                    str(best_rmsd_rank),
+                    f"{passing_count} / {pose_count}",
+                    (
+                        f"{passing_percentage:.1f}%"
+                        if isinstance(passing_percentage, (int, float))
+                        else str(passing_percentage)
+                    ),
+                    f"{threshold} Å",
+                    (
+                        "Yes"
+                        if summary.get("top_ranked_pose_success")
+                        else "No"
+                    ),
+                    (
+                        "Successful"
+                        if summary.get(
+                            "overall_pose_reproduction_success"
+                        )
+                        else "Failed"
+                    ),
+                ],
+            }
+        )
+
+        with st.expander(
+            "Redocking validation summary",
+            expanded=True,
         ):
-            column.metric(label, value)
+            st.dataframe(
+                summary_table,
+                width="stretch",
+                hide_index=True,
+            )
 
-        with st.expander("Complete redocking summary"):
-            st.json(summary)
+        download_columns = st.columns(2)
 
-    if not table.empty:
-        st.markdown("### Pose ranking and RMSD")
-
-        display_table = table.drop(
-            columns=["pose_pdbqt"],
-            errors="ignore",
+        download_columns[0].download_button(
+            label="Download summary JSON",
+            data=json.dumps(summary, indent=2),
+            file_name="1HSG_MK1_redocking_summary.json",
+            mime="application/json",
         )
 
-        st.dataframe(
-            display_table,
-            width="stretch",
-            hide_index=True,
+        if not table.empty:
+            download_columns[1].download_button(
+                label="Download pose analysis CSV",
+                data=table.to_csv(index=False),
+                file_name="1HSG_MK1_redocking_analysis.csv",
+                mime="text/csv",
+            )
+
+    if table.empty:
+        return
+
+    st.subheader("Pose ranking")
+
+    preferred_columns = [
+        "pose_rank",
+        "affinity_kcal_mol",
+        "crystal_in_place_rmsd_angstrom",
+        "aligned_best_rmsd_angstrom",
+        "passes_2A_threshold",
+    ]
+
+    available_columns = [
+        column
+        for column in preferred_columns
+        if column in table.columns
+    ]
+
+    display_table = table[available_columns].copy()
+
+    display_table = display_table.rename(
+        columns={
+            "pose_rank": "Pose",
+            "affinity_kcal_mol": "Affinity (kcal/mol)",
+            "crystal_in_place_rmsd_angstrom": "Crystal RMSD (Å)",
+            "aligned_best_rmsd_angstrom": "Aligned RMSD (Å)",
+            "passes_2A_threshold": "≤2 Å",
+        }
+    )
+
+    if "≤2 Å" in display_table.columns:
+        display_table["Validation"] = (
+            display_table["≤2 Å"]
+            .map({True: "PASS", False: "FAIL"})
+            .fillna("N/A")
+        )
+        display_table = display_table.drop(columns=["≤2 Å"])
+
+    st.dataframe(
+        display_table,
+        width="stretch",
+        hide_index=True,
+    )
+
+    chart_column_1, chart_column_2 = st.columns(2)
+
+    if {
+        "pose_rank",
+        "affinity_kcal_mol",
+    }.issubset(table.columns):
+        affinity_data = (
+            table[
+                [
+                    "pose_rank",
+                    "affinity_kcal_mol",
+                ]
+            ]
+            .set_index("pose_rank")
+            .rename(
+                columns={
+                    "affinity_kcal_mol": "Affinity (kcal/mol)"
+                }
+            )
         )
 
-        affinity_column = next(
-            (
-                column
-                for column in table.columns
-                if column == "affinity_kcal_mol"
-            ),
-            None,
+        with chart_column_1:
+            st.subheader("Docking affinity")
+            st.caption("More negative Vina scores indicate stronger predicted ranking.")
+            st.bar_chart(
+                affinity_data,
+                height=400,
+            )
+
+    if {
+        "pose_rank",
+        "crystal_in_place_rmsd_angstrom",
+    }.issubset(table.columns):
+        threshold_value = float(
+            summary.get("threshold_angstrom", 2.0)
         )
 
-        if affinity_column:
-            chart_data = table.copy()
+        rmsd_data = table[
+            [
+                "pose_rank",
+                "crystal_in_place_rmsd_angstrom",
+            ]
+        ].copy()
 
-            if "pose_rank" in chart_data.columns:
-                chart_data = chart_data.set_index("pose_rank")
+        rmsd_data["Validation threshold"] = threshold_value
 
-            st.markdown("### Docking affinity by pose")
-            st.bar_chart(chart_data[[affinity_column]])
-
-        rmsd_column = next(
-            (
-                column
-                for column in table.columns
-                if "crystal" in column.lower()
-                and "rmsd" in column.lower()
-            ),
-            None,
+        rmsd_data = (
+            rmsd_data
+            .set_index("pose_rank")
+            .rename(
+                columns={
+                    "crystal_in_place_rmsd_angstrom": (
+                        "Crystal RMSD (Å)"
+                    )
+                }
+            )
         )
 
-        if rmsd_column:
-            chart_data = table.copy()
+        with chart_column_2:
+            st.subheader("Crystallographic RMSD")
+            st.line_chart(
+                rmsd_data,
+                height=400,
+            )
 
-            if "pose_rank" in chart_data.columns:
-                chart_data = chart_data.set_index("pose_rank")
-
-            st.markdown("### Crystallographic RMSD by pose")
-            st.line_chart(chart_data[[rmsd_column]])
-
-
+    st.info(
+        "A redocked pose is considered successfully reproduced "
+        "when its crystallographic heavy-atom RMSD is no greater "
+        "than 2 Å. Vina scores are approximate ranking values, "
+        "not experimental binding free energies."
+    )
 def render_interactions() -> None:
-    """Render protein–ligand interaction results."""
+    """Render a professional protein-ligand interaction dashboard."""
 
     st.header("Protein–ligand interaction analysis")
+    st.caption(
+        "Explore predicted contacts for the crystallographic, "
+        "rank-1 and best-RMSD MK1 poses."
+    )
 
     report = load_text(INTERACTION_REPORT_PATH)
     table = load_csv(INTERACTION_TABLE_PATH)
@@ -307,14 +478,408 @@ def render_interactions() -> None:
         st.warning("Interaction-analysis outputs were not found.")
         return
 
-    if report:
+    if table.empty:
         st.markdown(report)
+        return
 
-    if not table.empty:
-        st.markdown("### Interaction records")
+    interaction_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() in {
+                "interaction_type",
+                "interaction",
+                "type",
+            }
+        ),
+        None,
+    )
 
-        display_table = table.drop(
-            columns=["pose_pdbqt"],
+    residue_name_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() in {
+                "protein_residue_name",
+                "residue_name",
+                "resname",
+            }
+        ),
+        None,
+    )
+
+    residue_number_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() in {
+                "protein_residue_number",
+                "residue_number",
+                "resnum",
+            }
+        ),
+        None,
+    )
+
+    chain_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() in {
+                "protein_chain",
+                "chain",
+                "chain_id",
+            }
+        ),
+        None,
+    )
+
+    pose_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() in {
+                "pose_label",
+                "pose",
+                "pose_name",
+            }
+        ),
+        None,
+    )
+
+    selected_table = table.copy()
+
+    if pose_column:
+        pose_values = sorted(
+            selected_table[pose_column]
+            .dropna()
+            .astype(str)
+            .unique()
+            .tolist()
+        )
+
+        pose_options = ["All poses"] + pose_values
+
+        selected_pose = st.selectbox(
+            "Pose selection",
+            options=pose_options,
+            help=(
+                "Filter contacts by crystallographic, rank-1 "
+                "or best-RMSD pose."
+            ),
+        )
+
+        if selected_pose != "All poses":
+            selected_table = selected_table[
+                selected_table[pose_column].astype(str)
+                == selected_pose
+            ].copy()
+
+    row_text = selected_table.apply(
+        lambda row: " ".join(
+            str(value)
+            for value in row.tolist()
+        ),
+        axis=1,
+    )
+
+    total_interactions = len(selected_table)
+
+    interaction_type_count = (
+        selected_table[interaction_column].nunique()
+        if interaction_column
+        else 0
+    )
+
+    catalytic_contacts = int(
+        row_text.str.contains(
+            "catalytic",
+            case=False,
+            na=False,
+        ).sum()
+    )
+
+    asp25_contacts = int(
+        row_text.str.contains(
+            r"ASP\s*25|ASP25",
+            case=False,
+            regex=True,
+            na=False,
+        ).sum()
+    )
+
+    hydrogen_bonds = 0
+
+    if interaction_column:
+        hydrogen_bonds = int(
+            selected_table[interaction_column]
+            .astype(str)
+            .str.contains(
+                "hydrogen",
+                case=False,
+                na=False,
+            )
+            .sum()
+        )
+
+    metric_columns = st.columns(5)
+
+    metric_columns[0].metric(
+        "Total contacts",
+        total_interactions,
+    )
+    metric_columns[1].metric(
+        "Interaction types",
+        interaction_type_count,
+    )
+    metric_columns[2].metric(
+        "Hydrogen bonds",
+        hydrogen_bonds,
+    )
+    metric_columns[3].metric(
+        "Catalytic contacts",
+        catalytic_contacts,
+    )
+    metric_columns[4].metric(
+        "ASP25 contacts",
+        asp25_contacts,
+    )
+
+    summary_tab, catalytic_tab, records_tab, report_tab = st.tabs(
+        [
+            "Summary",
+            "Catalytic site",
+            "Interaction records",
+            "Full report",
+        ]
+    )
+
+    with summary_tab:
+        chart_column_1, chart_column_2 = st.columns(2)
+
+        if interaction_column:
+            interaction_counts = (
+                selected_table[interaction_column]
+                .fillna("Unknown")
+                .astype(str)
+                .value_counts()
+                .rename_axis("Interaction type")
+                .reset_index(name="Count")
+                .sort_values("Count", ascending=True)
+            )
+
+            interaction_chart = (
+                alt.Chart(interaction_counts)
+                .mark_bar()
+                .encode(
+                    x=alt.X(
+                        "Count:Q",
+                        title="Number of contacts",
+                    ),
+                    y=alt.Y(
+                        "Interaction type:N",
+                        sort="-x",
+                        title=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip(
+                            "Interaction type:N",
+                            title="Interaction",
+                        ),
+                        alt.Tooltip(
+                            "Count:Q",
+                            title="Count",
+                        ),
+                    ],
+                )
+                .properties(
+                    height=max(
+                        280,
+                        len(interaction_counts) * 42,
+                    )
+                )
+            )
+
+            with chart_column_1:
+                st.subheader("Interactions by type")
+                st.altair_chart(
+                    interaction_chart,
+                    width="stretch",
+                )
+
+        if residue_name_column:
+            residue_labels = (
+                selected_table[residue_name_column]
+                .fillna("Unknown")
+                .astype(str)
+            )
+
+            if residue_number_column:
+                residue_numbers = (
+                    selected_table[residue_number_column]
+                    .fillna("")
+                    .astype(str)
+                    .str.replace(
+                        r"\.0$",
+                        "",
+                        regex=True,
+                    )
+                )
+
+                residue_labels = (
+                    residue_labels
+                    + residue_numbers
+                )
+
+            if chain_column:
+                chain_labels = (
+                    selected_table[chain_column]
+                    .fillna("")
+                    .astype(str)
+                )
+
+                residue_labels = (
+                    chain_labels
+                    + ":"
+                    + residue_labels
+                )
+
+            residue_counts = (
+                residue_labels
+                .value_counts()
+                .head(15)
+                .rename_axis("Residue")
+                .reset_index(name="Contact count")
+                .sort_values(
+                    "Contact count",
+                    ascending=True,
+                )
+            )
+
+            residue_chart = (
+                alt.Chart(residue_counts)
+                .mark_bar()
+                .encode(
+                    x=alt.X(
+                        "Contact count:Q",
+                        title="Number of contacts",
+                    ),
+                    y=alt.Y(
+                        "Residue:N",
+                        sort="-x",
+                        title=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip(
+                            "Residue:N",
+                            title="Residue",
+                        ),
+                        alt.Tooltip(
+                            "Contact count:Q",
+                            title="Contacts",
+                        ),
+                    ],
+                )
+                .properties(
+                    height=max(
+                        320,
+                        len(residue_counts) * 36,
+                    )
+                )
+            )
+
+            with chart_column_2:
+                st.subheader("Top contacted residues")
+                st.altair_chart(
+                    residue_chart,
+                    width="stretch",
+                )
+
+        st.info(
+            "Contact frequency reflects predicted geometric "
+            "interactions. Multiple ligand atoms may contact the "
+            "same protein residue."
+        )
+
+    with catalytic_tab:
+        catalytic_mask = row_text.str.contains(
+            r"ASP\s*25|ASP25|catalytic",
+            case=False,
+            regex=True,
+            na=False,
+        )
+
+        catalytic_rows = selected_table[
+            catalytic_mask
+        ].copy()
+
+        st.subheader("Catalytic Asp25 interactions")
+
+        if catalytic_rows.empty:
+            st.warning(
+                "No catalytic-site interaction records were found "
+                "for the selected pose."
+            )
+        else:
+            hidden_columns = [
+                column
+                for column in catalytic_rows.columns
+                if any(
+                    keyword in column.lower()
+                    for keyword in [
+                        "path",
+                        "file",
+                        "source_pdbqt",
+                    ]
+                )
+            ]
+
+            catalytic_display = catalytic_rows.drop(
+                columns=hidden_columns,
+                errors="ignore",
+            )
+
+            st.dataframe(
+                catalytic_display,
+                width="stretch",
+                hide_index=True,
+                column_config={
+                    "distance_angstrom": st.column_config.NumberColumn(
+                        "Distance (Å)",
+                        format="%.3f",
+                    ),
+                    "angle_degrees": st.column_config.NumberColumn(
+                        "Angle (°)",
+                        format="%.1f",
+                    ),
+                },
+            )
+
+            st.download_button(
+                label="Download catalytic contacts",
+                data=catalytic_rows.to_csv(index=False),
+                file_name=(
+                    "1HSG_MK1_catalytic_interactions.csv"
+                ),
+                mime="text/csv",
+            )
+
+    with records_tab:
+        hidden_columns = [
+            column
+            for column in selected_table.columns
+            if any(
+                keyword in column.lower()
+                for keyword in [
+                    "path",
+                    "file",
+                    "source_pdbqt",
+                ]
+            )
+        ]
+
+        display_table = selected_table.drop(
+            columns=hidden_columns,
             errors="ignore",
         )
 
@@ -322,109 +887,569 @@ def render_interactions() -> None:
             display_table,
             width="stretch",
             hide_index=True,
+            column_config={
+                "distance_angstrom": st.column_config.NumberColumn(
+                    "Distance (Å)",
+                    format="%.3f",
+                ),
+                "angle_degrees": st.column_config.NumberColumn(
+                    "Angle (°)",
+                    format="%.1f",
+                ),
+            },
         )
 
-        if "interaction_type" in table.columns:
-            counts = (
-                table["interaction_type"]
-                .value_counts()
-                .rename_axis("interaction_type")
-                .to_frame("count")
+        st.download_button(
+            label="Download filtered interaction CSV",
+            data=selected_table.to_csv(index=False),
+            file_name="1HSG_MK1_interactions.csv",
+            mime="text/csv",
+        )
+
+    with report_tab:
+        if report:
+            st.markdown(report)
+
+            st.download_button(
+                label="Download Markdown report",
+                data=report,
+                file_name=(
+                    "1HSG_MK1_interaction_report.md"
+                ),
+                mime="text/markdown",
+            )
+        else:
+            st.info(
+                "The Markdown interaction report was not found."
             )
 
-            st.markdown("### Interaction counts")
-            st.bar_chart(counts)
-
-
+    st.caption(
+        "Protein-ligand interactions are computational predictions "
+        "and require experimental validation."
+    )
 def render_screening() -> None:
-    """Render virtual-screening outputs."""
+    """Render a professional virtual-screening dashboard."""
 
     st.header("Virtual screening")
+    st.caption(
+        "Resource-aware ligand preparation, docking and "
+        "screening-result overview."
+    )
 
-    report = load_text(SCREENING_REPORT_PATH)
+    report_text = load_text(SCREENING_REPORT_PATH)
+    report_json = load_json(SCREENING_JSON_PATH)
     table = load_csv(SCREENING_TABLE_PATH)
 
-    if not report and table.empty:
+    if not report_json and not report_text and table.empty:
         st.warning("Virtual-screening outputs were not found.")
         return
 
-    if report:
-        st.markdown(report)
+    library_size = report_json.get(
+        "library_size",
+        report_json.get("input_count", 0),
+    )
+    accepted_count = report_json.get(
+        "accepted_count",
+        report_json.get("standardized_count", 0),
+    )
+    rejected_count = report_json.get(
+        "rejected_count",
+        0,
+    )
+    screening_count = report_json.get(
+        "screening_result_count",
+        report_json.get("screened_count", len(table)),
+    )
+    refined_count = report_json.get(
+        "refined_count",
+        0,
+    )
 
-    if not table.empty:
-        st.markdown("### Screening scores")
+    metric_columns = st.columns(5)
 
-        display_table = table.drop(
-            columns=["pose_pdbqt"],
-            errors="ignore",
+    metric_columns[0].metric(
+        "Library compounds",
+        library_size,
+    )
+    metric_columns[1].metric(
+        "Accepted",
+        accepted_count,
+    )
+    metric_columns[2].metric(
+        "Rejected",
+        rejected_count,
+    )
+    metric_columns[3].metric(
+        "Docking results",
+        screening_count,
+    )
+    metric_columns[4].metric(
+        "Refined hits",
+        refined_count,
+    )
+
+    overview_tab, scores_tab, report_tab = st.tabs(
+        [
+            "Overview",
+            "Screening scores",
+            "Full report",
+        ]
+    )
+
+    with overview_tab:
+        status_data = pd.DataFrame(
+            {
+                "Stage": [
+                    "Library",
+                    "Accepted",
+                    "Rejected",
+                    "Screened",
+                    "Refined",
+                ],
+                "Count": [
+                    library_size,
+                    accepted_count,
+                    rejected_count,
+                    screening_count,
+                    refined_count,
+                ],
+            }
         )
 
-        st.dataframe(
-            display_table,
+        status_chart = (
+            alt.Chart(status_data)
+            .mark_bar()
+            .encode(
+                x=alt.X(
+                    "Count:Q",
+                    title="Compound count",
+                ),
+                y=alt.Y(
+                    "Stage:N",
+                    sort="-x",
+                    title=None,
+                ),
+                tooltip=[
+                    alt.Tooltip("Stage:N"),
+                    alt.Tooltip("Count:Q"),
+                ],
+                color=alt.Color(
+                    "Stage:N",
+                    legend=None,
+                ),
+            )
+            .properties(height=300)
+        )
+
+        st.subheader("Screening workflow summary")
+        st.altair_chart(
+            status_chart,
             width="stretch",
-            hide_index=True,
         )
 
-        score_column = next(
-            (
-                column
-                for column in table.columns
-                if column in {
-                    "best_affinity",
-                    "best_affinity_kcal_mol",
-                    "screening_score",
-                }
-            ),
-            None,
-        )
-
-        id_column = next(
-            (
-                column
-                for column in table.columns
-                if column in {
-                    "compound_id",
-                    "ligand_id",
-                    "id",
-                }
-            ),
-            None,
-        )
-
-        if score_column and id_column:
-            chart_data = (
-                table[[id_column, score_column]]
-                .dropna()
-                .set_index(id_column)
+        if screening_count == 0:
+            st.warning(
+                "No completed docking scores were found. "
+                "The demonstration library was prepared, but "
+                "the screening-results table currently contains "
+                "no successful docking result."
             )
 
-            st.markdown("### Compound ranking")
-            st.bar_chart(chart_data)
+        if not table.empty:
+            score_column = next(
+                (
+                    column
+                    for column in table.columns
+                    if column in {
+                        "best_affinity",
+                        "best_affinity_kcal_mol",
+                        "screening_score",
+                        "affinity_kcal_mol",
+                    }
+                ),
+                None,
+            )
 
+            id_column = next(
+                (
+                    column
+                    for column in table.columns
+                    if column in {
+                        "compound_id",
+                        "ligand_id",
+                        "id",
+                    }
+                ),
+                None,
+            )
 
+            if score_column and id_column:
+                valid_scores = table[
+                    [id_column, score_column]
+                ].dropna().copy()
+
+                if not valid_scores.empty:
+                    valid_scores["Display compound"] = (
+                        valid_scores[id_column].astype(str)
+                    )
+
+                    valid_scores = valid_scores.sort_values(
+                        score_column,
+                        ascending=True,
+                    ).head(15)
+
+                    score_chart = (
+                        alt.Chart(valid_scores)
+                        .mark_bar()
+                        .encode(
+                            x=alt.X(
+                                f"{score_column}:Q",
+                                title="Best Vina score (kcal/mol)",
+                            ),
+                            y=alt.Y(
+                                "Display compound:N",
+                                sort=alt.EncodingSortField(
+                                    field=score_column,
+                                    order="ascending",
+                                ),
+                                title=None,
+                            ),
+                            tooltip=[
+                                alt.Tooltip(
+                                    f"{id_column}:N",
+                                    title="Compound",
+                                ),
+                                alt.Tooltip(
+                                    f"{score_column}:Q",
+                                    title="Score",
+                                    format=".3f",
+                                ),
+                            ],
+                        )
+                        .properties(
+                            height=max(
+                                300,
+                                len(valid_scores) * 35,
+                            )
+                        )
+                    )
+
+                    st.subheader("Top docking scores")
+                    st.caption(
+                        "More negative Vina scores indicate "
+                        "stronger predicted ranking."
+                    )
+                    st.altair_chart(
+                        score_chart,
+                        width="stretch",
+                    )
+
+    with scores_tab:
+        if table.empty:
+            st.info(
+                "The screening score table is currently empty."
+            )
+        else:
+            hidden_columns = [
+                column
+                for column in table.columns
+                if any(
+                    keyword in column.lower()
+                    for keyword in [
+                        "path",
+                        "file",
+                        "stdout",
+                        "stderr",
+                    ]
+                )
+            ]
+
+            display_table = table.drop(
+                columns=hidden_columns,
+                errors="ignore",
+            )
+
+            st.dataframe(
+                display_table,
+                width="stretch",
+                hide_index=True,
+                column_config={
+                    "best_affinity": (
+                        st.column_config.NumberColumn(
+                            "Best affinity",
+                            format="%.3f",
+                        )
+                    ),
+                    "best_affinity_kcal_mol": (
+                        st.column_config.NumberColumn(
+                            "Best affinity (kcal/mol)",
+                            format="%.3f",
+                        )
+                    ),
+                    "runtime_seconds": (
+                        st.column_config.NumberColumn(
+                            "Runtime (s)",
+                            format="%.2f",
+                        )
+                    ),
+                },
+            )
+
+            st.download_button(
+                label="Download screening scores",
+                data=table.to_csv(index=False),
+                file_name="screening_scores.csv",
+                mime="text/csv",
+            )
+
+    with report_tab:
+        if report_json:
+            summary_table = pd.DataFrame(
+                {
+                    "Metric": list(report_json.keys()),
+                    "Value": [
+                        (
+                            json.dumps(value)
+                            if isinstance(
+                                value,
+                                (dict, list),
+                            )
+                            else value
+                        )
+                        for value in report_json.values()
+                    ],
+                }
+            )
+
+            st.dataframe(
+                summary_table,
+                width="stretch",
+                hide_index=True,
+            )
+
+            st.download_button(
+                label="Download screening JSON",
+                data=json.dumps(
+                    report_json,
+                    indent=2,
+                ),
+                file_name="screening_report.json",
+                mime="application/json",
+            )
+
+        if report_text:
+            with st.expander(
+                "Markdown screening report",
+                expanded=False,
+            ):
+                st.markdown(report_text)
+
+            st.download_button(
+                label="Download screening Markdown",
+                data=report_text,
+                file_name="screening_report.md",
+                mime="text/markdown",
+            )
+
+    st.caption(
+        "The demonstration library validates software "
+        "functionality and does not represent a biological "
+        "discovery study."
+    )
 def render_prioritization() -> None:
-    """Render hit-prioritization outputs."""
+    """Render a professional hit-prioritization dashboard."""
 
     st.header("Hit prioritization")
+    st.caption(
+        "Consensus ranking integrating docking, interactions, "
+        "drug-likeness, structural alerts and ligand efficiency."
+    )
 
-    report = load_text(PRIORITIZATION_REPORT_PATH)
+    report_text = load_text(PRIORITIZATION_REPORT_PATH)
+    report_json = load_json(PRIORITIZATION_JSON_PATH)
 
     table = find_first_existing_csv(
         PRIORITIZATION_TABLE_CANDIDATES
     )
 
-    if not report and table.empty:
+    if not report_text and not report_json and table.empty:
         st.warning("Hit-prioritization outputs were not found.")
         return
 
-    if report:
-        st.markdown(report)
+    if table.empty:
+        if report_json:
+            st.json(report_json)
+        elif report_text:
+            st.markdown(report_text)
+        return
 
-    if not table.empty:
-        st.markdown("### Consensus ranking")
+    id_column = next(
+        (
+            column
+            for column in table.columns
+            if column in {
+                "compound_id",
+                "ligand_id",
+                "id",
+            }
+        ),
+        None,
+    )
 
-        display_table = table.drop(
-            columns=["pose_pdbqt"],
+    rank_column = next(
+        (
+            column
+            for column in table.columns
+            if column in {
+                "rank",
+                "consensus_rank",
+            }
+        ),
+        None,
+    )
+
+    consensus_column = next(
+        (
+            column
+            for column in table.columns
+            if column in {
+                "consensus_score",
+                "base_consensus_score",
+                "admet_adjusted_consensus_score",
+            }
+        ),
+        None,
+    )
+
+    affinity_column = next(
+        (
+            column
+            for column in table.columns
+            if column in {
+                "best_affinity",
+                "best_affinity_kcal_mol",
+                "refined_best_affinity",
+            }
+        ),
+        None,
+    )
+
+    qed_column = next(
+        (
+            column
+            for column in table.columns
+            if column.lower() == "qed"
+        ),
+        None,
+    )
+
+    ligand_efficiency_column = next(
+        (
+            column
+            for column in table.columns
+            if column in {
+                "ligand_efficiency",
+                "score_per_heavy_atom",
+            }
+        ),
+        None,
+    )
+
+    top_row = (
+        table.sort_values(
+            rank_column,
+            ascending=True,
+        ).iloc[0]
+        if rank_column
+        else table.iloc[0]
+    )
+
+    top_compound = (
+        top_row[id_column]
+        if id_column
+        else "N/A"
+    )
+
+    top_rank = (
+        top_row[rank_column]
+        if rank_column
+        else 1
+    )
+
+    top_consensus = (
+        top_row[consensus_column]
+        if consensus_column
+        else "N/A"
+    )
+
+    top_affinity = (
+        top_row[affinity_column]
+        if affinity_column
+        else "N/A"
+    )
+
+    metric_columns = st.columns(5)
+
+    metric_columns[0].metric(
+        "Ranked compounds",
+        len(table),
+    )
+    metric_columns[1].metric(
+        "Top compound",
+        top_compound,
+    )
+    metric_columns[2].metric(
+        "Top rank",
+        top_rank,
+    )
+    metric_columns[3].metric(
+        "Consensus score",
+        (
+            f"{float(top_consensus):.3f}"
+            if isinstance(
+                top_consensus,
+                (int, float),
+            )
+            else top_consensus
+        ),
+    )
+    metric_columns[4].metric(
+        "Best affinity",
+        (
+            f"{float(top_affinity):.3f} kcal/mol"
+            if isinstance(
+                top_affinity,
+                (int, float),
+            )
+            else top_affinity
+        ),
+    )
+
+    ranking_tab, profile_tab, report_tab = st.tabs(
+        [
+            "Consensus ranking",
+            "Top-hit profile",
+            "Full report",
+        ]
+    )
+
+    with ranking_tab:
+        display_table = table.copy()
+
+        hidden_columns = [
+            column
+            for column in display_table.columns
+            if any(
+                keyword in column.lower()
+                for keyword in [
+                    "path",
+                    "file",
+                ]
+            )
+        ]
+
+        display_table = display_table.drop(
+            columns=hidden_columns,
             errors="ignore",
         )
 
@@ -432,45 +1457,227 @@ def render_prioritization() -> None:
             display_table,
             width="stretch",
             hide_index=True,
+            column_config={
+                "consensus_score": (
+                    st.column_config.NumberColumn(
+                        "Consensus score",
+                        format="%.3f",
+                    )
+                ),
+                "best_affinity": (
+                    st.column_config.NumberColumn(
+                        "Best affinity",
+                        format="%.3f",
+                    )
+                ),
+                "qed": (
+                    st.column_config.NumberColumn(
+                        "QED",
+                        format="%.3f",
+                    )
+                ),
+                "ligand_efficiency": (
+                    st.column_config.NumberColumn(
+                        "Ligand efficiency",
+                        format="%.3f",
+                    )
+                ),
+            },
         )
 
-        score_column = next(
-            (
-                column
-                for column in table.columns
-                if column in {
-                    "consensus_score",
-                    "base_consensus_score",
-                    "admet_adjusted_consensus_score",
-                }
-            ),
-            None,
-        )
+        if consensus_column:
+            chart_data = table.copy()
 
-        id_column = next(
-            (
-                column
-                for column in table.columns
-                if column in {
-                    "compound_id",
-                    "ligand_id",
-                    "id",
-                }
-            ),
-            None,
-        )
+            if id_column:
+                chart_data["Compound label"] = (
+                    chart_data[id_column].astype(str)
+                )
+            else:
+                chart_data["Compound label"] = (
+                    "Compound "
+                    + (
+                        chart_data.index
+                        + 1
+                    ).astype(str)
+                )
 
-        if score_column and id_column:
-            chart_data = (
-                table[[id_column, score_column]]
-                .dropna()
-                .set_index(id_column)
+            if rank_column:
+                chart_data["Compound label"] = (
+                    chart_data["Compound label"]
+                    + " (#"
+                    + chart_data[
+                        rank_column
+                    ].astype(str)
+                    + ")"
+                )
+
+            chart_data = chart_data.sort_values(
+                consensus_column,
+                ascending=True,
             )
 
-            st.markdown("### Consensus scores")
-            st.bar_chart(chart_data)
+            consensus_chart = (
+                alt.Chart(chart_data)
+                .mark_bar()
+                .encode(
+                    x=alt.X(
+                        f"{consensus_column}:Q",
+                        title="Consensus score",
+                    ),
+                    y=alt.Y(
+                        "Compound label:N",
+                        sort=alt.EncodingSortField(
+                            field=consensus_column,
+                            order="descending",
+                        ),
+                        title=None,
+                    ),
+                    tooltip=[
+                        alt.Tooltip(
+                            "Compound label:N",
+                            title="Compound",
+                        ),
+                        alt.Tooltip(
+                            f"{consensus_column}:Q",
+                            title="Consensus",
+                            format=".3f",
+                        ),
+                    ],
+                )
+                .properties(
+                    height=max(
+                        280,
+                        len(chart_data) * 45,
+                    )
+                )
+            )
 
+            st.subheader("Consensus scores")
+            st.altair_chart(
+                consensus_chart,
+                width="stretch",
+            )
 
+        st.download_button(
+            label="Download consensus ranking",
+            data=table.to_csv(index=False),
+            file_name="consensus_ranking.csv",
+            mime="text/csv",
+        )
+
+    with profile_tab:
+        if id_column:
+            compound_options = (
+                table[id_column]
+                .astype(str)
+                .tolist()
+            )
+
+            selected_compound = st.selectbox(
+                "Select compound",
+                options=compound_options,
+            )
+
+            compound_rows = table[
+                table[id_column].astype(str)
+                == selected_compound
+            ]
+
+            selected_row = compound_rows.iloc[0]
+        else:
+            selected_row = table.iloc[0]
+
+        profile_fields = []
+
+        for column, label in [
+            (consensus_column, "Consensus score"),
+            (affinity_column, "Docking affinity"),
+            (qed_column, "QED"),
+            (
+                ligand_efficiency_column,
+                "Ligand efficiency",
+            ),
+            (
+                "interaction",
+                "Interaction score",
+            ),
+            (
+                "pains_alerts",
+                "PAINS alerts",
+            ),
+            (
+                "brenk_alerts",
+                "Brenk alerts",
+            ),
+            (
+                "alerts",
+                "Total alerts",
+            ),
+        ]:
+            if column and column in selected_row.index:
+                profile_fields.append(
+                    {
+                        "Feature": label,
+                        "Value": selected_row[column],
+                    }
+                )
+
+        if profile_fields:
+            profile_table = pd.DataFrame(
+                profile_fields
+            )
+
+            st.subheader("Selected-hit profile")
+            st.dataframe(
+                profile_table,
+                width="stretch",
+                hide_index=True,
+            )
+
+        if "smiles" in selected_row.index:
+            st.text_area(
+                "SMILES",
+                value=str(selected_row["smiles"]),
+                height=90,
+                disabled=True,
+            )
+
+        st.info(
+            "Consensus ranking supports prioritization only. "
+            "Final candidates require experimental validation."
+        )
+
+    with report_tab:
+        if report_json:
+            with st.expander(
+                "Machine-readable report",
+                expanded=True,
+            ):
+                st.json(report_json)
+
+            st.download_button(
+                label="Download prioritization JSON",
+                data=json.dumps(
+                    report_json,
+                    indent=2,
+                ),
+                file_name=(
+                    "hit_prioritization_report.json"
+                ),
+                mime="application/json",
+            )
+
+        if report_text:
+            st.markdown(report_text)
+
+            st.download_button(
+                label="Download prioritization Markdown",
+                data=report_text,
+                file_name=(
+                    "hit_prioritization_report.md"
+                ),
+                mime="text/markdown",
+            )
 def render_about() -> None:
     """Render project information."""
 
@@ -502,6 +1709,55 @@ def render_about() -> None:
     )
 
 
+def render_structure_viewer() -> None:
+    """Render the interactive protein-ligand structure viewer."""
+
+    st.header("Interactive 3D protein–ligand viewer")
+    st.caption(
+        "HIV-1 protease is shown as a cartoon, MK1 as sticks, and the "
+        "catalytic ASP25 dyad in red. Drag to rotate and scroll to zoom."
+    )
+
+    try:
+        settings = load_viewer_settings()
+        receptor, _ = structure_files(settings)
+        poses = available_pose_files(settings)
+    except (KeyError, ValueError) as exc:
+        st.error(f"The 3D viewer configuration is invalid: {exc}")
+        return
+
+    selected_pose = st.selectbox("Pose", options=list(poses))
+    ligand = poses[selected_pose]
+    missing = [path for path in (receptor.path, ligand.path) if not path.is_file()]
+    if missing:
+        st.error(
+            "The selected structure files are unavailable: "
+            + ", ".join(path.name for path in missing)
+        )
+        return
+
+    py3dmol = import_py3dmol()
+    if py3dmol is None:
+        st.warning(
+            "Interactive 3D rendering is unavailable because the optional "
+            "py3Dmol dependency is not installed. Install the project "
+            "dependencies (or run `conda run -n dockforge pip install "
+            "py3Dmol==2.5.3`) and restart Streamlit."
+        )
+        return
+
+    try:
+        view = build_view(
+            py3dmol,
+            receptor,
+            ligand,
+            list(settings.get("catalytic_residues", ["A:25", "B:25"])),
+        )
+        st.components.v1.html(view._make_html(), height=670, scrolling=False)
+    except (OSError, ValueError) as exc:
+        st.error(f"The selected structure could not be rendered: {exc}")
+
+
 def main() -> None:
     """Run the Streamlit application."""
 
@@ -512,6 +1768,7 @@ def main() -> None:
         [
             "Home",
             "Redocking",
+            "3D viewer",
             "Interactions",
             "Virtual screening",
             "Hit prioritization",
@@ -526,6 +1783,8 @@ def main() -> None:
         render_home()
     elif page == "Redocking":
         render_redocking()
+    elif page == "3D viewer":
+        render_structure_viewer()
     elif page == "Interactions":
         render_interactions()
     elif page == "Virtual screening":

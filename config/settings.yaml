@@ -78,6 +78,24 @@ interactions:
     - A:25
     - B:25
 
+visualization:
+  protein_ligand_viewer:
+    receptor:
+      path: data/processed/protonated_receptors/1HSG_chains-A-B_receptor.pdb
+      format: pdb
+    poses:
+      crystallographic:
+        path: data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf
+        format: sdf
+      rank_1_redocked:
+        path: data/processed/docking_poses/1HSG_MK1/pose_001.pdbqt
+        format: pdbqt
+    docking_pose_directory: data/processed/docking_poses/1HSG_MK1
+    redocking_summary_path: data/processed/docking_results/1HSG_MK1_redocking_summary.json
+    catalytic_residues:
+      - A:25
+      - B:25
+
 virtual_screening:
   max_library_size: 500
   chunk_size: 25

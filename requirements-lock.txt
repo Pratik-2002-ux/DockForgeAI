@@ -114,6 +114,7 @@ pyarrow==24.0.0
 pycairo==1.29.0
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pycparser_1779293633/work
 pydeck==0.9.3
+py3Dmol==2.5.3
 Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1774796700044/work
 pyobjc-core @ file:///Users/runner/miniforge3/conda-bld/pyobjc-core_1782231922267/work
 pyobjc-framework-Cocoa @ file:///Users/runner/miniforge3/conda-bld/pyobjc-framework-cocoa_1782265715098/work
