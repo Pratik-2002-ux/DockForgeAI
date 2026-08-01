@@ -56,3 +56,6 @@ reports/
 # Jupyter
 # ============================
 .ipynb_checkpoints/
+# Vina screening runtime logs
+data/processed/screening_runs/*/vina_stdout.txt
+data/processed/screening_runs/*/vina_stderr.txt

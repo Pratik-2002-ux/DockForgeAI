@@ -2,6 +2,7 @@
   "library_size": 3,
   "accepted_count": 3,
   "rejected_count": 0,
-  "screening_result_count": 0,
+  "screening_result_count": 3,
+  "screening_failure_count": 0,
   "refined_count": 0
 }
