@@ -1,0 +1,19 @@
+{
+  "cached_pool": "data/raw/xai/dude_hivpr/decoys_final.ism",
+  "models_are_validation_only": true,
+  "new_downloads": false,
+  "property_matching": "3000-seed candidate pool; closest 1000 to active standardized descriptor centroid",
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035
+  ],
+  "split": "scaffold-grouped 70/15/15"
+}

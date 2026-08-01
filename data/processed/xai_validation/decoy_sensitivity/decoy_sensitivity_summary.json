@@ -1,0 +1,8 @@
+{
+  "instability_warning": false,
+  "limitation": "DUD-E decoys are computational and not experimentally verified inactive compounds.",
+  "pr_auc_max": 0.9824022463965376,
+  "pr_auc_mean": 0.9580755809398026,
+  "pr_auc_min": 0.92880683246059,
+  "pr_auc_std": 0.017680271006187777
+}

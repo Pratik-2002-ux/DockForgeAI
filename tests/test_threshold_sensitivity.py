@@ -1,0 +1,3 @@
+from src.validation.threshold_sensitivity import run_threshold_sensitivity
+def test_threshold_entrypoint_is_callable(): assert callable(run_threshold_sensitivity)
+def test_threshold_analysis_is_separate_from_locked_training(): assert "validation" in run_threshold_sensitivity.__module__

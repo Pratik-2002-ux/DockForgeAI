@@ -1,0 +1,23 @@
+{
+  "best_test_baseline": {
+    "accuracy": 0.9966666666666667,
+    "balanced_accuracy": 0.9966666666666666,
+    "baseline": "tanimoto_3nn",
+    "brier_score": 0.002592592592592592,
+    "error_rate": 0.0033333333333333335,
+    "fn": 0,
+    "fp": 1,
+    "log_loss": 0.00771669204429532,
+    "mcc": 0.9933554081432371,
+    "mean_confidence": 0.995555555554569,
+    "positive_count": 150,
+    "pr_auc": 1.0,
+    "roc_auc": 1.0,
+    "sample_count": 300,
+    "split": "test",
+    "tn": 149,
+    "tp": 150
+  },
+  "interpretation": "Near-best nearest-neighbour performance indicates local similarity may dominate.",
+  "local_similarity_warning": true
+}

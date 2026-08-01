@@ -1,0 +1,27 @@
+{
+  "caliper": 0.2,
+  "full_test": {
+    "accuracy": 0.9966666666666667,
+    "balanced_accuracy": 0.9966666666666666,
+    "brier_score": 0.0036592197287589417,
+    "error_rate": 0.0033333333333333335,
+    "fn": 1,
+    "fp": 0,
+    "log_loss": 0.0933532325180709,
+    "mcc": 0.9933554081432371,
+    "mean_confidence": 0.998957748597098,
+    "positive_count": 150,
+    "pr_auc": 0.9966666666666666,
+    "roc_auc": 0.9966666666666666,
+    "sample_count": 300,
+    "tn": 150,
+    "tp": 149
+  },
+  "matched_pairs": 0,
+  "matched_test": {},
+  "mean_absolute_smd_after": null,
+  "mean_absolute_smd_before": 0.8215913519435016,
+  "pr_auc_drop": null,
+  "replacement": false,
+  "status": "not_evaluated_no_pairs_within_caliper"
+}

@@ -1,0 +1,8 @@
+field,group,count,mean_probability,std_probability
+source_database,ChEMBL,150,0.9912488305295222,0.08538418796313726
+source_database,DUD-E,150,0.0,0.0
+label_source,chembl_activity,150,0.9912488305295222,0.08538418796313726
+label_source,dude_decoy,150,0.0,0.0
+dataset_split,test,300,0.4956244152647611,0.5000981401194381
+binary_label,active,150,0.9912488305295222,0.08538418796313726
+binary_label,inactive_or_decoy,150,0.0,0.0

@@ -1,0 +1,5 @@
+threshold,active,decoy,ambiguous_excluded
+5.5,1000,1000,0
+6.0,1000,1000,0
+6.5,1000,1000,0
+7.0,1000,1000,0

@@ -1,0 +1,4 @@
+field,group_a,group_b,ks_statistic,wasserstein_distance,jensen_shannon_divergence
+source_database,ChEMBL,DUD-E,0.9933333333333333,0.991248830529522,0.6731006430757442
+label_source,chembl_activity,dude_decoy,0.9933333333333333,0.991248830529522,0.6731006430757442
+binary_label,active,inactive_or_decoy,0.9933333333333333,0.991248830529522,0.6731006430757442

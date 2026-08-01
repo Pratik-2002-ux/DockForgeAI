@@ -1,0 +1,60 @@
+{
+  "locked_artifacts_overwritten": false,
+  "metrics": [
+    {
+      "accuracy": 0.9166666666666666,
+      "balanced_accuracy": 0.9166666666666666,
+      "brier_score": 0.06590104938504499,
+      "error_rate": 0.08333333333333333,
+      "fn": 11,
+      "fp": 14,
+      "log_loss": 0.2245552173536187,
+      "mcc": 0.8335000500166725,
+      "mean_confidence": 0.9254314731409988,
+      "method": "unweighted",
+      "positive_count": 150,
+      "pr_auc": 0.9688493878044817,
+      "roc_auc": 0.9691555555555555,
+      "sample_count": 300,
+      "tn": 136,
+      "tp": 139
+    },
+    {
+      "accuracy": 0.9166666666666666,
+      "balanced_accuracy": 0.9166666666666666,
+      "brier_score": 0.06590104938504499,
+      "error_rate": 0.08333333333333333,
+      "fn": 11,
+      "fp": 14,
+      "log_loss": 0.2245552173536187,
+      "mcc": 0.8335000500166725,
+      "mean_confidence": 0.9254314731409988,
+      "method": "inverse_source_frequency",
+      "positive_count": 150,
+      "pr_auc": 0.9688493878044817,
+      "roc_auc": 0.9691555555555555,
+      "sample_count": 300,
+      "tn": 136,
+      "tp": 139
+    },
+    {
+      "accuracy": 0.9166666666666666,
+      "balanced_accuracy": 0.9166666666666666,
+      "brier_score": 0.06590104938504499,
+      "error_rate": 0.08333333333333333,
+      "fn": 11,
+      "fp": 14,
+      "log_loss": 0.2245552173536187,
+      "mcc": 0.8335000500166725,
+      "mean_confidence": 0.9254314731409988,
+      "method": "class_source_joint",
+      "positive_count": 150,
+      "pr_auc": 0.9688493878044817,
+      "roc_auc": 0.9691555555555555,
+      "sample_count": 300,
+      "tn": 136,
+      "tp": 139
+    }
+  ],
+  "models_are_validation_only": true
+}
