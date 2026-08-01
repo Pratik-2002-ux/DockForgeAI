@@ -29,6 +29,25 @@ directories:
   external_data: data/external
   logs: logs
   reports: reports
+  interaction_inputs: data/processed/interaction_inputs
+  interaction_results: data/processed/interaction_results
+  interaction_tables: data/processed/interaction_tables
+  interaction_reports: data/processed/interaction_reports
+  interaction_figures: data/processed/interaction_figures
+  screening_inputs: data/raw/screening_libraries
+  standardized_library: data/processed/screening_library/standardized
+  filtered_library: data/processed/screening_library/filtered
+  screening_ligand_sdf: data/processed/screening_library/sdf
+  screening_ligand_pdbqt: data/processed/screening_library/pdbqt
+  screening_runs: data/processed/screening_runs
+  screening_tables: data/processed/screening_tables
+  screening_reports: data/processed/screening_reports
+  failed_ligands: data/processed/screening_library/failed
+  admet_inputs: data/raw/admet
+  admet_tables: data/processed/admet_tables
+  prioritization_tables: data/processed/prioritization_tables
+  prioritization_reports: data/processed/prioritization_reports
+  prioritization_figures: data/processed/prioritization_figures
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"
@@ -47,3 +66,41 @@ docking:
   energy_range: 4
   seed: 2026
   redocking_rmsd_threshold_angstrom: 2.0
+
+interactions:
+  preferred_engine: plip
+  hydrogen_bond_distance_angstrom: 3.5
+  hydrogen_bond_angle_degrees: 120
+  hydrophobic_distance_angstrom: 4.0
+  salt_bridge_distance_angstrom: 4.0
+  pi_stacking_distance_angstrom: 5.5
+  catalytic_residues:
+    - A:25
+    - B:25
+
+virtual_screening:
+  max_library_size: 500
+  chunk_size: 25
+  concurrent_jobs: 1
+  cpu_per_job: 4
+  screening_exhaustiveness: 4
+  screening_num_modes: 3
+  screening_energy_range: 3
+  refinement_exhaustiveness: 16
+  refinement_num_modes: 10
+  refinement_energy_range: 4
+  top_fraction_for_refinement: 0.10
+  minimum_refinement_count: 10
+  maximum_refinement_count: 30
+  seed: 2026
+  timeout_per_ligand_seconds: 1800
+  resume: true
+
+prioritization:
+  docking_weight: 0.30
+  interaction_weight: 0.25
+  druglikeness_weight: 0.20
+  structural_alert_weight: 0.10
+  ligand_efficiency_weight: 0.15
+  missing_external_admet_policy: neutral
+  top_hits_to_report: 10

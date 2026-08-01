@@ -1,0 +1,142 @@
+interaction_type,protein_chain,protein_residue_name,protein_residue_number,protein_atom,ligand_atom,distance_angstrom,angle_degrees,source_engine,pose_label,pose_rank,notes
+hydrophobic,A,ARG,8,CZ,C,3.523,,fallback,crystal,1,geometric prediction
+hydrophobic,A,ARG,8,CZ,C,3.759,,fallback,crystal,1,geometric prediction
+catalytic_contact,A,ASP,25,CG,O,3.217,,fallback,crystal,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD1,O,2.773,120,fallback,crystal,1,geometric prediction
+salt_bridge,A,ASP,25,OD1,O,2.773,,fallback,crystal,1,geometric prediction
+catalytic_contact,A,ASP,25,OD1,O,2.773,,fallback,crystal,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD2,O,2.934,120,fallback,crystal,1,geometric prediction
+salt_bridge,A,ASP,25,OD2,O,2.934,,fallback,crystal,1,geometric prediction
+catalytic_contact,A,ASP,25,OD2,O,2.934,,fallback,crystal,1,catalytic residue contact
+catalytic_contact,A,ASP,25,OD2,C,3.234,,fallback,crystal,1,catalytic residue contact
+hydrophobic,A,ALA,28,CB,C,3.815,,fallback,crystal,1,geometric prediction
+hydrophobic,A,GLY,49,CA,C,3.956,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,CE1,C,4.955,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,4.723,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,5.461,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,5.286,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,4.679,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.557,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.197,,fallback,crystal,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,5.386,,fallback,crystal,1,geometric prediction
+hydrophobic,A,PRO,81,CG,C,3.918,,fallback,crystal,1,geometric prediction
+hydrogen_bond,B,ARG,8,NH2,N,3.461,120,fallback,crystal,1,geometric prediction
+salt_bridge,B,ARG,8,NH2,N,3.461,,fallback,crystal,1,geometric prediction
+catalytic_contact,B,ASP,25,CG,O,3.215,,fallback,crystal,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD1,O,2.626,120,fallback,crystal,1,geometric prediction
+salt_bridge,B,ASP,25,OD1,O,2.626,,fallback,crystal,1,geometric prediction
+catalytic_contact,B,ASP,25,OD1,O,2.626,,fallback,crystal,1,catalytic residue contact
+salt_bridge,B,ASP,25,OD2,N,3.997,,fallback,crystal,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,C,3.378,,fallback,crystal,1,catalytic residue contact
+catalytic_contact,B,ASP,25,OD2,C,3.354,,fallback,crystal,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD2,O,3.04,120,fallback,crystal,1,geometric prediction
+salt_bridge,B,ASP,25,OD2,O,3.04,,fallback,crystal,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,O,3.04,,fallback,crystal,1,catalytic residue contact
+hydrophobic,B,ALA,28,CB,C,3.773,,fallback,crystal,1,geometric prediction
+hydrophobic,B,ALA,28,CB,C,3.655,,fallback,crystal,1,geometric prediction
+salt_bridge,B,ASP,29,OD1,O,3.759,,fallback,crystal,1,geometric prediction
+hydrogen_bond,B,ASP,29,OD2,O,3.061,120,fallback,crystal,1,geometric prediction
+salt_bridge,B,ASP,29,OD2,O,3.061,,fallback,crystal,1,geometric prediction
+hydrophobic,B,ASP,30,CB,C,3.94,,fallback,crystal,1,geometric prediction
+hydrophobic,B,ILE,47,CB,C,3.933,,fallback,crystal,1,geometric prediction
+hydrophobic,B,GLY,49,CA,C,3.96,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.734,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.71,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.942,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.686,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.946,,fallback,crystal,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.875,,fallback,crystal,1,geometric prediction
+hydrophobic,A,ARG,8,CZ,C,3.523,,fallback,rank1,1,geometric prediction
+hydrophobic,A,ARG,8,CZ,C,3.759,,fallback,rank1,1,geometric prediction
+catalytic_contact,A,ASP,25,CG,O,3.217,,fallback,rank1,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD1,O,2.773,120,fallback,rank1,1,geometric prediction
+salt_bridge,A,ASP,25,OD1,O,2.773,,fallback,rank1,1,geometric prediction
+catalytic_contact,A,ASP,25,OD1,O,2.773,,fallback,rank1,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD2,O,2.934,120,fallback,rank1,1,geometric prediction
+salt_bridge,A,ASP,25,OD2,O,2.934,,fallback,rank1,1,geometric prediction
+catalytic_contact,A,ASP,25,OD2,O,2.934,,fallback,rank1,1,catalytic residue contact
+catalytic_contact,A,ASP,25,OD2,C,3.234,,fallback,rank1,1,catalytic residue contact
+hydrophobic,A,ALA,28,CB,C,3.815,,fallback,rank1,1,geometric prediction
+hydrophobic,A,GLY,49,CA,C,3.956,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,CE1,C,4.955,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,4.723,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,5.461,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,5.286,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,4.679,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.557,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.197,,fallback,rank1,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,5.386,,fallback,rank1,1,geometric prediction
+hydrophobic,A,PRO,81,CG,C,3.918,,fallback,rank1,1,geometric prediction
+hydrogen_bond,B,ARG,8,NH2,N,3.461,120,fallback,rank1,1,geometric prediction
+salt_bridge,B,ARG,8,NH2,N,3.461,,fallback,rank1,1,geometric prediction
+catalytic_contact,B,ASP,25,CG,O,3.215,,fallback,rank1,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD1,O,2.626,120,fallback,rank1,1,geometric prediction
+salt_bridge,B,ASP,25,OD1,O,2.626,,fallback,rank1,1,geometric prediction
+catalytic_contact,B,ASP,25,OD1,O,2.626,,fallback,rank1,1,catalytic residue contact
+salt_bridge,B,ASP,25,OD2,N,3.997,,fallback,rank1,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,C,3.378,,fallback,rank1,1,catalytic residue contact
+catalytic_contact,B,ASP,25,OD2,C,3.354,,fallback,rank1,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD2,O,3.04,120,fallback,rank1,1,geometric prediction
+salt_bridge,B,ASP,25,OD2,O,3.04,,fallback,rank1,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,O,3.04,,fallback,rank1,1,catalytic residue contact
+hydrophobic,B,ALA,28,CB,C,3.773,,fallback,rank1,1,geometric prediction
+hydrophobic,B,ALA,28,CB,C,3.655,,fallback,rank1,1,geometric prediction
+salt_bridge,B,ASP,29,OD1,O,3.759,,fallback,rank1,1,geometric prediction
+hydrogen_bond,B,ASP,29,OD2,O,3.061,120,fallback,rank1,1,geometric prediction
+salt_bridge,B,ASP,29,OD2,O,3.061,,fallback,rank1,1,geometric prediction
+hydrophobic,B,ASP,30,CB,C,3.94,,fallback,rank1,1,geometric prediction
+hydrophobic,B,ILE,47,CB,C,3.933,,fallback,rank1,1,geometric prediction
+hydrophobic,B,GLY,49,CA,C,3.96,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.734,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.71,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.942,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.686,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.946,,fallback,rank1,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.875,,fallback,rank1,1,geometric prediction
+hydrophobic,A,ARG,8,CZ,C,3.523,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,A,ARG,8,CZ,C,3.759,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,A,ASP,25,CG,O,3.217,,fallback,best-rmsd,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD1,O,2.773,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,A,ASP,25,OD1,O,2.773,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,A,ASP,25,OD1,O,2.773,,fallback,best-rmsd,1,catalytic residue contact
+hydrogen_bond,A,ASP,25,OD2,O,2.934,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,A,ASP,25,OD2,O,2.934,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,A,ASP,25,OD2,O,2.934,,fallback,best-rmsd,1,catalytic residue contact
+catalytic_contact,A,ASP,25,OD2,C,3.234,,fallback,best-rmsd,1,catalytic residue contact
+hydrophobic,A,ALA,28,CB,C,3.815,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,A,GLY,49,CA,C,3.956,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,CE1,C,4.955,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,4.723,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,HE1,C,5.461,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,5.286,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,CZ,C,4.679,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.557,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,4.197,,fallback,best-rmsd,1,geometric prediction
+pi_stacking,A,PHE,53,HZ,C,5.386,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,A,PRO,81,CG,C,3.918,,fallback,best-rmsd,1,geometric prediction
+hydrogen_bond,B,ARG,8,NH2,N,3.461,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,B,ARG,8,NH2,N,3.461,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,B,ASP,25,CG,O,3.215,,fallback,best-rmsd,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD1,O,2.626,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,B,ASP,25,OD1,O,2.626,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,B,ASP,25,OD1,O,2.626,,fallback,best-rmsd,1,catalytic residue contact
+salt_bridge,B,ASP,25,OD2,N,3.997,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,C,3.378,,fallback,best-rmsd,1,catalytic residue contact
+catalytic_contact,B,ASP,25,OD2,C,3.354,,fallback,best-rmsd,1,catalytic residue contact
+hydrogen_bond,B,ASP,25,OD2,O,3.04,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,B,ASP,25,OD2,O,3.04,,fallback,best-rmsd,1,geometric prediction
+catalytic_contact,B,ASP,25,OD2,O,3.04,,fallback,best-rmsd,1,catalytic residue contact
+hydrophobic,B,ALA,28,CB,C,3.773,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,ALA,28,CB,C,3.655,,fallback,best-rmsd,1,geometric prediction
+salt_bridge,B,ASP,29,OD1,O,3.759,,fallback,best-rmsd,1,geometric prediction
+hydrogen_bond,B,ASP,29,OD2,O,3.061,120,fallback,best-rmsd,1,geometric prediction
+salt_bridge,B,ASP,29,OD2,O,3.061,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,ASP,30,CB,C,3.94,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,ILE,47,CB,C,3.933,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,GLY,49,CA,C,3.96,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.734,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.71,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CB,C,3.942,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.686,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.946,,fallback,best-rmsd,1,geometric prediction
+hydrophobic,B,PRO,81,CG,C,3.875,,fallback,best-rmsd,1,geometric prediction

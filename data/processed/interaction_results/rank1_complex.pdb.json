@@ -1,0 +1,12 @@
+{
+  "receptor_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/protonated_receptors/1HSG_chains-A-B_receptor.pdb",
+  "ligand_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "output_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/interaction_results/rank1_complex.pdb",
+  "label": "rank1",
+  "contains_receptor": true,
+  "contains_ligand": true,
+  "receptor_chains": [
+    "A",
+    "B"
+  ]
+}
