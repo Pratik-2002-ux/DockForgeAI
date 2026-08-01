@@ -10,4 +10,3 @@ services:
       - ./reports:/app/reports
       - ./logs:/app/logs
     restart: unless-stopped
-    init: true
