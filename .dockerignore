@@ -1,0 +1,16 @@
+.git
+.github
+.codex
+.agents
+__pycache__
+*.py[cod]
+.pytest_cache
+.DS_Store
+.venv
+venv
+logs/*
+reports/*
+data/processed/screening_runs/*/vina_stdout.txt
+data/processed/screening_runs/*/vina_stderr.txt
+*.tmp
+*.bak

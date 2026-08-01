@@ -1,0 +1,52 @@
+name: DockForgeAI CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validation:
+    name: Compile, test, and reporting smoke checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create dockforge environment
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          environment-name: dockforge
+          cache-environment: true
+          cache-downloads: true
+      - name: Compile Python sources
+        shell: bash -el {0}
+        run: python -m compileall app src scripts tests
+      - name: Run test suite
+        shell: bash -el {0}
+        run: pytest -q 2>&1 | tee pytest.log
+      - name: Report-data smoke test
+        shell: bash -el {0}
+        run: python -c "from src.reports.report_data import collect_report_data; assert collect_report_data()['redocking']['rmsd_angstrom'] == 0.518"
+      - name: Molecule-renderer smoke test
+        shell: bash -el {0}
+        run: python -c "from src.visualization.molecule_renderer import *; assert render_molecule_bytes(molecule_from_smiles('CCO'),'smoke').startswith(b'\x89PNG')"
+      - name: Offline HTML report smoke test
+        shell: bash -el {0}
+        run: python scripts/generate_final_report.py --html-only --overwrite --output-prefix ci_smoke
+      - name: Upload HTML smoke report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dockforge-html-smoke-report
+          path: data/processed/final_reports/html/ci_smoke.html
+      - name: Upload test log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-failure-log
+          path: pytest.log
+          if-no-files-found: ignore
