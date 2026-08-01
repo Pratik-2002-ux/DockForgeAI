@@ -1,0 +1,532 @@
+{
+  "artifacts": [
+    {
+      "path": "data/processed/xai_validation/baselines/dummy_baselines.csv",
+      "sha256": "517e97f7c98748ef0c4f476928a79d3cea7ded32d9e2b50b333c5aa708f90295",
+      "size_bytes": 701
+    },
+    {
+      "path": "data/processed/xai_validation/baselines/nearest_neighbor_metrics.csv",
+      "sha256": "affcd42c1dd9fe866dcc40bc11267707176517c8f08c43793ca4b60bd8cdeed0",
+      "size_bytes": 1928
+    },
+    {
+      "path": "data/processed/xai_validation/baselines/nearest_neighbor_predictions.csv",
+      "sha256": "b0de6346224a46402c45a8b6d470a2c40a5d3369bb597693eebaacb20db66135",
+      "size_bytes": 148831
+    },
+    {
+      "path": "data/processed/xai_validation/baselines/nearest_neighbor_summary.json",
+      "sha256": "8eeaa1c8e7a6d65fcd7d79d5888a94b708d96d62961cbaf3c01cc05596aa390b",
+      "size_bytes": 646
+    },
+    {
+      "path": "data/processed/xai_validation/calibration/calibration_bin_data.csv",
+      "sha256": "b770ae78375e9c3f905ccc38f3f20da3029890597ef5e50a0d089613b66090a5",
+      "size_bytes": 540
+    },
+    {
+      "path": "data/processed/xai_validation/calibration/calibration_robustness.csv",
+      "sha256": "5d5ee435b6ead2fe4f9c1c163d356b8b4f8af554dfe8611933aeb85678307332",
+      "size_bytes": 1962
+    },
+    {
+      "path": "data/processed/xai_validation/calibration/calibration_slope_intercept.csv",
+      "sha256": "c1b14b323244773772fb2794dbc58b3447495d5e9bc0fa83fcf52b006db44e0e",
+      "size_bytes": 513
+    },
+    {
+      "path": "data/processed/xai_validation/calibration/calibration_summary.json",
+      "sha256": "57cc3c066671642b22f6eb1df416aab95c2d0e2cffa17d0dc059b344676e8d04",
+      "size_bytes": 5311
+    },
+    {
+      "path": "data/processed/xai_validation/decoy_sensitivity/decoy_sensitivity_summary.json",
+      "sha256": "8bdf45ffc7fbebd38a44516b2951f12d1afc285bfeee0bdff4452c79a22ed32a",
+      "size_bytes": 282
+    },
+    {
+      "path": "data/processed/xai_validation/decoy_sensitivity/decoy_subset_manifest.json",
+      "sha256": "84b4c3f6c6a11466396ea7c974e8d8483da2c7f3a47d276849a684d4a590062e",
+      "size_bytes": 393
+    },
+    {
+      "path": "data/processed/xai_validation/decoy_sensitivity/decoy_subset_metrics.csv",
+      "sha256": "ab21f3d161f962ef6a6206546888c5369600feefcc0cbf706cbb72e23516933f",
+      "size_bytes": 2416
+    },
+    {
+      "path": "data/processed/xai_validation/decoy_sensitivity/decoy_subset_properties.csv",
+      "sha256": "a170696541d8baed1b25bac7cabf634a87bc800cb5d67ace88b642676251e8b2",
+      "size_bytes": 1050
+    },
+    {
+      "path": "data/processed/xai_validation/explanation_sanity/explanation_sanity_summary.json",
+      "sha256": "10702211e816407a29a4a1b6cf51de62f5aca87396ed53874ae331a2a040162e",
+      "size_bytes": 1164
+    },
+    {
+      "path": "data/processed/xai_validation/explanation_sanity/feature_removal_tests.csv",
+      "sha256": "28462e0d36536e01eac80fa7d815907dfa6d4175d7774b1dae09fb809b5a8db1",
+      "size_bytes": 318
+    },
+    {
+      "path": "data/processed/xai_validation/explanation_sanity/importance_agreement.csv",
+      "sha256": "9a8e81a9d967bde93f034576f7da6468e1329b3bf09791cc5ed2e90b8abb9ad2",
+      "size_bytes": 89
+    },
+    {
+      "path": "data/processed/xai_validation/explanation_sanity/local_fidelity.csv",
+      "sha256": "c5eae9a0cd897dc70a3a1091b49db3fd27c89dbaaecb38b1a188b34b82ff179a",
+      "size_bytes": 70
+    },
+    {
+      "path": "data/processed/xai_validation/explanation_sanity/randomization_tests.csv",
+      "sha256": "d6dba11026f87afa38223f83c3d9f365cffb58d0a97df38b7ef2ecc35e7cea7f",
+      "size_bytes": 113
+    },
+    {
+      "path": "data/processed/xai_validation/figures/adversarial_validation.png",
+      "sha256": "ae537446f6dbfa21456f670d72df00fd4b3977a7535e5de45f57d1e88b5086fd",
+      "size_bytes": 33677
+    },
+    {
+      "path": "data/processed/xai_validation/figures/adversarial_validation.svg",
+      "sha256": "4c6fbd989f6fccaf48c4aadbb50717f256f10ae278765014fac0330467ee827a",
+      "size_bytes": 24819
+    },
+    {
+      "path": "data/processed/xai_validation/figures/calibration_robustness.png",
+      "sha256": "d46cf20e6fe6fa48eb9f642b3bb4acc8da85e370a7f6fc4ab53aa3dc31ec576e",
+      "size_bytes": 32838
+    },
+    {
+      "path": "data/processed/xai_validation/figures/calibration_robustness.svg",
+      "sha256": "e5123079888cc9c98d211894b62d1752ef0bc28bf29825f33b48e96f1078dfac",
+      "size_bytes": 25463
+    },
+    {
+      "path": "data/processed/xai_validation/figures/decoy_subset_variation.png",
+      "sha256": "1ebaee106f5124e65c7adb8c872d51083618d037b99343d5a1fd97083f2a4b13",
+      "size_bytes": 33611
+    },
+    {
+      "path": "data/processed/xai_validation/figures/decoy_subset_variation.svg",
+      "sha256": "1b4908bc7cb88057e77b934782de5674f57381b398496cdf906541d7c5f5c425",
+      "size_bytes": 25980
+    },
+    {
+      "path": "data/processed/xai_validation/figures/descriptor_balance_after.png",
+      "sha256": "329041e2ef7f827c8f009a6ef4be51bd168487caca958f3f34f8ebd4f214c13f",
+      "size_bytes": 41952
+    },
+    {
+      "path": "data/processed/xai_validation/figures/descriptor_balance_after.svg",
+      "sha256": "5c14e3bb321a2975d880c9bfebc16cb8dd8cf9b912cdf79152e385cc66ce6573",
+      "size_bytes": 31311
+    },
+    {
+      "path": "data/processed/xai_validation/figures/descriptor_balance_before.png",
+      "sha256": "60f40b489f426537311696371c1e33907c388a315575d7300f5d71c3767280c1",
+      "size_bytes": 42589
+    },
+    {
+      "path": "data/processed/xai_validation/figures/descriptor_balance_before.svg",
+      "sha256": "5251b8186c4ca559ef9ed77570757914143aaf3f0aab9e5629085a0bb6869a0a",
+      "size_bytes": 31390
+    },
+    {
+      "path": "data/processed/xai_validation/figures/dummy_baseline_comparison.png",
+      "sha256": "43731abbe0932553fa6fc45b4c9e20d7fc3013313ac1bdca0fffb163127f56d3",
+      "size_bytes": 32645
+    },
+    {
+      "path": "data/processed/xai_validation/figures/dummy_baseline_comparison.svg",
+      "sha256": "7cd01d4b51f5a14727701d814f5ac009db5391d549531497f52bc899b0f7604d",
+      "size_bytes": 25982
+    },
+    {
+      "path": "data/processed/xai_validation/figures/explanation_agreement.png",
+      "sha256": "74eb0ba12ae242d49fbe009a01ee558742451abe737ca135ad2eafcc9d8b29e2",
+      "size_bytes": 44907
+    },
+    {
+      "path": "data/processed/xai_validation/figures/explanation_agreement.svg",
+      "sha256": "d4f23a02863d06298786cf6cda1c99c033d64eb19e9b64662d44d46d18c4a009",
+      "size_bytes": 31553
+    },
+    {
+      "path": "data/processed/xai_validation/figures/feature_removal_sanity.png",
+      "sha256": "497d4e4994293193b260353d5e34e058aada9b4721b83278628cc8fca1985ee2",
+      "size_bytes": 33367
+    },
+    {
+      "path": "data/processed/xai_validation/figures/feature_removal_sanity.svg",
+      "sha256": "5f586980636e53a1ef8165545ec6635b40b4803f568a6fccccf0a84e8055d471",
+      "size_bytes": 27722
+    },
+    {
+      "path": "data/processed/xai_validation/figures/full_vs_matched.png",
+      "sha256": "7a9a1ae4305dfb13bd6c14223a530212736dec3fba201264f093f81f50cf9e3d",
+      "size_bytes": 39518
+    },
+    {
+      "path": "data/processed/xai_validation/figures/full_vs_matched.svg",
+      "sha256": "afa5d7ff8b95a7b7c7c314e8acce6a94216a8d79a318a396ff8750ebde648d0a",
+      "size_bytes": 30144
+    },
+    {
+      "path": "data/processed/xai_validation/figures/label_permutation_distribution.png",
+      "sha256": "5e0e1b3ba6d59c15c87c9743e9a3dc545b6fb851eb845718771c4e86b8b5c7a2",
+      "size_bytes": 30324
+    },
+    {
+      "path": "data/processed/xai_validation/figures/label_permutation_distribution.svg",
+      "sha256": "34c401f9e5a7d8ed12cfdc39a3e843398eb7b8ce970e2d63a37379100b95cd65",
+      "size_bytes": 30092
+    },
+    {
+      "path": "data/processed/xai_validation/figures/nearest_neighbor_comparison.png",
+      "sha256": "d1fa360a73563beb8b01e03765dc3d6037560364f42ca0b38647597ec3ebe847",
+      "size_bytes": 34526
+    },
+    {
+      "path": "data/processed/xai_validation/figures/nearest_neighbor_comparison.svg",
+      "sha256": "51e126039ec957f704b3b30647ad12a97b95d77bc6f4fc489edf4d6872f15388",
+      "size_bytes": 28130
+    },
+    {
+      "path": "data/processed/xai_validation/figures/observed_vs_permuted.png",
+      "sha256": "477c9f9d06aa8a1a7849fc59ef864bbba8ddfa7ac601af956a08b075a7576584",
+      "size_bytes": 32910
+    },
+    {
+      "path": "data/processed/xai_validation/figures/observed_vs_permuted.svg",
+      "sha256": "6d01a43a03c66936d7f0cff7cf6745c80928839833ae574403f0237179c8b750",
+      "size_bytes": 31248
+    },
+    {
+      "path": "data/processed/xai_validation/figures/probability_shift.png",
+      "sha256": "0bd2a40962a80ef032f443f9f07de18ca0378a0a429754c9c052a16b4a1c4ff4",
+      "size_bytes": 36886
+    },
+    {
+      "path": "data/processed/xai_validation/figures/probability_shift.svg",
+      "sha256": "22eec2080fd6a13b2a4e5fa49a530e32e52fd8e4f38d2a78024554145af43a2a",
+      "size_bytes": 29163
+    },
+    {
+      "path": "data/processed/xai_validation/figures/scaffold_frequency_performance.png",
+      "sha256": "5898208be392de712bf4fee245e63d7612a68d4427fdc59af9a468bc45902f57",
+      "size_bytes": 35156
+    },
+    {
+      "path": "data/processed/xai_validation/figures/scaffold_frequency_performance.svg",
+      "sha256": "17cfc26be771c2f077a391d32790162d74298f8a7168ba9a91916945b3269b6d",
+      "size_bytes": 29702
+    },
+    {
+      "path": "data/processed/xai_validation/figures/seed_stability.png",
+      "sha256": "24af7ff1c969c2faff386a1b57cb63946de453b19739e64f34c8d901735660ac",
+      "size_bytes": 33041
+    },
+    {
+      "path": "data/processed/xai_validation/figures/seed_stability.svg",
+      "sha256": "77cfe87e7e27cac7d109353cf0f7c7001f2efdf578609c2bab06cb2d026c14ba",
+      "size_bytes": 27501
+    },
+    {
+      "path": "data/processed/xai_validation/figures/similarity_error_probability.png",
+      "sha256": "ff21ca62443615674ffd132f17abdc1be6db7e63db0816034bf275d98240e0f0",
+      "size_bytes": 39622
+    },
+    {
+      "path": "data/processed/xai_validation/figures/similarity_error_probability.svg",
+      "sha256": "8dac6daea54b6ab4b94892900077ac8de02a9e7d6c3bdae4e51d86c1724d379e",
+      "size_bytes": 32655
+    },
+    {
+      "path": "data/processed/xai_validation/figures/similarity_stratified_performance.png",
+      "sha256": "8936bba759d436d56a37ffd2f7c204082aaad6840b419688e5ab6318b173a788",
+      "size_bytes": 35835
+    },
+    {
+      "path": "data/processed/xai_validation/figures/similarity_stratified_performance.svg",
+      "sha256": "17774d90f2ab9553c314b56c03dc5777389221328bf741c7b23bfef430a9ccdc",
+      "size_bytes": 31113
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_class_crosstab.png",
+      "sha256": "26ed1392ecbc4e30a69fd2cd67f7e8cae2dd3d5bf3c4dce2b34d9104d089c949",
+      "size_bytes": 38832
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_class_crosstab.svg",
+      "sha256": "141468681e41b53745478026f281ac96e5c2265a76520fec0eb9364627771583",
+      "size_bytes": 29717
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_only_classifier.png",
+      "sha256": "601ebe7ce1774218d736c72e151d121c5329730f067a35e2dcfcb8aa14a57866",
+      "size_bytes": 35817
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_only_classifier.svg",
+      "sha256": "8d78d2036f56d42f5f78983fa23890a84e9b7273d4ea02332f75cecbd8700fdd",
+      "size_bytes": 28871
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_weighted_vs_original.png",
+      "sha256": "eedc3dfca9b491d435eba34d22970e76559aec85095f095737bbb3b45e99821b",
+      "size_bytes": 35429
+    },
+    {
+      "path": "data/processed/xai_validation/figures/source_weighted_vs_original.svg",
+      "sha256": "be03a151c31d1f43da702206124e4cf1644155aab71370759eaca31c3ce83b30",
+      "size_bytes": 28629
+    },
+    {
+      "path": "data/processed/xai_validation/figures/threshold_sensitivity.png",
+      "sha256": "e8468cf877db9ec59d2bd61e782f3beb1828c056663f27a67ee22270a6830e89",
+      "size_bytes": 31956
+    },
+    {
+      "path": "data/processed/xai_validation/figures/threshold_sensitivity.svg",
+      "sha256": "906b5b61a824b00a1e43289fae02928c4f194ee10a7988f2e3db5bd9f5da914a",
+      "size_bytes": 27583
+    },
+    {
+      "path": "data/processed/xai_validation/figures/validation_scorecard_summary.png",
+      "sha256": "a520d6a20cbf7ecbe5f7795ab1ef718381b059993460a6918dc364d3a9a10cba",
+      "size_bytes": 34362
+    },
+    {
+      "path": "data/processed/xai_validation/figures/validation_scorecard_summary.svg",
+      "sha256": "9b0998ca8b65cfce156e22b24af7ca92be8a6fff0c8e717160f72b1373aec29d",
+      "size_bytes": 27359
+    },
+    {
+      "path": "data/processed/xai_validation/matched_subsets/matched_pairs.csv",
+      "sha256": "98029b65818e227b6f31246583a5ddc720a755b022780f386e9dee051230534b",
+      "size_bytes": 28
+    },
+    {
+      "path": "data/processed/xai_validation/matched_subsets/matched_subset_metrics.json",
+      "sha256": "00266d80c0bc4669dd9071713dd8db6f90f95b6a10d09062de79e61b9c3414f7",
+      "size_bytes": 721
+    },
+    {
+      "path": "data/processed/xai_validation/matched_subsets/matching_balance_after.csv",
+      "sha256": "f5ec176fba55ede8730582f710513499c21e25d272bd45a3866cf9f866a540ad",
+      "size_bytes": 438
+    },
+    {
+      "path": "data/processed/xai_validation/matched_subsets/matching_balance_before.csv",
+      "sha256": "f5ec176fba55ede8730582f710513499c21e25d272bd45a3866cf9f866a540ad",
+      "size_bytes": 438
+    },
+    {
+      "path": "data/processed/xai_validation/matched_subsets/unmatched_compounds.csv",
+      "sha256": "2feb9cf3654b9f85d3960475b1ff777ced515632e6d63c4cee7d1821bec9c783",
+      "size_bytes": 9017
+    },
+    {
+      "path": "data/processed/xai_validation/permutation/label_permutation_metrics.csv",
+      "sha256": "37c7b97c56c081153dc21ced5fe8958e5e1d6d1bcea7086a5c74b74e833f3d59",
+      "size_bytes": 38137
+    },
+    {
+      "path": "data/processed/xai_validation/permutation/permutation_summary.json",
+      "sha256": "2248769112977689177c4bf5e8e3cb0114a1418daeb86ca38eb3da455db8919f",
+      "size_bytes": 324
+    },
+    {
+      "path": "data/processed/xai_validation/permutation/scaffold_block_permutation_metrics.csv",
+      "sha256": "379218ba77619fa8130321b1d320b724b4659f734f2218ae6bf9e1cc43114583",
+      "size_bytes": 342
+    },
+    {
+      "path": "data/processed/xai_validation/permutation/source_block_permutation_metrics.csv",
+      "sha256": "379218ba77619fa8130321b1d320b724b4659f734f2218ae6bf9e1cc43114583",
+      "size_bytes": 342
+    },
+    {
+      "path": "data/processed/xai_validation/probability_shift/distribution_distances.csv",
+      "sha256": "629151107b8e7b67bd5ebaae377a05e8aad11ab9a1e031bb6a736bbdad0d8270",
+      "size_bytes": 357
+    },
+    {
+      "path": "data/processed/xai_validation/probability_shift/probability_shift_summary.csv",
+      "sha256": "15a3ce5541e3a1a8772ae2f1fee562b0624b03d880833c483346db38fb7b59de",
+      "size_bytes": 426
+    },
+    {
+      "path": "data/processed/xai_validation/reports/DockForgeAI_XAI_Validation_Report.html",
+      "sha256": "298a11333526065cc02aaaa0e184f9076e85ab8689a15035a3f02a5ecd3724de",
+      "size_bytes": 2900
+    },
+    {
+      "path": "data/processed/xai_validation/reports/DockForgeAI_XAI_Validation_Report.pdf",
+      "sha256": "a6264bed691745a41cc553e106ad720893c52df60da5c9c219bbde39b8f79a00",
+      "size_bytes": 31465
+    },
+    {
+      "path": "data/processed/xai_validation/reports/xai_validation_report_manifest.json",
+      "sha256": "73a0643d715a298ac2102d04ea12ea3d30372cb2a5d83524a3756984e7b2fee6",
+      "size_bytes": 1010
+    },
+    {
+      "path": "data/processed/xai_validation/reweighting/reweighting_summary.json",
+      "sha256": "a8a62f6a96be6e7990d4632e9d069c656020de7688b6747674af3f359349c621",
+      "size_bytes": 1686
+    },
+    {
+      "path": "data/processed/xai_validation/reweighting/source_weighted_metrics.csv",
+      "sha256": "979218af33eb7a34365510a7cc2e2875950203ce7827b8e4f8b2498d7ee8eae5",
+      "size_bytes": 781
+    },
+    {
+      "path": "data/processed/xai_validation/reweighting/weight_distribution.csv",
+      "sha256": "14d237ed3b62a6b541f7ac3337a659de865e312240566149db9c35309f62d8b8",
+      "size_bytes": 72814
+    },
+    {
+      "path": "data/processed/xai_validation/scaffolds/scaffold_error_analysis.csv",
+      "sha256": "33bfc12d83cf4086bcebda4ddde0c20b70723e4d0f39116a159ac7aca5ec3f01",
+      "size_bytes": 274910
+    },
+    {
+      "path": "data/processed/xai_validation/scaffolds/scaffold_frequency_metrics.csv",
+      "sha256": "5d8c0c788727fb5de7d621c3999fb8f00b438e113a1de2c6dcfc308a30f1b642",
+      "size_bytes": 1320
+    },
+    {
+      "path": "data/processed/xai_validation/scaffolds/scaffold_generalization_summary.json",
+      "sha256": "6a45f13a2165365a7a6afdd882a6823d8d5de849b09d8f957ad7f7e38816b343",
+      "size_bytes": 85
+    },
+    {
+      "path": "data/processed/xai_validation/similarity/similarity_distribution.csv",
+      "sha256": "9ed0b8e37b95915961193c7dff4ade0776f94ff6997c264415c86d4968c48d4a",
+      "size_bytes": 15908
+    },
+    {
+      "path": "data/processed/xai_validation/similarity/similarity_error_analysis.csv",
+      "sha256": "de502c58b9d0d155ebb55fcb946afb0d85f46d11ae47e6945a595ce771eedb3a",
+      "size_bytes": 17713
+    },
+    {
+      "path": "data/processed/xai_validation/similarity/similarity_stratified_metrics.csv",
+      "sha256": "b07626b9fb28faecab9a9eb49bc8ee3f412a1df17c1f05e35b23e533ab10404a",
+      "size_bytes": 787
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/adversarial_feature_importance.csv",
+      "sha256": "ae44e7fd27f84590be903d3450a1c4d9d06fb008528e45500f302d7dd0f566d6",
+      "size_bytes": 2002
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/adversarial_predictions.csv",
+      "sha256": "2be5218add32c75d304e9284c13fe53cf449d076247172ed27f6c956dc570b9c",
+      "size_bytes": 386597
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_adversarial_metrics.csv",
+      "sha256": "ffe09b973cdceeb47f9f6c6bf19ddd63c38e70da79cf5b721ab2c80e2f0aeff5",
+      "size_bytes": 701
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_bias_summary.json",
+      "sha256": "16d716c1546f9974b4a6dbfe93008329fd27b710355c4f2514dc48fd53970064",
+      "size_bytes": 742
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_class_crosstab.csv",
+      "sha256": "d9782c384af6118a058eeb40e20ed234c1f9ac7a1a911688faad8849d060968f",
+      "size_bytes": 101
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_entropy_by_class.csv",
+      "sha256": "0cfa6242a2a06ad2948a08c9b51ceeaacc20783a0f14a7714eafecf5e49eb18b",
+      "size_bytes": 61
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_frequency_tables.csv",
+      "sha256": "3cf844ad1e860a2b12ed8847011425e0171623a446703579d470e5d72a0ac6c7",
+      "size_bytes": 14685
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_mutual_information.csv",
+      "sha256": "940f1cc09f495b2855bc65ce787c63dfe198ff6db8d70387b7cb7651afb5a86e",
+      "size_bytes": 313
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_only_model_metrics.json",
+      "sha256": "e6013e3831392a73fefb4a0ea5775eee830771d5ba4a1b3e3268a2c61926cd01",
+      "size_bytes": 826
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/source_only_predictions.csv",
+      "sha256": "b54b44bd38a8bb43e146b9e1cd8566d975fe933a2687412c0b70e82650a5a1f4",
+      "size_bytes": 28776
+    },
+    {
+      "path": "data/processed/xai_validation/source_bias/train_test_adversarial_metrics.csv",
+      "sha256": "e1c39e5b355bd272048d9b8697bd664cf9e7e0f48580e418dba8206795acef51",
+      "size_bytes": 1496
+    },
+    {
+      "path": "data/processed/xai_validation/stability/classification_consistency.csv",
+      "sha256": "8768f06f059bb867e347cc1d6491eb635b1acbd69360f3a0ae81d3609ce843be",
+      "size_bytes": 6483
+    },
+    {
+      "path": "data/processed/xai_validation/stability/feature_importance_stability.csv",
+      "sha256": "1329e17e48974502dae1efcd35d8750cde9710b89ba97c508a64eb7688c91acb",
+      "size_bytes": 155
+    },
+    {
+      "path": "data/processed/xai_validation/stability/prediction_stability.csv",
+      "sha256": "cf975e71af827cf3b9cc6df402f495f8ab4efa205e9158038b2d59fa236077c5",
+      "size_bytes": 11345
+    },
+    {
+      "path": "data/processed/xai_validation/stability/seed_metric_stability.csv",
+      "sha256": "1e7812f80141ee41e3f5ee1277382ce98e5c67cc285e7313a3c49b6399a386ad",
+      "size_bytes": 38676
+    },
+    {
+      "path": "data/processed/xai_validation/stability/stability_summary.json",
+      "sha256": "4113f5fd4893b0351b802f4053bdbbb0974f3a1e5b53a65bc9f4d1abc449e2a7",
+      "size_bytes": 121
+    },
+    {
+      "path": "data/processed/xai_validation/thresholds/threshold_class_counts.csv",
+      "sha256": "5a1248dbb57ed30ef3a0bd62cb42888bb4b1bad5cb7fe2c6b029aa2ee400f43a",
+      "size_bytes": 106
+    },
+    {
+      "path": "data/processed/xai_validation/thresholds/threshold_sensitivity_metrics.csv",
+      "sha256": "9716c2ac10f2fd065327dc2154d0f70d4501ef65ba1392296f0af18eec793e19",
+      "size_bytes": 1806
+    },
+    {
+      "path": "data/processed/xai_validation/thresholds/threshold_summary.json",
+      "sha256": "61a84854ec6fadb510a51f7ce63ea5412e0520b702a22243e74d5d9a2cf6349f",
+      "size_bytes": 4425
+    },
+    {
+      "path": "data/processed/xai_validation/validation_scorecard.json",
+      "sha256": "162eeb26d16d623d4cfaee0794ae5fb79606ae5802ccdf2e1a50ba29772a0add",
+      "size_bytes": 5269
+    },
+    {
+      "path": "data/processed/xai_validation/validation_scorecard.md",
+      "sha256": "6eb9dccbe20f0f3adada09d3fa077a74a207e6257cad6b55d4a5d3d1c0b1584f",
+      "size_bytes": 2169
+    }
+  ],
+  "locked_model_retrained": false,
+  "new_biological_data_downloaded": false,
+  "offline": true
+}

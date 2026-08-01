@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "data/processed/xai_validation/reports/DockForgeAI_XAI_Validation_Report.pdf",
+      "sha256": "a6264bed691745a41cc553e106ad720893c52df60da5c9c219bbde39b8f79a00",
+      "size_bytes": 31465
+    },
+    {
+      "path": "data/processed/xai_validation/reports/DockForgeAI_XAI_Validation_Report.html",
+      "sha256": "298a11333526065cc02aaaa0e184f9076e85ab8689a15035a3f02a5ecd3724de",
+      "size_bytes": 2900
+    }
+  ],
+  "limitations": [
+    "102 software tests passing proves software consistency, not biological truth.",
+    "DUD-E decoys are not experimentally verified inactive compounds.",
+    "ChEMBL/DUD-E source separation may inflate performance.",
+    "SHAP explains model behaviour, not biological causality.",
+    "High benchmark performance does not prove therapeutic activity.",
+    "Independent external validation has not yet been completed.",
+    "Experimental validation is outside current scope."
+  ],
+  "qualification": "benchmark-supported with cautions"
+}

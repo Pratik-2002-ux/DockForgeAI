@@ -1,0 +1,127 @@
+{
+  "categories": {
+    "adversarial_separability": {
+      "evidence": "Chemical-domain classifier",
+      "limitation": "In-sample adversarial estimate",
+      "metric": "see source_adversarial_metrics.csv",
+      "recommended_action": "Confirm on independent sources",
+      "status": "caution",
+      "threshold_or_interpretation_rule": "caution at AUC >= 0.70"
+    },
+    "applicability_domain_reliability": {
+      "evidence": "263 in-domain / 37 out-of-domain",
+      "limitation": "AD is similarity-based",
+      "metric": "37 out-of-domain",
+      "recommended_action": "Use external coverage analysis",
+      "status": "caution",
+      "threshold_or_interpretation_rule": "warnings required outside domain"
+    },
+    "calibration_quality": {
+      "evidence": "Locked-test and domain calibration",
+      "limitation": "Sparse out-of-domain subgroup",
+      "metric": "see calibration_summary.json",
+      "recommended_action": "Validate prospectively",
+      "status": "caution",
+      "threshold_or_interpretation_rule": "inspect Brier/ECE and slope"
+    },
+    "dataset_integrity": {
+      "evidence": "Locked manifest and checksums",
+      "limitation": "Internal checks do not prove labels",
+      "metric": "2000 rows",
+      "recommended_action": "Retain checksum audit",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "all expected rows and files"
+    },
+    "decoy_subset_robustness": {
+      "evidence": "Cached decoy sensitivity",
+      "limitation": "DUD-E decoys remain computational",
+      "metric": 0.017680271006187777,
+      "recommended_action": "Use experimental negatives",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "caution at SD >= 0.05"
+    },
+    "dummy_baseline_superiority": {
+      "evidence": "Locked-test dummy baselines",
+      "limitation": "Same benchmark limitations apply",
+      "metric": "see dummy_baselines.csv",
+      "recommended_action": "Retain baseline",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "best model must exceed dummy"
+    },
+    "duplicate_control": {
+      "evidence": "Curated duplicate exclusion report",
+      "limitation": "Source records may share analog series",
+      "metric": "1564 excluded",
+      "recommended_action": "Retain reports",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "no duplicate standardized structures"
+    },
+    "explanation_sanity": {
+      "evidence": "Randomization/removal/agreement controls",
+      "limitation": "Non-causal explanations",
+      "metric": "see explanation_sanity_summary.json",
+      "recommended_action": "Do not infer mechanism",
+      "status": "caution",
+      "threshold_or_interpretation_rule": "explanations must respond to controls"
+    },
+    "external_validation_status": {
+      "evidence": "No user-supplied independent dataset",
+      "limitation": "No external evidence",
+      "metric": null,
+      "recommended_action": "Use provided inference-only interface",
+      "status": "not_evaluated",
+      "threshold_or_interpretation_rule": "requires genuinely independent data"
+    },
+    "matched_subset_robustness": {
+      "evidence": "No-replacement descriptor matching",
+      "limitation": "No pairs met the configured caliper",
+      "metric": null,
+      "recommended_action": "Use a larger physicochemically balanced dataset",
+      "status": "not_evaluated",
+      "threshold_or_interpretation_rule": "caution at PR-AUC drop >= 0.10; not evaluated when zero pairs"
+    },
+    "nearest_neighbour_superiority": {
+      "evidence": "Tanimoto and descriptor neighbours",
+      "limitation": "Analog memorization can inflate results",
+      "metric": "see nearest_neighbor_metrics.csv",
+      "recommended_action": "Evaluate low-similarity external data",
+      "status": "caution",
+      "threshold_or_interpretation_rule": "caution when neighbour PR-AUC >= 0.95"
+    },
+    "permutation_significance": {
+      "evidence": "100 permutations",
+      "limitation": "Significance does not remove source bias",
+      "metric": 0.009900990099009901,
+      "recommended_action": "Increase repetitions if needed",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "p < 0.05"
+    },
+    "scaffold_leakage": {
+      "evidence": "Scaffold-safe split",
+      "limitation": "Scaffold separation is not external validation",
+      "metric": "0 leaked scaffolds",
+      "recommended_action": "Use independent future data",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "must equal zero"
+    },
+    "seed_stability": {
+      "evidence": "5 seeds",
+      "limitation": "Same fixed split",
+      "metric": 0.0,
+      "recommended_action": "Repeat on independent split",
+      "status": "pass",
+      "threshold_or_interpretation_rule": "lower variance is better"
+    },
+    "source_bias": {
+      "evidence": "Source-only classifier",
+      "limitation": "Source and label provenance are coupled",
+      "metric": 1.0,
+      "recommended_action": "Obtain experimentally measured negatives",
+      "status": "fail",
+      "threshold_or_interpretation_rule": "caution at AUC >= 0.70"
+    }
+  },
+  "not_experimentally_validated": true,
+  "not_externally_validated": true,
+  "qualification": "benchmark-supported with cautions"
+}
