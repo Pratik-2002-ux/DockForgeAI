@@ -1,0 +1,44 @@
+# Hit prioritization report
+
+[
+  {
+    "compound_id": "demo",
+    "best_affinity": -6.0,
+    "smiles": "CCO",
+    "pains_alerts": 0,
+    "brenk_alerts": 0,
+    "interaction": 1.0,
+    "qed": 0.8,
+    "ligand_efficiency": 0.5,
+    "alerts": 0.0,
+    "norm_best_affinity": 1.0,
+    "norm_alerts": 1.0,
+    "norm_interaction": 1.0,
+    "norm_pains_alerts": 1.0,
+    "norm_brenk_alerts": 1.0,
+    "norm_ligand_efficiency": 1.0,
+    "norm_qed": 1.0,
+    "consensus_score": 1.0,
+    "rank": 1
+  },
+  {
+    "compound_id": "demo",
+    "best_affinity": -6.0,
+    "smiles": "CCO",
+    "pains_alerts": 0,
+    "brenk_alerts": 0,
+    "interaction": 1.0,
+    "qed": 0.407,
+    "ligand_efficiency": -2.0,
+    "alerts": 0.0,
+    "norm_best_affinity": 1.0,
+    "norm_alerts": 1.0,
+    "norm_interaction": 1.0,
+    "norm_pains_alerts": 1.0,
+    "norm_brenk_alerts": 1.0,
+    "norm_ligand_efficiency": 0.0,
+    "norm_qed": 0.0,
+    "consensus_score": 0.65,
+    "rank": 2
+  }
+]
