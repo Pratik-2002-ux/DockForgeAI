@@ -48,6 +48,12 @@ directories:
   prioritization_tables: data/processed/prioritization_tables
   prioritization_reports: data/processed/prioritization_reports
   prioritization_figures: data/processed/prioritization_figures
+  report_assets: data/processed/report_assets
+  pdf_reports: data/processed/final_reports/pdf
+  html_reports: data/processed/final_reports/html
+  report_figures: data/processed/report_assets/figures
+  molecule_images: data/processed/report_assets/molecules
+  final_reports: data/processed/final_reports
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"

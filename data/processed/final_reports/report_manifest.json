@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-08-01T10:01:20.528126+00:00",
+  "runtime_seconds": 2.51,
+  "generated_files": [
+    {
+      "path": "data/processed/report_assets/figures/docking_affinity_by_pose.png",
+      "size_bytes": 41019,
+      "timestamp": "2026-08-01T10:01:18.782490+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/crystallographic_rmsd_by_pose.png",
+      "size_bytes": 111829,
+      "timestamp": "2026-08-01T10:01:18.876991+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/interaction_counts.png",
+      "size_bytes": 73395,
+      "timestamp": "2026-08-01T10:01:18.955240+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/top_contacted_residues.png",
+      "size_bytes": 66760,
+      "timestamp": "2026-08-01T10:01:19.061774+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/screening_score_ranking.png",
+      "size_bytes": 42334,
+      "timestamp": "2026-08-01T10:01:19.147077+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/screening_workflow_counts.png",
+      "size_bytes": 44901,
+      "timestamp": "2026-08-01T10:01:19.240797+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/consensus_prioritization.png",
+      "size_bytes": 46878,
+      "timestamp": "2026-08-01T10:01:19.318255+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/figures/top_hit_descriptor_profile.png",
+      "size_bytes": 54715,
+      "timestamp": "2026-08-01T10:01:19.395205+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/MK1_reference.png",
+      "size_bytes": 30004,
+      "timestamp": "2026-08-01T10:01:20.022972+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/MK1_reference.svg",
+      "size_bytes": 46391,
+      "timestamp": "2026-08-01T10:01:20.025734+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_1.png",
+      "size_bytes": 15767,
+      "timestamp": "2026-08-01T10:01:20.035638+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_1.svg",
+      "size_bytes": 14584,
+      "timestamp": "2026-08-01T10:01:20.037662+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_2.png",
+      "size_bytes": 10373,
+      "timestamp": "2026-08-01T10:01:20.046038+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_2.svg",
+      "size_bytes": 16334,
+      "timestamp": "2026-08-01T10:01:20.047425+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_3.png",
+      "size_bytes": 12070,
+      "timestamp": "2026-08-01T10:01:20.057225+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/compound_3.svg",
+      "size_bytes": 17643,
+      "timestamp": "2026-08-01T10:01:20.058531+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/prioritized_demo_1.png",
+      "size_bytes": 10278,
+      "timestamp": "2026-08-01T10:01:20.066532+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/prioritized_demo_1.svg",
+      "size_bytes": 10355,
+      "timestamp": "2026-08-01T10:01:20.067348+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/prioritized_demo_2.png",
+      "size_bytes": 10493,
+      "timestamp": "2026-08-01T10:01:20.074994+00:00"
+    },
+    {
+      "path": "data/processed/report_assets/molecules/prioritized_demo_2.svg",
+      "size_bytes": 10889,
+      "timestamp": "2026-08-01T10:01:20.075845+00:00"
+    },
+    {
+      "path": "data/processed/final_reports/pdf/DockForgeAI_1HSG_MK1_report.pdf",
+      "size_bytes": 564687,
+      "timestamp": "2026-08-01T10:01:20.516258+00:00"
+    },
+    {
+      "path": "data/processed/final_reports/html/DockForgeAI_1HSG_MK1_report.html",
+      "size_bytes": 771571,
+      "timestamp": "2026-08-01T10:01:20.524678+00:00"
+    }
+  ],
+  "software_versions": {
+    "python": "3.12.13",
+    "rdkit": "2025.9.5",
+    "vina": "AutoDock Vina v1.2.7",
+    "meeko": "0.7.1",
+    "gemmi": "0.7.5",
+    "streamlit": "1.60.0",
+    "py3Dmol": "2.5.3",
+    "git_commit": "17317b8"
+  },
+  "source_inputs": [
+    "data/processed/protein_reports/1HSG_inspection.json",
+    "data/processed/docking_results/1HSG_MK1_redocking_summary.json",
+    "data/processed/interaction_reports/interactions.csv",
+    "data/processed/screening_tables/screening_scores.csv",
+    "data/processed/prioritization_reports/consensus_ranking.csv"
+  ],
+  "warnings": [],
+  "missing_optional_sections": [],
+  "git_commit_hash": "17317b8"
+}

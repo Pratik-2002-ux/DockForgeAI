@@ -119,6 +119,7 @@ Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1774796700
 pyobjc-core @ file:///Users/runner/miniforge3/conda-bld/pyobjc-core_1782231922267/work
 pyobjc-framework-Cocoa @ file:///Users/runner/miniforge3/conda-bld/pyobjc-framework-cocoa_1782265715098/work
 pyparsing @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pyparsing_1769003998/work
+pypdf==6.14.2
 PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1733217236728/work
 pytest==9.1.1
 python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
