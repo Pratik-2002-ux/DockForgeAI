@@ -16,6 +16,10 @@ directories:
   receptor_pdbqt: data/processed/pdbqt/receptors
   docking_boxes: data/processed/docking_boxes
   docking_configs: config/docking
+  docking_runs: data/processed/docking_runs
+  docking_poses: data/processed/docking_poses
+  docking_results: data/processed/docking_results
+  docking_tables: data/processed/docking_tables
   docking_reports: data/processed/docking_reports
   standardized_ligands: data/processed/standardized_ligands
   minimized_ligands: data/processed/minimized_ligands
@@ -32,3 +36,14 @@ rcsb:
 
 network:
   timeout_seconds: 30
+
+docking:
+  vina_executable: vina
+  meeko_export_executable: mk_export.py
+  timeout_seconds: 7200
+  cpu: 4
+  exhaustiveness: 8
+  num_modes: 10
+  energy_range: 4
+  seed: 2026
+  redocking_rmsd_threshold_angstrom: 2.0
