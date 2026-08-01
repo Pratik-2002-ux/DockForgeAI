@@ -1,0 +1,14 @@
+{
+  "compound_id": "CHEMBL_CHEMBL377826",
+  "standardized_compound_id": "OYUYLCNOZNRGMP-QGRQJHSQSA-N",
+  "dataset_split": "test",
+  "true_label": "active",
+  "raw_probability": 0.9999487736279108,
+  "predicted_probability": 1.0,
+  "predicted_class": "active",
+  "model_id": "logistic_regression__fingerprint__seed2026",
+  "feature_set": "fingerprint",
+  "seed": 2026,
+  "scaffold_id": "SCF-b8ea971b2b176df9",
+  "interpretation_warning": "Explains model behaviour, not biological causality."
+}

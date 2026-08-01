@@ -1,0 +1,7 @@
+{
+  "model_id": "logistic_regression__fingerprint__seed2026",
+  "top_features": 30,
+  "fingerprint_bits_mapped": 30,
+  "local_cards": 60,
+  "shap_limitation": "Native additive importances explain model behaviour, not biological causality."
+}

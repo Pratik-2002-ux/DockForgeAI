@@ -1,0 +1,14 @@
+{
+  "compound_id": "DUDE_C35450020",
+  "standardized_compound_id": "SWPBZYBIVAIOGI-MZNJEOGPSA-N",
+  "dataset_split": "test",
+  "true_label": "inactive_or_decoy",
+  "raw_probability": 0.0079807008418686,
+  "predicted_probability": 0.0,
+  "predicted_class": "inactive_or_decoy",
+  "model_id": "logistic_regression__fingerprint__seed2026",
+  "feature_set": "fingerprint",
+  "seed": 2026,
+  "scaffold_id": "SCF-2fc40b24d57e0a83",
+  "interpretation_warning": "Explains model behaviour, not biological causality."
+}
