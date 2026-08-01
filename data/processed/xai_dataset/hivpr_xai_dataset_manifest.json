@@ -1,0 +1,78 @@
+{
+  "target_chembl_id": "CHEMBL243",
+  "dude_target_id": "HIVPR",
+  "chembl_release": "ChEMBL_37",
+  "raw_chembl_activity_count": 9257,
+  "valid_chembl_activity_record_count": 5787,
+  "unique_active_compound_count": 1000,
+  "raw_dude_decoy_count": 35750,
+  "valid_dude_decoy_count": 35715,
+  "selected_decoy_count": 1000,
+  "duplicate_count": 1564,
+  "conflicting_activity_count": 90,
+  "exclusion_counts": {
+    "invalid_structures.csv": 2868,
+    "outside_typical_range.csv": 400,
+    "invalid_measurements.csv": 4,
+    "conflicting_assay_annotations.csv": 0,
+    "ambiguous_activities.csv": 602,
+    "conflicting_activities.csv": 90,
+    "duplicate_compounds.csv": 1564,
+    "property_outliers.csv": 516,
+    "excluded_decoys.csv": 34715
+  },
+  "final_dataset_size": 2000,
+  "class_counts": {
+    "active": 1000,
+    "inactive_or_decoy": 1000
+  },
+  "unique_scaffold_count": 1190,
+  "split_counts": {
+    "train": 1400,
+    "test": 300,
+    "validation": 300
+  },
+  "scaffold_leakage_count": 0,
+  "random_seed": 2026,
+  "deterministic_with_cached_inputs": true,
+  "source_files": [
+    {
+      "filename": "decoys_final.ism",
+      "sha256": "bf67ae7fcec2f822f9c853575d9df72485f3d19666ef7e095bee357cd365c0ec",
+      "size_bytes": 2623397
+    },
+    {
+      "filename": "actives_final.ism",
+      "sha256": "60f6b3ccbb815f1089330908b52d18a8592828e377a61db9f920466e8109fcdc",
+      "size_bytes": 49501
+    },
+    {
+      "filename": "receptor.pdb",
+      "sha256": "a39f4456b05a2b9f816944849f934f8ea71de4fc085d689204c359111c9190bc",
+      "size_bytes": 101475
+    },
+    {
+      "filename": "crystal_ligand.mol2",
+      "sha256": "73820866824323987fe207ee559ff19e9acdc7548efec4628ef828049d894a22",
+      "size_bytes": 8432
+    }
+  ],
+  "generated_files": [
+    "hivpr_xai_2000_compounds.csv",
+    "hivpr_xai_2000_compounds.parquet",
+    "hivpr_xai_2000_compounds.sdf",
+    "hivpr_xai_scaffold_split.csv",
+    "class_distribution.csv",
+    "source_distribution.csv",
+    "scaffold_distribution.csv",
+    "split_distribution.csv",
+    "activity_distribution.csv",
+    "descriptor_distribution.csv",
+    "active_decoy_matching.csv",
+    "dataset_summary.json",
+    "dataset_summary.md",
+    "dataset_provenance.json"
+  ],
+  "schema_file": "hivpr_xai_dataset_schema.json",
+  "checksums_file": "hivpr_xai_dataset_checksums.json"
+}

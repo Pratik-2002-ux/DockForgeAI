@@ -1,0 +1,25 @@
+{
+  "dataset_path": "data/processed/xai_dataset/hivpr_xai_2000_compounds.csv",
+  "dataset_sha256": "6718389dcc7d3443b4f549dbff4008ffac3faf59e5b210edf95dbda01aedb165",
+  "row_count": 2000,
+  "dimensions": {
+    "descriptor": [
+      2000,
+      33
+    ],
+    "fingerprint": [
+      2000,
+      2048
+    ],
+    "maccs": [
+      2000,
+      167
+    ],
+    "fused": [
+      2000,
+      2248
+    ]
+  },
+  "constant_columns_removed": [],
+  "leakage_columns_included": []
+}

@@ -54,6 +54,21 @@ directories:
   report_figures: data/processed/report_assets/figures
   molecule_images: data/processed/report_assets/molecules
   final_reports: data/processed/final_reports
+  xai_chembl_raw: data/raw/xai/chembl
+  xai_dude_raw: data/raw/xai/dude_hivpr
+  xai_interim: data/interim/xai
+  xai_dataset: data/processed/xai_dataset
+  xai_reports: data/processed/xai_reports
+  xai_exclusions: data/processed/xai_exclusions
+  xai_logs: logs/xai_dataset
+  xai_features: data/processed/xai_features
+  xai_models: data/processed/xai_models
+  xai_predictions: data/processed/xai_predictions
+  xai_explanations: data/processed/xai_explanations
+  xai_benchmarks: data/processed/xai_benchmarks
+  xai_figures: data/processed/xai_figures
+  xai_final_reports: data/processed/xai_final_reports
+  xai_model_cards: data/processed/xai_model_cards
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"
@@ -128,3 +143,63 @@ prioritization:
   ligand_efficiency_weight: 0.15
   missing_external_admet_policy: neutral
   top_hits_to_report: 10
+
+xai_dataset:
+  target_chembl_id: CHEMBL243
+  dude_target_id: HIVPR
+  target_compound_count: 2000
+  target_active_count: 1000
+  target_decoy_count: 1000
+  active_pchembl_threshold: 6.0
+  ambiguous_lower_threshold: 5.0
+  standard_activity_types:
+    - IC50
+    - Ki
+    - Kd
+    - EC50
+  minimum_target_confidence_score: 8
+  random_seed: 2026
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  test_fraction: 0.15
+  maximum_molecular_weight: 750
+  minimum_heavy_atoms: 5
+  maximum_formal_charge: 3
+  minimum_formal_charge: -3
+  request_timeout_seconds: 60
+  request_retries: 4
+  request_page_size: 1000
+  cache_downloads: true
+  resume: true
+
+xai_modeling:
+  dataset_path: data/processed/xai_dataset/hivpr_xai_2000_compounds.csv
+  label_column: binary_label
+  split_column: dataset_split
+  scaffold_column: scaffold_id
+  positive_label: active
+  negative_label: inactive_or_decoy
+  random_seed: 2026
+  seeds: [2026, 2027, 2028, 2029, 2030]
+  primary_selection_metric: pr_auc
+  bootstrap_iterations: 500
+  fingerprint:
+    radius: 2
+    n_bits: 2048
+    use_chirality: true
+    use_counts: false
+  maccs_enabled: true
+  calibration_methods: [none, sigmoid, isotonic]
+  applicability_domain:
+    top_k_neighbors: 5
+    similarity_quantile_threshold: 0.05
+    descriptor_distance_quantile_threshold: 0.95
+  explainability:
+    top_global_features: 30
+    local_explanation_count_per_category: 20
+    background_sample_size: 100
+    fingerprint_example_count: 5
+  reports:
+    include_all_seed_tables: true
+    include_local_examples: true
+    include_ablation_results: true

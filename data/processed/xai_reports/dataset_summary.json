@@ -1,0 +1,21 @@
+{
+  "dataset_size": 2000,
+  "class_counts": {
+    "active": 1000,
+    "inactive_or_decoy": 1000
+  },
+  "source_counts": {
+    "ChEMBL": 1000,
+    "DUD-E": 1000
+  },
+  "unique_scaffolds": 1190,
+  "split_counts": {
+    "train": 1400,
+    "test": 300,
+    "validation": 300
+  },
+  "scientific_limitations": [
+    "DUD-E decoys are computational property-matched decoys, not experimentally proven inactive compounds.",
+    "This dataset phase does not include docking, feature engineering, machine learning, or model performance claims."
+  ]
+}

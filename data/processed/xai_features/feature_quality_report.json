@@ -1,0 +1,397 @@
+{
+  "row_count": 2000,
+  "feature_count": 33,
+  "constant_columns": [],
+  "missing_rate": {
+    "molecular_weight": 0.0,
+    "exact_molecular_weight": 0.0,
+    "logp": 0.0,
+    "tpsa": 0.0,
+    "hbd": 0.0,
+    "hba": 0.0,
+    "rotatable_bonds": 0.0,
+    "ring_count": 0.0,
+    "aromatic_ring_count": 0.0,
+    "formal_charge": 0.0,
+    "heavy_atom_count": 0.0,
+    "fraction_csp3": 0.0,
+    "qed": 0.0,
+    "pains_alert_count": 0.0,
+    "brenk_alert_count": 0.0,
+    "MolMR": 0.0,
+    "LabuteASA": 0.0,
+    "BalabanJ": 0.0,
+    "BertzCT": 0.0,
+    "HallKierAlpha": 0.0,
+    "Kappa1": 0.0,
+    "Kappa2": 0.0,
+    "Kappa3": 0.0,
+    "Chi0": 0.0,
+    "Chi1": 0.0,
+    "Chi2n": 0.0,
+    "Chi3n": 0.0,
+    "NumAliphaticRings": 0.0,
+    "NumSaturatedRings": 0.0,
+    "NumHeterocycles": 0.0,
+    "NumAmideBonds": 0.0,
+    "NumBridgeheadAtoms": 0.0,
+    "NumSpiroAtoms": 0.0
+  },
+  "highly_correlated_pairs": [
+    {
+      "feature_a": "molecular_weight",
+      "feature_b": "molecular_weight",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "molecular_weight",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 0.999992495057419
+    },
+    {
+      "feature_a": "molecular_weight",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9604918187799747
+    },
+    {
+      "feature_a": "molecular_weight",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9755314382291925
+    },
+    {
+      "feature_a": "molecular_weight",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9623367172770948
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "molecular_weight",
+      "absolute_correlation": 0.999992495057419
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9612959041417731
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9760402074218514
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9631404174612873
+    },
+    {
+      "feature_a": "exact_molecular_weight",
+      "feature_b": "Chi1",
+      "absolute_correlation": 0.950280771165096
+    },
+    {
+      "feature_a": "logp",
+      "feature_b": "logp",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "tpsa",
+      "feature_b": "tpsa",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "hbd",
+      "feature_b": "hbd",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "hba",
+      "feature_b": "hba",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "rotatable_bonds",
+      "feature_b": "rotatable_bonds",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "ring_count",
+      "feature_b": "ring_count",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "aromatic_ring_count",
+      "feature_b": "aromatic_ring_count",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "formal_charge",
+      "feature_b": "formal_charge",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "molecular_weight",
+      "absolute_correlation": 0.9604918187799747
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 0.9612959041417731
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "MolMR",
+      "absolute_correlation": 0.9729429123769354
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9927113965306418
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9893444768391341
+    },
+    {
+      "feature_a": "heavy_atom_count",
+      "feature_b": "Chi1",
+      "absolute_correlation": 0.9965247216858791
+    },
+    {
+      "feature_a": "fraction_csp3",
+      "feature_b": "fraction_csp3",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "qed",
+      "feature_b": "qed",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "pains_alert_count",
+      "feature_b": "pains_alert_count",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "brenk_alert_count",
+      "feature_b": "brenk_alert_count",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "MolMR",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9729429123769354
+    },
+    {
+      "feature_a": "MolMR",
+      "feature_b": "MolMR",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "MolMR",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9856270388367583
+    },
+    {
+      "feature_a": "MolMR",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9590219927716863
+    },
+    {
+      "feature_a": "MolMR",
+      "feature_b": "Chi1",
+      "absolute_correlation": 0.9719190521621828
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "molecular_weight",
+      "absolute_correlation": 0.9755314382291925
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 0.9760402074218514
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9927113965306418
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "MolMR",
+      "absolute_correlation": 0.9856270388367583
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9852553122369372
+    },
+    {
+      "feature_a": "LabuteASA",
+      "feature_b": "Chi1",
+      "absolute_correlation": 0.9876490864262628
+    },
+    {
+      "feature_a": "BalabanJ",
+      "feature_b": "BalabanJ",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "BertzCT",
+      "feature_b": "BertzCT",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "HallKierAlpha",
+      "feature_b": "HallKierAlpha",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Kappa1",
+      "feature_b": "Kappa1",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Kappa1",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9562638980441092
+    },
+    {
+      "feature_a": "Kappa2",
+      "feature_b": "Kappa2",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Kappa3",
+      "feature_b": "Kappa3",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "molecular_weight",
+      "absolute_correlation": 0.9623367172770948
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 0.9631404174612873
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9893444768391341
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "MolMR",
+      "absolute_correlation": 0.9590219927716863
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9852553122369372
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "Kappa1",
+      "absolute_correlation": 0.9562638980441092
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "Chi0",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Chi0",
+      "feature_b": "Chi1",
+      "absolute_correlation": 0.9753699376054629
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "exact_molecular_weight",
+      "absolute_correlation": 0.950280771165096
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "heavy_atom_count",
+      "absolute_correlation": 0.9965247216858791
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "MolMR",
+      "absolute_correlation": 0.9719190521621828
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "LabuteASA",
+      "absolute_correlation": 0.9876490864262628
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "Chi0",
+      "absolute_correlation": 0.9753699376054629
+    },
+    {
+      "feature_a": "Chi1",
+      "feature_b": "Chi1",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Chi2n",
+      "feature_b": "Chi2n",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "Chi3n",
+      "feature_b": "Chi3n",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumAliphaticRings",
+      "feature_b": "NumAliphaticRings",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumSaturatedRings",
+      "feature_b": "NumSaturatedRings",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumHeterocycles",
+      "feature_b": "NumHeterocycles",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumAmideBonds",
+      "feature_b": "NumAmideBonds",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumBridgeheadAtoms",
+      "feature_b": "NumBridgeheadAtoms",
+      "absolute_correlation": 1.0
+    },
+    {
+      "feature_a": "NumSpiroAtoms",
+      "feature_b": "NumSpiroAtoms",
+      "absolute_correlation": 1.0
+    }
+  ]
+}

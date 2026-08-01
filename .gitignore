@@ -59,3 +59,19 @@ reports/
 # Vina screening runtime logs
 data/processed/screening_runs/*/vina_stdout.txt
 data/processed/screening_runs/*/vina_stderr.txt
+
+# XAI dataset source caches and resumable downloads
+data/raw/xai/chembl/activity_page_*.json
+data/raw/xai/chembl/
+data/raw/xai/retrieval_metadata.json
+data/raw/xai/dude_hivpr/*.tar.gz
+data/raw/xai/dude_hivpr/*.tgz
+data/raw/xai/dude_hivpr/*.zip
+data/raw/xai/**/*.part
+data/interim/xai/*progress*.json
+data/interim/xai/*.sdf
+logs/xai_dataset/
+data/raw/xai/dude_hivpr/
+data/processed/xai_models/*.joblib
+data/processed/xai_models/*__calibrator.joblib
+data/processed/xai_exclusions/excluded_decoys.csv

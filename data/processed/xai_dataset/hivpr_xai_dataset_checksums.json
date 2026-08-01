@@ -1,0 +1,62 @@
+{
+  "hivpr_xai_2000_compounds.csv": {
+    "sha256": "6718389dcc7d3443b4f549dbff4008ffac3faf59e5b210edf95dbda01aedb165",
+    "size_bytes": 1769923
+  },
+  "hivpr_xai_2000_compounds.parquet": {
+    "sha256": "f421457821d7e8e97c1416fe2cca6613d2ab1a63ddcb54552f4458cb77362667",
+    "size_bytes": 717440
+  },
+  "hivpr_xai_2000_compounds.sdf": {
+    "sha256": "a40b072cfd9f08840078052ec9a9dcf6b1e755d14c7e64dda4948a01dd7bd17f",
+    "size_bytes": 7393957
+  },
+  "hivpr_xai_scaffold_split.csv": {
+    "sha256": "41be5d5868fbd6258028db59d2dfc5868a5c8e74a302bd80cc236df3226e158f",
+    "size_bytes": 136264
+  },
+  "class_distribution.csv": {
+    "sha256": "134a13481dce97451626da6e74ec367d06db01d852680158c08311d2c066f3f7",
+    "size_bytes": 54
+  },
+  "source_distribution.csv": {
+    "sha256": "56b55186c01e87ab371796aafca4c4338f13edb6df6094052c89a31aaca049be",
+    "size_bytes": 45
+  },
+  "scaffold_distribution.csv": {
+    "sha256": "6060aaf851f80d24e60a3c77581843e1aee63b9c176fa91ea70c89786e3599a6",
+    "size_bytes": 27408
+  },
+  "split_distribution.csv": {
+    "sha256": "85596699094dce535d1f076c7ff11af9dbe3416f6c1eb7deb5e0ab15e08c51e3",
+    "size_bytes": 55
+  },
+  "activity_distribution.csv": {
+    "sha256": "9a873d900bc12f071b982a31be14ec869aa5d92e6a15f073c5e0d7e267163ce3",
+    "size_bytes": 30269
+  },
+  "descriptor_distribution.csv": {
+    "sha256": "e4f2d8d21f141edf0aaad7539523b8560beefe01b01a43d491e8c13b63921c5a",
+    "size_bytes": 882
+  },
+  "active_decoy_matching.csv": {
+    "sha256": "bb720d6e14f01462dfb733117287f74d537a78b5435cfaa6e273ab1030f31956",
+    "size_bytes": 541
+  },
+  "dataset_summary.json": {
+    "sha256": "15ae7c1df47ce260cd7a7b23014d08d3edb818cb72558428e118d976ecf2c68e",
+    "size_bytes": 539
+  },
+  "dataset_summary.md": {
+    "sha256": "6d88da1fdf891d6dec7b810152bfb1c2c66ba07034d42ac356525cd0ea785d5c",
+    "size_bytes": 234
+  },
+  "dataset_provenance.json": {
+    "sha256": "66d7606f85b3a8001aa937c9b33822a8d2d502d2fc88827f5dd0a4667a15aca7",
+    "size_bytes": 1154
+  },
+  "hivpr_xai_dataset_schema.json": {
+    "sha256": "b9c8f5b27cae3cf7a6d701e035a4b5e71b00a2c72e7b38d3526f3ddec1d51384",
+    "size_bytes": 4751
+  }
+}

@@ -139,6 +139,9 @@ rlPyCairo @ file:///home/conda/feedstock_root/build_artifacts/rlpycairo_17568641
 rpds-py @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_rpds-py_1782831381/work
 s3transfer==0.16.0
 scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1781912202945/work/dist/scipy-1.18.0-cp312-cp312-macosx_11_0_arm64.whl#sha256=9c7828ad45103cde1b0196c257ba7faf68e89b41198d3ff49a9c13acae224932
+scikit-learn==1.9.0
+shap==0.52.0
+joblib==1.5.3
 Send2Trash @ file:///Users/runner/miniforge3/conda-bld/bld/rattler-build_send2trash_1770937603/work
 setuptools==83.0.0
 six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work

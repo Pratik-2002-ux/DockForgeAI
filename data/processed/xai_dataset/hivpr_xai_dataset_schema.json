@@ -1,0 +1,258 @@
+{
+  "columns": [
+    {
+      "name": "compound_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "standardized_compound_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_database",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_record_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_molecule_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_target_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_assay_id",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "source_document_id",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "original_smiles",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "canonical_isomeric_smiles",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "inchi",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "inchikey",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "inchikey_connectivity",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "molecular_formula",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "molecular_weight",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "exact_molecular_weight",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "logp",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "tpsa",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "hbd",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "hba",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "rotatable_bonds",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "ring_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "aromatic_ring_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "formal_charge",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "heavy_atom_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "fraction_csp3",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "qed",
+      "dtype": "float64",
+      "nullable": false
+    },
+    {
+      "name": "pains_alert_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "brenk_alert_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "murcko_scaffold_smiles",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "scaffold_id",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "activity_type",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "original_activity_value",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "original_activity_units",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "standard_activity_value_nm",
+      "dtype": "float64",
+      "nullable": true
+    },
+    {
+      "name": "pchembl_value",
+      "dtype": "float64",
+      "nullable": true
+    },
+    {
+      "name": "activity_relation",
+      "dtype": "str",
+      "nullable": true
+    },
+    {
+      "name": "binary_label",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "label_source",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "activity_record_count",
+      "dtype": "int64",
+      "nullable": false
+    },
+    {
+      "name": "activity_min_pchembl",
+      "dtype": "float64",
+      "nullable": true
+    },
+    {
+      "name": "activity_max_pchembl",
+      "dtype": "float64",
+      "nullable": true
+    },
+    {
+      "name": "activity_median_pchembl",
+      "dtype": "float64",
+      "nullable": true
+    },
+    {
+      "name": "activity_conflict_flag",
+      "dtype": "bool",
+      "nullable": false
+    },
+    {
+      "name": "retrieval_date",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "source_release",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "provenance_reference",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "dataset_split",
+      "dtype": "str",
+      "nullable": false
+    },
+    {
+      "name": "scaffold_frequency",
+      "dtype": "int64",
+      "nullable": false
+    }
+  ],
+  "binary_label_values": [
+    "active",
+    "inactive_or_decoy"
+  ],
+  "dataset_split_values": [
+    "train",
+    "validation",
+    "test"
+  ]
+}

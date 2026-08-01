@@ -1,0 +1,39 @@
+{
+  "retrieved_at": "2026-08-01T16:14:15.866780+00:00",
+  "source_release": "ChEMBL_37",
+  "sources": [
+    {
+      "database": "ChEMBL",
+      "target_id": "CHEMBL243",
+      "endpoint": "https://www.ebi.ac.uk/chembl/api/data/activity.json",
+      "release": "ChEMBL_37"
+    },
+    {
+      "database": "DUD-E",
+      "target_id": "HIVPR",
+      "base_url": "http://dude.docking.org/targets",
+      "files": [
+        {
+          "filename": "decoys_final.ism",
+          "sha256": "bf67ae7fcec2f822f9c853575d9df72485f3d19666ef7e095bee357cd365c0ec",
+          "size_bytes": 2623397
+        },
+        {
+          "filename": "actives_final.ism",
+          "sha256": "60f6b3ccbb815f1089330908b52d18a8592828e377a61db9f920466e8109fcdc",
+          "size_bytes": 49501
+        },
+        {
+          "filename": "receptor.pdb",
+          "sha256": "a39f4456b05a2b9f816944849f934f8ea71de4fc085d689204c359111c9190bc",
+          "size_bytes": 101475
+        },
+        {
+          "filename": "crystal_ligand.mol2",
+          "sha256": "73820866824323987fe207ee559ff19e9acdc7548efec4628ef828049d894a22",
+          "size_bytes": 8432
+        }
+      ]
+    }
+  ]
+}
