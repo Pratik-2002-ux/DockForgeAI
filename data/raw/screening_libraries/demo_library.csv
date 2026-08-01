@@ -1,0 +1,4 @@
+compound_id,compound_name,smiles,source
+1,DemoA,CCO,demo
+2,DemoB,CCN,demo
+3,DemoC,CC(C)O,demo

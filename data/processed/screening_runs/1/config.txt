@@ -1,0 +1,13 @@
+receptor = data/processed/pdbqt/receptors/1HSG_chains-A-B_receptor.pdbqt
+ligand = /Users/pratikramchandrachaudhari/DockForgeAI/data/processed/screening_library/pdbqt/1.pdbqt
+center_x = 11.634
+center_y = 22.47
+center_z = 5.859
+size_x = 24.854
+size_y = 20.214
+size_z = 20.0
+exhaustiveness = 4
+num_modes = 3
+cpu = 4
+seed = 2026
+energy_range = 3
