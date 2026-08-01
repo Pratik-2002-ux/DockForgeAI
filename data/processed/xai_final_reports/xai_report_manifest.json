@@ -1,0 +1,419 @@
+{
+  "generated_files": [
+    {
+      "path": "data/processed/xai_figures/dataset_class_distribution.png",
+      "size_bytes": 46877,
+      "sha256": "aabd7851f1135466b5738eddb435f4cdde12de771e472690e73c831b0350013a"
+    },
+    {
+      "path": "data/processed/xai_figures/scaffold_split_distribution.png",
+      "size_bytes": 48098,
+      "sha256": "6ef65f2dd0b05bb96118f605f0088827904b46b413b755eb44411a8f74c66a12"
+    },
+    {
+      "path": "data/processed/xai_figures/model_comparison.png",
+      "size_bytes": 56986,
+      "sha256": "de2f7e0c56be1894af7a2b77e3495e3e6f125705a90a2af2ce4aed16ac69eab6"
+    },
+    {
+      "path": "data/processed/xai_figures/feature_family_comparison.png",
+      "size_bytes": 43274,
+      "sha256": "389bf5d2a11e581d6617486a590d944b53592ad46bc01e8bfd4db10f60756bb5"
+    },
+    {
+      "path": "data/processed/xai_figures/calibration_comparison.png",
+      "size_bytes": 48623,
+      "sha256": "32d281856800249b2e2af311e045985daade94a4e53d64594e43175c1dfb435e"
+    },
+    {
+      "path": "data/processed/xai_figures/global_feature_importance.png",
+      "size_bytes": 69628,
+      "sha256": "852e9ae477a0dd3d4e57216e012d8b420fb54018afd1d1bb84cfa50b0ad03201"
+    },
+    {
+      "path": "data/processed/xai_figures/probability_distribution.png",
+      "size_bytes": 34328,
+      "sha256": "372ecd446b1aa27451f049a9887b32a305694d0673607876546f3863b7a2bebf"
+    },
+    {
+      "path": "data/processed/xai_figures/descriptor_distribution.png",
+      "size_bytes": 49474,
+      "sha256": "24949a718ca12cf128cf1fdcdc8977c7d4525de0ab39c414e08cde26b37aae6f"
+    },
+    {
+      "path": "data/processed/xai_figures/explanation_stability.png",
+      "size_bytes": 37456,
+      "sha256": "071bb5d1c15a9a3ac9d02e6b5810138fd486d879e0b9b384ebbbf8f964a92349"
+    },
+    {
+      "path": "data/processed/xai_figures/model_disagreement.png",
+      "size_bytes": 33219,
+      "sha256": "d5effcd33fa815e5961b346724401d00513819abe13f062f5883d791ecea240d"
+    },
+    {
+      "path": "data/processed/xai_figures/roc_curves.png",
+      "size_bytes": 54643,
+      "sha256": "3dce76ef18a0977867717ba764e90ed81495466dc17ccb09e502da50d2ff626a"
+    },
+    {
+      "path": "data/processed/xai_figures/precision_recall_curves.png",
+      "size_bytes": 56521,
+      "sha256": "ac9e3b2c90812e0c3f90b56b4e3d1a52be2b12210b54621c3a320920fc97804b"
+    },
+    {
+      "path": "data/processed/xai_figures/confusion_matrix.png",
+      "size_bytes": 53994,
+      "sha256": "7071564ba1a2bc1a2161a89ee1cfea6387f1c402b3e828578d9b316919801f18"
+    },
+    {
+      "path": "data/processed/xai_figures/applicability_domain_distribution.png",
+      "size_bytes": 39177,
+      "sha256": "c15e0f3dc23c58ccbf92c7c764b3f42ce318ee8a786c024618699c29eebfdd75"
+    },
+    {
+      "path": "data/processed/xai_figures/in_vs_out_domain_performance.png",
+      "size_bytes": 38590,
+      "sha256": "4307bcd78dbb36a3a3ec760b8b38015ce2b456e9e99193fd6a7fc446bbc366f0"
+    },
+    {
+      "path": "data/processed/xai_figures/fingerprint_bit_importance.png",
+      "size_bytes": 65490,
+      "sha256": "f927508118892ccc9c1128b47508377fd874b23d9ca68af3d393ef7cc944cb39"
+    },
+    {
+      "path": "data/processed/xai_figures/descriptor_shap_summary.png",
+      "size_bytes": 105912,
+      "sha256": "02498b8f0da31fe20bab742992d56d52df011041240718e31f023f0bf8c7e16f"
+    },
+    {
+      "path": "data/processed/xai_figures/ablation_study.png",
+      "size_bytes": 39303,
+      "sha256": "1eff4d6f5669e93d66cc462c3dc60af23226a8f2a4bae237404bfdb748ed1cd2"
+    },
+    {
+      "path": "data/processed/xai_figures/random_vs_scaffold_split.png",
+      "size_bytes": 36862,
+      "sha256": "eb6c1fff7c0ad042fc42ea84051b2a0bf41f87fbde21fcb3c4ef62ad02f9d192"
+    },
+    {
+      "path": "data/processed/xai_figures/active_decoy_matching.png",
+      "size_bytes": 37822,
+      "sha256": "f2141b7438234ab026fc547bf6a72bb284b1a1a7d9b5713261cea57ff10491c9"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__descriptor__seed2026.json",
+      "size_bytes": 2142,
+      "sha256": "18b6eb2bbd5e911d855541ff406f17543d7bb794f20f1791139bddd1e92a8b5f"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__descriptor__seed2026.json",
+      "size_bytes": 1833,
+      "sha256": "6501bd371e70bffd73eb1ec46e024a42bcf9fca264460382074e8fcf82b0972f"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__descriptor__seed2026.json",
+      "size_bytes": 1828,
+      "sha256": "6c7dfed405102d985fd1c7fd66f65ae0123d84e6b38448cd97cf8d775db3d895"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__descriptor__seed2026.json",
+      "size_bytes": 1910,
+      "sha256": "eb7ea4fb60b52675f9ce9000795af3dba24f0c0dd2efc17bda8bb373daedfb76"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__descriptor__seed2027.json",
+      "size_bytes": 2142,
+      "sha256": "baa3e2fd12792bd8fb7490fabff2d2c2690347b53b0b7df4531d1ca0e22a41e2"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__descriptor__seed2027.json",
+      "size_bytes": 1833,
+      "sha256": "5b0cc500eed0a81bde8d3e504593d6f616f9926fc53b6050e19f2ccf8adc256c"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__descriptor__seed2027.json",
+      "size_bytes": 1828,
+      "sha256": "6aafe37cfc448e43d6ce24b556267da11c33c14008d9dc685c99c04698146804"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__descriptor__seed2027.json",
+      "size_bytes": 1910,
+      "sha256": "f5114d0b05bbbd7fa0aec8f66a1e5ee30d0c1ad4eb4f2a19f47ccd28adc218ca"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__descriptor__seed2028.json",
+      "size_bytes": 2143,
+      "sha256": "f8713cf71119bcd9f1d3a34dd24a4a88ef13d91f59d0dceb4a2853adc15efdf2"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__descriptor__seed2028.json",
+      "size_bytes": 1832,
+      "sha256": "3f9f6ef4a007e4729b0c5b5fa340a5ca4b9f3c3d2a40700da1aa8a77e248fe15"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__descriptor__seed2028.json",
+      "size_bytes": 1827,
+      "sha256": "aa1c2610ebb1fab90fff7147b400158ae9ddf1fc2487f45f4b32d703312746b2"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__descriptor__seed2028.json",
+      "size_bytes": 1909,
+      "sha256": "14bc25bc4dee2e367e2313576abbb462278a89e22bc28d47358d289632496b6d"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__descriptor__seed2029.json",
+      "size_bytes": 2143,
+      "sha256": "05cfffd3f66cd066f0fc5018847533081b81382c0a7b1768d4f3bb194c3ae952"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__descriptor__seed2029.json",
+      "size_bytes": 1832,
+      "sha256": "0f85ff5c14f3065ec9bbe641384a03b7c378dd0d89b246376dc84a80607e846c"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__descriptor__seed2029.json",
+      "size_bytes": 1828,
+      "sha256": "06ce44de8e22c428608afb05fdb647e6bb0a932a968ee04b3d4b95e5aaa66689"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__descriptor__seed2029.json",
+      "size_bytes": 1910,
+      "sha256": "5ed1e81e08cd76b7858f2a862f745218d32944f76a7d3d8608d1d96e6fa71158"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__descriptor__seed2030.json",
+      "size_bytes": 2142,
+      "sha256": "2de9e6ff7a2d6f49dec67f8701c8f9b6c495485d2164d87ee7261772aafd66ca"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__descriptor__seed2030.json",
+      "size_bytes": 1830,
+      "sha256": "7bf0921066acf9c2ab5d61cd75dd31f1c0dec12b2f9feef61441889d19305f28"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__descriptor__seed2030.json",
+      "size_bytes": 1828,
+      "sha256": "d71e74ae9baac2e1111467fdb74e3e35160e987fa6155d42fecf251b10d175fc"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__descriptor__seed2030.json",
+      "size_bytes": 1910,
+      "sha256": "579a077f4884fc963e7f3c1be3f59973953400e2592c950983c988f691952074"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fingerprint__seed2026.json",
+      "size_bytes": 2146,
+      "sha256": "4307e6150c297aa749c49ad3466648b33082e6ad0619e327604238a827e2cd25"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fingerprint__seed2026.json",
+      "size_bytes": 1836,
+      "sha256": "eb4f3d87c0697b7a0bd3d2d554ca21e9ae9b96256e032f2a00112feab9785333"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fingerprint__seed2026.json",
+      "size_bytes": 1831,
+      "sha256": "cf25c6c5a0f7844a13d222c4a1bf85e8dceaf7dd32c9b53c18b35ed0c11e93a4"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fingerprint__seed2026.json",
+      "size_bytes": 1910,
+      "sha256": "445745a205b9a461e7a821f56d92e448cb2b98c940b72a86f2a66710f0b2f96b"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fingerprint__seed2027.json",
+      "size_bytes": 2145,
+      "sha256": "d0a8012f1c0e6c0f707f44e1278765a54d7023149bf7001941af47d18cbb767f"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fingerprint__seed2027.json",
+      "size_bytes": 1835,
+      "sha256": "50dc2659b3d9ca934597c4ad0794a1f4def2abdbc610836388da4d5843d2218b"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fingerprint__seed2027.json",
+      "size_bytes": 1831,
+      "sha256": "518a2ab2515d5a77c92aa64cec7a4410165692ff5c8fa62d48a65b2a2c39a94b"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fingerprint__seed2027.json",
+      "size_bytes": 1912,
+      "sha256": "970c51cb2b43495fd51f19a5e490e3fdcf2806b67c39e5c12f8a55d6d184af76"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fingerprint__seed2028.json",
+      "size_bytes": 2145,
+      "sha256": "b7308623aff48b5ae3225a8bd37ad65fa7b386a00572a0f3ec8c62468809de93"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fingerprint__seed2028.json",
+      "size_bytes": 1836,
+      "sha256": "5ee4bc24e130af827469062010e9a55b4058c95ee8ab951bc5b83f8901aadbf7"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fingerprint__seed2028.json",
+      "size_bytes": 1830,
+      "sha256": "9d1fbb81653760cd4519b264d8d10efe3e0090361b161ddeb9f5113e2723cf7b"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fingerprint__seed2028.json",
+      "size_bytes": 1912,
+      "sha256": "ba2067da0145db0f521e7cc1390cf48bdcf1ccd9153f665885dc289f56a83dc1"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fingerprint__seed2029.json",
+      "size_bytes": 2146,
+      "sha256": "d5174379e477c593713ddb3ff6e44d7ab49747e9b2de7cae8d218dc350f034a1"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fingerprint__seed2029.json",
+      "size_bytes": 1836,
+      "sha256": "20f92b32e1b56129533d6f83af3d9d387d36d46475cff033a09249b6956ecbed"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fingerprint__seed2029.json",
+      "size_bytes": 1831,
+      "sha256": "4f180968805d7a01b670e8056a27f8402dd53d1bf8753c783e372a59eef543de"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fingerprint__seed2029.json",
+      "size_bytes": 1912,
+      "sha256": "28b97f1f68d667753b92aa441e1569f9774867fae192bb8f093b060d035692d0"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fingerprint__seed2030.json",
+      "size_bytes": 2145,
+      "sha256": "f20113328d5edfe0354e13f82096fe2be2db8582f1af61130efd7a2a5b546803"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fingerprint__seed2030.json",
+      "size_bytes": 1835,
+      "sha256": "97eaddeca481bfa030ea7cb1d9f6bf2ad04fd3a42f187a5e7867e19c7ceca8fd"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fingerprint__seed2030.json",
+      "size_bytes": 1831,
+      "sha256": "0aa8c9fc0c2bf07f143747d5bceb0e0e41f88b5db8a17980e530fcc0dbf98c5e"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fingerprint__seed2030.json",
+      "size_bytes": 1912,
+      "sha256": "81dc49cec0a76976ebf202a0573de39c66dcc29beca95087292d673fc7eee138"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fused__seed2026.json",
+      "size_bytes": 2128,
+      "sha256": "3a9b5d1147abff2d46e587d1d6a48bfe60848350488567d4a4e2983b7d8d6b53"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fused__seed2026.json",
+      "size_bytes": 1818,
+      "sha256": "8c2dcfe1c91102ae184d9b4fcb30181fd5d640071f8adba7d3bdb073a03fbd33"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fused__seed2026.json",
+      "size_bytes": 1813,
+      "sha256": "a550231f0dd419ceaa28f0701840fa06171a6d653e27d628fbc58eef76a19ee3"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fused__seed2026.json",
+      "size_bytes": 1895,
+      "sha256": "964cf4e1d362a3c9b5fcea72569e14c415313651d4e61adb448d89d64ca0fda5"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fused__seed2027.json",
+      "size_bytes": 2127,
+      "sha256": "c68ff0113d1fe8a66c1d0e2d5ab11685a063cc628124cdc629d67a5fca82e8b9"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fused__seed2027.json",
+      "size_bytes": 1816,
+      "sha256": "7bd10d47dcea5873da46eb54bbd7794befb2e33394923247b04656f2bf56f0c6"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fused__seed2027.json",
+      "size_bytes": 1813,
+      "sha256": "e8c3f41156e69cada6a632040b1e7ee55950cc201a15a1e1a128dc703af6c7d8"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fused__seed2027.json",
+      "size_bytes": 1894,
+      "sha256": "f4c4e7b21edf75ef42c5d73c6d0fc2a3a3a28653cc8b52ce279355340e631178"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fused__seed2028.json",
+      "size_bytes": 2127,
+      "sha256": "8cce68d75d11469e960d48c050630876e4891ba89d64e8f4a038223f28174b98"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fused__seed2028.json",
+      "size_bytes": 1818,
+      "sha256": "a944d0fdacab51c4966efe46e822bd57f5b50f80803646728adfb2ef85fa1b84"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fused__seed2028.json",
+      "size_bytes": 1813,
+      "sha256": "f043882db0e7f03db5366a3ca76966a4a3eb78ab9be181dd50c31194cbb32dc6"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fused__seed2028.json",
+      "size_bytes": 1894,
+      "sha256": "d6b25cd8b74e668869d619c274ce53d698c9a58ddf0f638f4dcb69761592acd8"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fused__seed2029.json",
+      "size_bytes": 2127,
+      "sha256": "93f17bad849bcc848622a31c62f0049d21ac1de8f420fa61212ab0ff8354105c"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fused__seed2029.json",
+      "size_bytes": 1817,
+      "sha256": "b7ab6e9c4cd1a6d99683a873dbc8c01dfba93687b8cc8f45ac7d38f1dbdb5188"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fused__seed2029.json",
+      "size_bytes": 1813,
+      "sha256": "41dcce47742a9577166370a1bd11d04193c569d7453b2d54d57a2bcd4ddd9a66"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fused__seed2029.json",
+      "size_bytes": 1895,
+      "sha256": "9d8e80b38a731ee5536345df8d00120f1763e06fe2931c077b98d263936c049a"
+    },
+    {
+      "path": "data/processed/xai_model_cards/logistic_regression__fused__seed2030.json",
+      "size_bytes": 2127,
+      "sha256": "369bf1341788e373a8cfb3e0807a209e20763569824f61ec9a10c9cc3fb88c9d"
+    },
+    {
+      "path": "data/processed/xai_model_cards/random_forest__fused__seed2030.json",
+      "size_bytes": 1818,
+      "sha256": "e5837dc76e99adcfd55af83a2b4ff89e42e19fb309e872a95ed03e7d6bb0f3d3"
+    },
+    {
+      "path": "data/processed/xai_model_cards/extra_trees__fused__seed2030.json",
+      "size_bytes": 1813,
+      "sha256": "bfaf6e8634b22e708c35dcd9688ca4e41acb982bd68567bba2ca496d8a637869"
+    },
+    {
+      "path": "data/processed/xai_model_cards/hist_gradient_boosting__fused__seed2030.json",
+      "size_bytes": 1894,
+      "sha256": "dac24bbad03434a5ffcbe72d97b697fe6d728b5efc238ee911f4e7054348c406"
+    },
+    {
+      "path": "data/processed/xai_final_reports/DockForgeAI_XAI_Benchmark_Report.html",
+      "size_bytes": 3113,
+      "sha256": "a192d5b5fdf8d6d7d070e908f9ce7ffe74579d5a626d5003a727f9ce419c21e6"
+    },
+    {
+      "path": "data/processed/xai_final_reports/DockForgeAI_XAI_Benchmark_Report.pdf",
+      "size_bytes": 6056,
+      "sha256": "65669044c5bc23db3b96db47e4be39a19856f65c3a9236e4a29840329ce7f02c"
+    }
+  ],
+  "limitations": [
+    "DUD-E decoys are not experimentally inactive",
+    "Source shortcuts can inflate performance",
+    "Explanations are not biological causality"
+  ]
+}

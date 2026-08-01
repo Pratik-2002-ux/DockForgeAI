@@ -1,0 +1,48 @@
+{
+  "model_id": "extra_trees__fused__seed2028",
+  "model_name": "extra_trees",
+  "feature_set": "fused",
+  "seed": 2028,
+  "hyperparameters": {
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 2028,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "calibration_method": "isotonic",
+  "training_timestamp": "2026-08-01T16:47:26.823937+00:00",
+  "training_runtime_seconds": 0.22172220899665263,
+  "artifact_path": "data/processed/xai_models/extra_trees__fused__seed2028.joblib",
+  "metrics_path": "data/processed/xai_benchmarks/model_comparison.csv",
+  "dataset_checksum": "6718389dcc7d3443b4f549dbff4008ffac3faf59e5b210edf95dbda01aedb165",
+  "feature_checksum": "82bdd6a5d4b3a655d8be848b2e6ecfa5c72235af1f8dc86c25e9a734761d682c",
+  "git_commit_hash": "72bf4c4",
+  "split_method": "Bemis-Murcko scaffold group 70/15/15",
+  "intended_use": "Benchmark model-behaviour research",
+  "inappropriate_use": "Binding, therapeutic, clinical, or biological claims",
+  "class_labels": {
+    "active": "ChEMBL potency-qualified",
+    "inactive_or_decoy": "DUD-E computational decoy, not experimentally proven inactive"
+  },
+  "limitations": [
+    "Source differences may create shortcuts",
+    "Good classification does not prove binding",
+    "Applicability-domain warnings must be considered"
+  ],
+  "reproducibility_command": "conda run --no-capture-output -n dockforge python scripts/run_complete_xai_pipeline.py --offline"
+}

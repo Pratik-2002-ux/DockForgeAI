@@ -1,0 +1,50 @@
+{
+  "model_id": "hist_gradient_boosting__descriptor__seed2026",
+  "model_name": "hist_gradient_boosting",
+  "feature_set": "descriptor",
+  "seed": 2026,
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "class_weight": null,
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 1,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 100,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "random_state": 2026,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "calibration_method": "isotonic",
+  "training_timestamp": "2026-08-01T16:46:45.429535+00:00",
+  "training_runtime_seconds": 0.9175394999983837,
+  "artifact_path": "data/processed/xai_models/hist_gradient_boosting__descriptor__seed2026.joblib",
+  "metrics_path": "data/processed/xai_benchmarks/model_comparison.csv",
+  "dataset_checksum": "6718389dcc7d3443b4f549dbff4008ffac3faf59e5b210edf95dbda01aedb165",
+  "feature_checksum": "82bdd6a5d4b3a655d8be848b2e6ecfa5c72235af1f8dc86c25e9a734761d682c",
+  "git_commit_hash": "72bf4c4",
+  "split_method": "Bemis-Murcko scaffold group 70/15/15",
+  "intended_use": "Benchmark model-behaviour research",
+  "inappropriate_use": "Binding, therapeutic, clinical, or biological claims",
+  "class_labels": {
+    "active": "ChEMBL potency-qualified",
+    "inactive_or_decoy": "DUD-E computational decoy, not experimentally proven inactive"
+  },
+  "limitations": [
+    "Source differences may create shortcuts",
+    "Good classification does not prove binding",
+    "Applicability-domain warnings must be considered"
+  ],
+  "reproducibility_command": "conda run --no-capture-output -n dockforge python scripts/run_complete_xai_pipeline.py --offline"
+}

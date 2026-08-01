@@ -1,0 +1,49 @@
+{
+  "model_id": "logistic_regression__fingerprint__seed2029",
+  "model_name": "logistic_regression",
+  "feature_set": "fingerprint",
+  "seed": 2029,
+  "hyperparameters": {
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "standardscaler__copy": true,
+    "standardscaler__with_mean": false,
+    "standardscaler__with_std": true,
+    "logisticregression__C": 1.0,
+    "logisticregression__class_weight": "balanced",
+    "logisticregression__dual": false,
+    "logisticregression__fit_intercept": true,
+    "logisticregression__intercept_scaling": 1,
+    "logisticregression__l1_ratio": 0.0,
+    "logisticregression__max_iter": 2000,
+    "logisticregression__n_jobs": null,
+    "logisticregression__penalty": "deprecated",
+    "logisticregression__random_state": 2029,
+    "logisticregression__solver": "lbfgs",
+    "logisticregression__tol": 0.0001,
+    "logisticregression__verbose": 0,
+    "logisticregression__warm_start": false
+  },
+  "calibration_method": "isotonic",
+  "training_timestamp": "2026-08-01T16:47:09.579916+00:00",
+  "training_runtime_seconds": 0.017260916996747255,
+  "artifact_path": "data/processed/xai_models/logistic_regression__fingerprint__seed2029.joblib",
+  "metrics_path": "data/processed/xai_benchmarks/model_comparison.csv",
+  "dataset_checksum": "6718389dcc7d3443b4f549dbff4008ffac3faf59e5b210edf95dbda01aedb165",
+  "feature_checksum": "82bdd6a5d4b3a655d8be848b2e6ecfa5c72235af1f8dc86c25e9a734761d682c",
+  "git_commit_hash": "72bf4c4",
+  "split_method": "Bemis-Murcko scaffold group 70/15/15",
+  "intended_use": "Benchmark model-behaviour research",
+  "inappropriate_use": "Binding, therapeutic, clinical, or biological claims",
+  "class_labels": {
+    "active": "ChEMBL potency-qualified",
+    "inactive_or_decoy": "DUD-E computational decoy, not experimentally proven inactive"
+  },
+  "limitations": [
+    "Source differences may create shortcuts",
+    "Good classification does not prove binding",
+    "Applicability-domain warnings must be considered"
+  ],
+  "reproducibility_command": "conda run --no-capture-output -n dockforge python scripts/run_complete_xai_pipeline.py --offline"
+}
