@@ -1,0 +1,24 @@
+{
+  "models": [
+    "logistic_regression",
+    "random_forest",
+    "extra_trees",
+    "hist_gradient_boosting"
+  ],
+  "feature_sets": [
+    "descriptor",
+    "fingerprint",
+    "fused"
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "primary_split": "scaffold",
+  "primary_selection_metric": "validation_pr_auc",
+  "test_set_used_for_tuning": false,
+  "bootstrap_iterations": 500
+}

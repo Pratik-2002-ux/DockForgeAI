@@ -1,0 +1,5 @@
+model_name,mean_test_pr_auc,difference_from_best,interpretation
+random_forest,0.9946124350690876,0.0,descriptive repeated-seed comparison; source shortcut caveat applies
+hist_gradient_boosting,0.9937022815157269,-0.0009101535533606597,descriptive repeated-seed comparison; source shortcut caveat applies
+extra_trees,0.9928216392570057,-0.001790795812081858,descriptive repeated-seed comparison; source shortcut caveat applies
+logistic_regression,0.9870419674243437,-0.0075704676447438946,descriptive repeated-seed comparison; source shortcut caveat applies

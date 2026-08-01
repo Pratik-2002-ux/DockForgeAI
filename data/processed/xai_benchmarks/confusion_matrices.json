@@ -1,0 +1,362 @@
+{
+  "logistic_regression__descriptor__seed2026": {
+    "tn": 129,
+    "fp": 21,
+    "fn": 5,
+    "tp": 145
+  },
+  "random_forest__descriptor__seed2026": {
+    "tn": 145,
+    "fp": 5,
+    "fn": 7,
+    "tp": 143
+  },
+  "extra_trees__descriptor__seed2026": {
+    "tn": 142,
+    "fp": 8,
+    "fn": 5,
+    "tp": 145
+  },
+  "hist_gradient_boosting__descriptor__seed2026": {
+    "tn": 143,
+    "fp": 7,
+    "fn": 7,
+    "tp": 143
+  },
+  "logistic_regression__descriptor__seed2027": {
+    "tn": 129,
+    "fp": 21,
+    "fn": 5,
+    "tp": 145
+  },
+  "random_forest__descriptor__seed2027": {
+    "tn": 145,
+    "fp": 5,
+    "fn": 7,
+    "tp": 143
+  },
+  "extra_trees__descriptor__seed2027": {
+    "tn": 145,
+    "fp": 5,
+    "fn": 5,
+    "tp": 145
+  },
+  "hist_gradient_boosting__descriptor__seed2027": {
+    "tn": 143,
+    "fp": 7,
+    "fn": 7,
+    "tp": 143
+  },
+  "logistic_regression__descriptor__seed2028": {
+    "tn": 129,
+    "fp": 21,
+    "fn": 5,
+    "tp": 145
+  },
+  "random_forest__descriptor__seed2028": {
+    "tn": 134,
+    "fp": 16,
+    "fn": 2,
+    "tp": 148
+  },
+  "extra_trees__descriptor__seed2028": {
+    "tn": 142,
+    "fp": 8,
+    "fn": 4,
+    "tp": 146
+  },
+  "hist_gradient_boosting__descriptor__seed2028": {
+    "tn": 143,
+    "fp": 7,
+    "fn": 7,
+    "tp": 143
+  },
+  "logistic_regression__descriptor__seed2029": {
+    "tn": 129,
+    "fp": 21,
+    "fn": 5,
+    "tp": 145
+  },
+  "random_forest__descriptor__seed2029": {
+    "tn": 135,
+    "fp": 15,
+    "fn": 4,
+    "tp": 146
+  },
+  "extra_trees__descriptor__seed2029": {
+    "tn": 145,
+    "fp": 5,
+    "fn": 5,
+    "tp": 145
+  },
+  "hist_gradient_boosting__descriptor__seed2029": {
+    "tn": 143,
+    "fp": 7,
+    "fn": 7,
+    "tp": 143
+  },
+  "logistic_regression__descriptor__seed2030": {
+    "tn": 129,
+    "fp": 21,
+    "fn": 5,
+    "tp": 145
+  },
+  "random_forest__descriptor__seed2030": {
+    "tn": 137,
+    "fp": 13,
+    "fn": 5,
+    "tp": 145
+  },
+  "extra_trees__descriptor__seed2030": {
+    "tn": 144,
+    "fp": 6,
+    "fn": 4,
+    "tp": 146
+  },
+  "hist_gradient_boosting__descriptor__seed2030": {
+    "tn": 143,
+    "fp": 7,
+    "fn": 7,
+    "tp": 143
+  },
+  "logistic_regression__fingerprint__seed2026": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fingerprint__seed2026": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 2,
+    "tp": 148
+  },
+  "extra_trees__fingerprint__seed2026": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fingerprint__seed2026": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "logistic_regression__fingerprint__seed2027": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fingerprint__seed2027": {
+    "tn": 148,
+    "fp": 2,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fingerprint__seed2027": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fingerprint__seed2027": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "logistic_regression__fingerprint__seed2028": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fingerprint__seed2028": {
+    "tn": 148,
+    "fp": 2,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fingerprint__seed2028": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fingerprint__seed2028": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "logistic_regression__fingerprint__seed2029": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fingerprint__seed2029": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 2,
+    "tp": 148
+  },
+  "extra_trees__fingerprint__seed2029": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fingerprint__seed2029": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "logistic_regression__fingerprint__seed2030": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fingerprint__seed2030": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "extra_trees__fingerprint__seed2030": {
+    "tn": 148,
+    "fp": 2,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fingerprint__seed2030": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 2,
+    "tp": 148
+  },
+  "logistic_regression__fused__seed2026": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fused__seed2026": {
+    "tn": 148,
+    "fp": 2,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fused__seed2026": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fused__seed2026": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "logistic_regression__fused__seed2027": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fused__seed2027": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fused__seed2027": {
+    "tn": 148,
+    "fp": 2,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fused__seed2027": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "logistic_regression__fused__seed2028": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fused__seed2028": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fused__seed2028": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fused__seed2028": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "logistic_regression__fused__seed2029": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fused__seed2029": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fused__seed2029": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fused__seed2029": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "logistic_regression__fused__seed2030": {
+    "tn": 150,
+    "fp": 0,
+    "fn": 1,
+    "tp": 149
+  },
+  "random_forest__fused__seed2030": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "extra_trees__fused__seed2030": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  },
+  "hist_gradient_boosting__fused__seed2030": {
+    "tn": 149,
+    "fp": 1,
+    "fn": 1,
+    "tp": 149
+  }
+}

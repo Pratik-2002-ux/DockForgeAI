@@ -1,0 +1,3 @@
+comparison,status
+scaffold split (primary),reported
+random split (secondary),not used for primary selection; source shortcut caveat
