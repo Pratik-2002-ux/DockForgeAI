@@ -1,0 +1,11 @@
+pose_rank,affinity_kcal_mol,vina_rmsd_lower_bound_angstrom,vina_rmsd_upper_bound_angstrom,crystal_in_place_rmsd_angstrom,aligned_best_rmsd_angstrom,passes_2A_threshold,atom_records,pose_pdbqt
+1,-11.575,0.0,0.0,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_001.pdbqt
+2,-10.601,2.042,11.172,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_002.pdbqt
+3,-10.497,1.997,10.508,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_003.pdbqt
+4,-10.37,1.527,4.315,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_004.pdbqt
+5,-10.21,2.684,4.656,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_005.pdbqt
+6,-10.159,2.06,10.686,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_006.pdbqt
+7,-10.089,1.871,11.045,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_007.pdbqt
+8,-10.054,2.324,4.274,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_008.pdbqt
+9,-9.91,2.943,5.82,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_009.pdbqt
+10,-9.832,2.442,11.019,0.0,0.0,True,49,/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_010.pdbqt

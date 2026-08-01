@@ -1,0 +1,6 @@
+{
+  "reference_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "pose_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/1HSG_MK1_redocked_poses.sdf",
+  "pose_count": 10,
+  "threshold_angstrom": 2.0
+}

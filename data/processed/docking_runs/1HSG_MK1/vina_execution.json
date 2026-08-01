@@ -1,0 +1,13 @@
+{
+  "command": "/Library/anaconda3/envs/dockforge/bin/vina --config /Users/pratikramchandrachaudhari/DockForgeAI/config/docking/1HSG_MK1_redocking.txt --out /Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/1HSG_MK1_redocked.pdbqt.tmp",
+  "executable": "/Library/anaconda3/envs/dockforge/bin/vina",
+  "vina_version": "AutoDock Vina v1.2.7",
+  "start_time_utc": "2026-08-01T05:59:15.180812+00:00",
+  "end_time_utc": "2026-08-01T05:59:49.383477+00:00",
+  "runtime_seconds": 34.203,
+  "return_code": 0,
+  "stdout_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/vina_stdout.txt",
+  "stderr_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/vina_stderr.txt",
+  "output_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/1HSG_MK1_redocked.pdbqt",
+  "used_log_flag": false
+}

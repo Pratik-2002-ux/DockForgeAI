@@ -1,0 +1,236 @@
+{
+  "settings": {
+    "project": {
+      "name": "DockForgeAI",
+      "version": "1.0.0"
+    },
+    "directories": {
+      "raw_proteins": "data/raw/proteins",
+      "protein_metadata": "data/raw/protein_metadata",
+      "protein_reports": "data/processed/protein_reports",
+      "prepared_proteins": "data/processed/proteins",
+      "extracted_ligands": "data/processed/extracted_ligands",
+      "preparation_reports": "data/processed/preparation_reports",
+      "crystallographic_ligands": "data/processed/crystallographic_ligands",
+      "docking_ready_ligands": "data/processed/docking_ready_ligands",
+      "ligand_pdbqt": "data/processed/pdbqt/ligands",
+      "protonated_receptors": "data/processed/protonated_receptors",
+      "receptor_pdbqt": "data/processed/pdbqt/receptors",
+      "docking_boxes": "data/processed/docking_boxes",
+      "docking_configs": "config/docking",
+      "docking_reports": "data/processed/docking_reports",
+      "standardized_ligands": "data/processed/standardized_ligands",
+      "minimized_ligands": "data/processed/minimized_ligands",
+      "ligand_reports": "data/processed/ligand_reports",
+      "raw_ligands": "data/raw/ligands",
+      "processed_data": "data/processed",
+      "external_data": "data/external",
+      "logs": "logs",
+      "reports": "reports"
+    },
+    "rcsb": {
+      "structure_url": "https://files.rcsb.org/download/{pdb_id}.pdb",
+      "metadata_url": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
+    },
+    "network": {
+      "timeout_seconds": 30
+    }
+  },
+  "execution_metadata": {
+    "command": "/Library/anaconda3/envs/dockforge/bin/vina --config /Users/pratikramchandrachaudhari/DockForgeAI/config/docking/1HSG_MK1_redocking.txt --out /Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/1HSG_MK1_redocked.pdbqt.tmp",
+    "executable": "/Library/anaconda3/envs/dockforge/bin/vina",
+    "vina_version": "AutoDock Vina v1.2.7",
+    "start_time_utc": "2026-08-01T05:59:15.180812+00:00",
+    "end_time_utc": "2026-08-01T05:59:49.383477+00:00",
+    "runtime_seconds": 34.203,
+    "return_code": 0,
+    "stdout_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/vina_stdout.txt",
+    "stderr_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/vina_stderr.txt",
+    "output_path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_runs/1HSG_MK1/1HSG_MK1_redocked.pdbqt",
+    "used_log_flag": false
+  },
+  "summary": {
+    "pose_count": 10,
+    "best_affinity_kcal_mol": -11.575,
+    "best_affinity_pose_rank": 1,
+    "rmsd_best_affinity_pose_angstrom": 0.0,
+    "min_rmsd_angstrom": 0.0,
+    "min_rmsd_pose_rank": 1,
+    "affinity_min_rmsd_pose_kcal_mol": -11.575,
+    "first_passing_pose_rank": 1,
+    "passing_pose_count": 10,
+    "passing_pose_percentage": 100.0,
+    "overall_pose_reproduction_success": true,
+    "top_ranked_pose_success": true,
+    "threshold_angstrom": 2.0,
+    "interpretation": "Validated strongly"
+  },
+  "preparation_report": {
+    "input_receptor": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/proteins/1HSG_chains-A-B_clean.pdb",
+    "protonated_receptor_pdb": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/protonated_receptors/1HSG_chains-A-B_receptor.pdb",
+    "receptor_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/pdbqt/receptors/1HSG_chains-A-B_receptor.pdbqt",
+    "preparation_report": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/preparation_reports/1HSG_receptor_preparation.json",
+    "software_versions": {
+      "python": "3.12",
+      "meeko": "0.7.1",
+      "bio_python": "installed"
+    },
+    "chains": [
+      "A",
+      "B"
+    ],
+    "protein_residue_count": 198,
+    "heavy_atoms_before": 1514,
+    "heavy_atoms_after": 1514,
+    "catalytic_asp25": {
+      "A": 25,
+      "B": 25
+    },
+    "protonation_assumption": "Input PDB did not encode explicit protonation states for the catalytic Asp25 dyad; the preparation workflow used Meeko's default residue templates and assumed standard carboxylate-type Asp side chains for both catalytic residues.",
+    "coordinate_preservation_status": true,
+    "receptor_pdbqt_atom_count": 1842,
+    "warnings": [
+      "No explicit protonation states were present in the input receptor PDB; Asp25 was treated with a standard carboxylate assumption."
+    ]
+  },
+  "box_report": {
+    "ligand_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+    "padding_angstrom": 5.0,
+    "bounds": {
+      "min_x": 4.207,
+      "max_x": 19.061,
+      "min_y": 17.363,
+      "max_y": 27.577,
+      "min_z": 1.541,
+      "max_z": 10.176
+    },
+    "center": {
+      "x": 11.634,
+      "y": 22.47,
+      "z": 5.859
+    },
+    "size": {
+      "x": 24.854,
+      "y": 20.214,
+      "z": 20.0
+    },
+    "span": {
+      "x": 14.854,
+      "y": 10.214,
+      "z": 8.635
+    },
+    "warnings": []
+  },
+  "rows": [
+    {
+      "pose_rank": "1",
+      "affinity_kcal_mol": "-11.575",
+      "vina_rmsd_lower_bound_angstrom": "0.0",
+      "vina_rmsd_upper_bound_angstrom": "0.0",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_001.pdbqt"
+    },
+    {
+      "pose_rank": "2",
+      "affinity_kcal_mol": "-10.601",
+      "vina_rmsd_lower_bound_angstrom": "2.042",
+      "vina_rmsd_upper_bound_angstrom": "11.172",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_002.pdbqt"
+    },
+    {
+      "pose_rank": "3",
+      "affinity_kcal_mol": "-10.497",
+      "vina_rmsd_lower_bound_angstrom": "1.997",
+      "vina_rmsd_upper_bound_angstrom": "10.508",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_003.pdbqt"
+    },
+    {
+      "pose_rank": "4",
+      "affinity_kcal_mol": "-10.37",
+      "vina_rmsd_lower_bound_angstrom": "1.527",
+      "vina_rmsd_upper_bound_angstrom": "4.315",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_004.pdbqt"
+    },
+    {
+      "pose_rank": "5",
+      "affinity_kcal_mol": "-10.21",
+      "vina_rmsd_lower_bound_angstrom": "2.684",
+      "vina_rmsd_upper_bound_angstrom": "4.656",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_005.pdbqt"
+    },
+    {
+      "pose_rank": "6",
+      "affinity_kcal_mol": "-10.159",
+      "vina_rmsd_lower_bound_angstrom": "2.06",
+      "vina_rmsd_upper_bound_angstrom": "10.686",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_006.pdbqt"
+    },
+    {
+      "pose_rank": "7",
+      "affinity_kcal_mol": "-10.089",
+      "vina_rmsd_lower_bound_angstrom": "1.871",
+      "vina_rmsd_upper_bound_angstrom": "11.045",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_007.pdbqt"
+    },
+    {
+      "pose_rank": "8",
+      "affinity_kcal_mol": "-10.054",
+      "vina_rmsd_lower_bound_angstrom": "2.324",
+      "vina_rmsd_upper_bound_angstrom": "4.274",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_008.pdbqt"
+    },
+    {
+      "pose_rank": "9",
+      "affinity_kcal_mol": "-9.91",
+      "vina_rmsd_lower_bound_angstrom": "2.943",
+      "vina_rmsd_upper_bound_angstrom": "5.82",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_009.pdbqt"
+    },
+    {
+      "pose_rank": "10",
+      "affinity_kcal_mol": "-9.832",
+      "vina_rmsd_lower_bound_angstrom": "2.442",
+      "vina_rmsd_upper_bound_angstrom": "11.019",
+      "crystal_in_place_rmsd_angstrom": "0.0",
+      "aligned_best_rmsd_angstrom": "0.0",
+      "passes_2A_threshold": "True",
+      "atom_records": "49",
+      "pose_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/pose_010.pdbqt"
+    }
+  ]
+}
