@@ -31,6 +31,13 @@ from app.components.protein_viewer import (  # noqa: E402
     load_viewer_settings,
     structure_files,
 )
+from app.components.export_center import (  # noqa: E402
+    build_zip_bytes,
+    categorized_exports,
+    format_file_size,
+    generate_reports,
+    load_manifest,
+)
 
 
 st.set_page_config(
@@ -1758,6 +1765,47 @@ def render_structure_viewer() -> None:
         st.error(f"The selected structure could not be rendered: {exc}")
 
 
+def render_export_center() -> None:
+    """Render report status, generation controls and safe downloads."""
+
+    st.header("Reports & Exports")
+    st.caption("Generate and download portable scientific reports and validated workflow outputs. Report generation never reruns docking.")
+    manifest = load_manifest()
+    report_entries = [entry for entry in manifest.get("generated_files", []) if str(entry.get("path", "")).endswith((".pdf", ".html"))]
+    columns = st.columns(3)
+    columns[0].metric("Status", "Ready" if report_entries else "Not generated")
+    columns[1].metric("Last generated", str(manifest.get("generated_at", "Unavailable"))[:19])
+    columns[2].metric("Warnings", len(manifest.get("warnings", [])))
+    for entry in report_entries:
+        st.write(f"{Path(entry['path']).name}: {format_file_size(int(entry.get('size_bytes', 0)))}")
+    if st.button("Generate PDF and HTML reports", type="primary"):
+        with st.spinner("Generating reports from existing outputs…"):
+            success, message = generate_reports()
+        (st.success if success else st.error)(message)
+        if success: st.rerun()
+    exports = categorized_exports()
+    report_root = PROJECT_ROOT
+    tabs = st.tabs(["Final reports", "Tables & JSON", "Images", "Bundles", "Manifest"])
+    with tabs[0]:
+        for path in exports["Reports"]:
+            if path.suffix in {".pdf", ".html"}:
+                st.download_button(f"Download {path.name}", path.read_bytes(), path.name, "application/pdf" if path.suffix == ".pdf" else "text/html")
+    with tabs[1]:
+        for path in exports["Tables"] + exports["Summaries"]:
+            st.download_button(f"Download {path.name}", path.read_bytes(), path.name)
+    with tabs[2]:
+        for path in exports["Molecule images"]:
+            st.download_button(f"Download {path.name}", path.read_bytes(), path.name)
+    with tabs[3]:
+        figure_zip = build_zip_bytes(exports["Figures"], report_root)
+        all_zip = build_zip_bytes(sum(exports.values(), []), report_root)
+        st.download_button("Download figure bundle", figure_zip, "DockForgeAI_figures.zip", "application/zip")
+        st.download_button("Download all final outputs", all_zip, "DockForgeAI_final_outputs.zip", "application/zip")
+    with tabs[4]: st.json(manifest or {"status": "No report manifest is available yet."})
+    for warning in manifest.get("warnings", []): st.warning(warning)
+    st.info("Docking scores are approximate ranking values. Demo compounds are not validated inhibitors, RDKit descriptors are not full ADMET predictions, and all predictions require experimental validation.")
+
+
 def main() -> None:
     """Run the Streamlit application."""
 
@@ -1769,6 +1817,7 @@ def main() -> None:
             "Home",
             "Redocking",
             "3D viewer",
+            "Reports & Exports",
             "Interactions",
             "Virtual screening",
             "Hit prioritization",
@@ -1785,6 +1834,8 @@ def main() -> None:
         render_redocking()
     elif page == "3D viewer":
         render_structure_viewer()
+    elif page == "Reports & Exports":
+        render_export_center()
     elif page == "Interactions":
         render_interactions()
     elif page == "Virtual screening":
