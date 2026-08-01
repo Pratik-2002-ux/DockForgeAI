@@ -1,0 +1,17 @@
+{
+  "template_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/raw/ligands/MK1_ideal.sdf",
+  "crystallographic_source_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/extracted_ligands/1HSG_MK1_chain-B_res-902.pdb",
+  "output_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "template_heavy_atoms": 45,
+  "crystallographic_heavy_atoms": 45,
+  "output_heavy_atoms": 45,
+  "output_total_atoms": 45,
+  "output_bonds": 49,
+  "molecular_formula": "C36H47N5O4",
+  "formal_charge": 0,
+  "canonical_smiles": "CC(C)(C)NC(=O)[C@@H]1CN(Cc2cccnc2)CCN1C[C@@H](O)C[C@@H](Cc1ccccc1)C(=O)N[C@H]1c2ccccc2C[C@H]1O",
+  "sanitization_status": "passed",
+  "coordinate_rmsd_angstrom": 0.0,
+  "maximum_atom_displacement_angstrom": 0.0,
+  "coordinates_preserved": true
+}
