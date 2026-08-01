@@ -1,0 +1,28 @@
+{
+  "ligand_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "padding_angstrom": 5.0,
+  "bounds": {
+    "min_x": 4.207,
+    "max_x": 19.061,
+    "min_y": 17.363,
+    "max_y": 27.577,
+    "min_z": 1.541,
+    "max_z": 10.176
+  },
+  "center": {
+    "x": 11.634,
+    "y": 22.47,
+    "z": 5.859
+  },
+  "size": {
+    "x": 24.854,
+    "y": 20.214,
+    "z": 20.0
+  },
+  "span": {
+    "x": 14.854,
+    "y": 10.214,
+    "z": 8.635
+  },
+  "warnings": []
+}

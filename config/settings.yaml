@@ -10,6 +10,13 @@ directories:
   extracted_ligands: data/processed/extracted_ligands
   preparation_reports: data/processed/preparation_reports
   crystallographic_ligands: data/processed/crystallographic_ligands
+  docking_ready_ligands: data/processed/docking_ready_ligands
+  ligand_pdbqt: data/processed/pdbqt/ligands
+  protonated_receptors: data/processed/protonated_receptors
+  receptor_pdbqt: data/processed/pdbqt/receptors
+  docking_boxes: data/processed/docking_boxes
+  docking_configs: config/docking
+  docking_reports: data/processed/docking_reports
   standardized_ligands: data/processed/standardized_ligands
   minimized_ligands: data/processed/minimized_ligands
   ligand_reports: data/processed/ligand_reports

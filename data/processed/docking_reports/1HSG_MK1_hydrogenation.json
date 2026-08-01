@@ -1,0 +1,12 @@
+{
+  "input_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "output_file": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_ready_ligands/1HSG_MK1_crystallographic_H.sdf",
+  "heavy_atoms": 45,
+  "total_atoms": 92,
+  "explicit_hydrogens": 47,
+  "formal_charge": 0,
+  "hydrogen_optimization": "converged",
+  "heavy_atom_rmsd_angstrom": 0.0,
+  "maximum_heavy_atom_displacement_angstrom": 0.0,
+  "heavy_atom_coordinates_preserved": true
+}

@@ -1,0 +1,28 @@
+{
+  "input_receptor": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/proteins/1HSG_chains-A-B_clean.pdb",
+  "protonated_receptor_pdb": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/protonated_receptors/1HSG_chains-A-B_receptor.pdb",
+  "receptor_pdbqt": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/pdbqt/receptors/1HSG_chains-A-B_receptor.pdbqt",
+  "preparation_report": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/preparation_reports/1HSG_receptor_preparation.json",
+  "software_versions": {
+    "python": "3.12",
+    "meeko": "0.7.1",
+    "bio_python": "installed"
+  },
+  "chains": [
+    "A",
+    "B"
+  ],
+  "protein_residue_count": 198,
+  "heavy_atoms_before": 1514,
+  "heavy_atoms_after": 1514,
+  "catalytic_asp25": {
+    "A": 25,
+    "B": 25
+  },
+  "protonation_assumption": "Input PDB did not encode explicit protonation states for the catalytic Asp25 dyad; the preparation workflow used Meeko's default residue templates and assumed standard carboxylate-type Asp side chains for both catalytic residues.",
+  "coordinate_preservation_status": true,
+  "receptor_pdbqt_atom_count": 1842,
+  "warnings": [
+    "No explicit protonation states were present in the input receptor PDB; Asp25 was treated with a standard carboxylate assumption."
+  ]
+}

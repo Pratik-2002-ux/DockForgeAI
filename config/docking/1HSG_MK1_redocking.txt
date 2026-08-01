@@ -1,0 +1,16 @@
+receptor = data/processed/pdbqt/receptors/1HSG_chains-A-B_receptor.pdbqt
+ligand = data/processed/pdbqt/ligands/1HSG_MK1.pdbqt
+
+center_x = 11.634
+center_y = 22.470
+center_z = 5.859
+
+size_x = 24.854
+size_y = 20.214
+size_z = 20.000
+
+exhaustiveness = 8
+num_modes = 10
+energy_range = 4
+cpu = 4
+seed = 2026

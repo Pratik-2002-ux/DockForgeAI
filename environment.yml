@@ -1,4 +1,4 @@
-name: dockforge
+name: base
 channels:
   - conda-forge
   - bioconda
@@ -6,18 +6,30 @@ channels:
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
 dependencies:
+  - _anaconda_depends
   - python=3.12
-  - numpy
-  - matplotlib
-  - pandas
-  - scipy
-  - notebook
+  - setuptools
   - pip
-  - jupyter
-  - pyyaml
-  - tqdm
-  - requests
-  - biopython
-  - openbabel
-  - rdkit
-prefix: /Library/anaconda3/envs/dockforge
+  - wheel
+  - anaconda-anon-usage
+  - anaconda-catalogs
+  - anaconda-client
+  - anaconda-project
+  - anaconda-navigator
+  - conda[version='>=23.7']
+  - conda-build
+  - conda-content-trust
+  - conda-libmamba-solver
+  - conda-pack
+  - conda-package-handling
+  - conda-package-streaming
+  - conda-token
+  - python.app
+  - mamba
+  - salmon
+  - ncbi-datasets-cli
+  - multiqc
+  - fastqc
+  - gurobi
+  - gatk4
+prefix: /Library/anaconda3
