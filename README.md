@@ -115,7 +115,28 @@ The workflow is intentionally serialized and chunked for an 8 GB Apple Silicon s
 
 ## Roadmap
 
-Potential next work includes larger benchmark datasets, richer provenance schemas, calibrated uncertainty, and experimentally anchored validation. No roadmap item should weaken the current reproducible baseline.
+### Explainable-AI dataset roadmap
+
+Phase XAI-1 constructs a curated HIV-1 protease benchmark from ChEMBL target `CHEMBL243` activities and DUD-E target `HIVPR` decoys. Actives require exact IC50, Ki, Kd, or EC50 measurements with pChEMBL ≥ 6.0 (or potency ≤1,000 nM). DUD-E structures carry `inactive_or_decoy` / `dude_decoy` labels and are **computational decoys, not experimentally proven inactive compounds**. Ambiguous measurements are excluded, structure duplicates and active/decoy overlaps are removed, and intact Bemis–Murcko scaffold groups define the 70/15/15 train/validation/test assignments to reduce structural leakage.
+
+Build and validate using:
+
+```bash
+conda run -n dockforge python scripts/build_hivpr_xai_dataset.py --target-count 2000 --active-count 1000 --decoy-count 1000 --resume
+conda run -n dockforge python scripts/validate_hivpr_xai_dataset.py --dataset data/processed/xai_dataset/hivpr_xai_2000_compounds.csv
+```
+
+See [XAI dataset documentation](docs/XAI_DATASET.md) for source provenance, labels, exclusions, and offline/resume behavior. Phase XAI-1 does not perform docking, feature engineering, machine learning, SHAP, active learning, or make model-performance claims.
+
+Potential later work includes feature engineering and leakage-aware modelling, but only after this dataset is independently reviewed. No roadmap item should weaken the current reproducible baseline.
+
+XAI-2–XAI-6 now provide leakage-safe descriptors/fingerprints, repeated-seed scaffold-safe CPU benchmarks, validation-only calibration, training-derived applicability-domain warnings, model-behaviour explanations, cached Streamlit pages, model cards, and PDF/HTML reports. Run the local pipeline without data retrieval:
+
+```bash
+conda run --no-capture-output -n dockforge python scripts/run_complete_xai_pipeline.py --seeds 2026 2027 2028 2029 2030 --bootstrap-iterations 500 --overwrite --offline
+```
+
+The strong benchmark separation must be interpreted cautiously because ChEMBL actives and DUD-E decoys can expose source-specific shortcuts. It is not evidence of binding or therapeutic activity. See [XAI limitations](docs/XAI_LIMITATIONS.md).
 
 ## Citation
 

@@ -12,3 +12,5 @@ conda run -n dockforge python scripts/generate_final_report.py --overwrite
 ```
 
 Preserve existing outputs and the corrected 0.518 Å RMSD baseline. Add focused tests for new behavior, do not weaken assertions, and keep generated caches/logs out of Git. External ADMET integrations must retain source, version or assay, units, and retrieval date. Molecular dynamics and experimental validation are outside current scope.
+
+XAI code must preserve scaffold assignments and test-set isolation, reject metadata leakage, use deterministic seeds, and keep source-shortcut and decoy caveats in every user-facing artifact. Unit tests use synthetic matrices/molecules and no network or docking.

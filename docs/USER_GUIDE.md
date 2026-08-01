@@ -11,3 +11,5 @@ Use **Redocking** for the corrected 1HSG/MK1 validation, **3D viewer** to rotate
 Generate reports without the UI using `conda run -n dockforge python scripts/generate_final_report.py --overwrite`. This reads existing results and does not rerun Vina. External ADMET may only be interpreted when its source, units, model/assay, and collection date are recorded. Missing provenance is reported as unavailable.
 
 The demo screen demonstrates software operation, not biological discovery. Molecular dynamics and experimental validation are outside the application’s current scope.
+
+XAI pages are available after explicitly running `scripts/run_complete_xai_pipeline.py`. They explain cached benchmark behaviour and never train on page load. Treat DUD-E records as computational decoys, not measured inactive compounds.

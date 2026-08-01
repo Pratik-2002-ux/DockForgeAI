@@ -5,3 +5,5 @@
 The Streamlit layer in `app/` calls read-only loaders and bounded report helpers. Configuration is centralized in `config/settings.yaml`. Reports preserve source provenance as project-relative paths. CLI scripts orchestrate modules but do not duplicate scientific logic.
 
 The design favors one-process, low-memory execution on 8 GB systems. CI compiles and tests small fixtures without docking or internet access.
+
+The XAI layer separates `src/features`, `src/ml`, `src/explainability`, and `src/xai_reports`. Manifests connect dataset, features, models, predictions, explanations, and reports by checksums. Streamlit consumes cached artifacts only.
