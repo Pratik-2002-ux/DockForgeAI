@@ -1,0 +1,9 @@
+field,mutual_information,unique_values
+source_database,0.6931471805599454,2
+label_source,0.6931471805599454,2
+source_target_id,0.6931471805599454,2
+source_assay_id,0.6931471805599454,180
+source_document_id,0.6931471805599454,160
+provenance_reference,0.0,1
+retrieval_date,0.0,1
+source_release,0.6931471805599454,2

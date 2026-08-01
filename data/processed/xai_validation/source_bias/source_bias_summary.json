@@ -1,0 +1,33 @@
+{
+  "production_feature_exclusion_confirmed": true,
+  "shortcut_risk": "high",
+  "source_fields": [
+    "source_database",
+    "label_source",
+    "source_target_id",
+    "source_assay_id",
+    "source_document_id",
+    "provenance_reference",
+    "retrieval_date",
+    "source_release"
+  ],
+  "test_metrics": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "brier_score": 2.975080117647472e-06,
+    "error_rate": 0.0,
+    "fn": 0,
+    "fp": 0,
+    "log_loss": 0.0017258761117139832,
+    "mcc": 1.0,
+    "mean_confidence": 0.9982756131423923,
+    "positive_count": 150,
+    "pr_auc": 1.0000000000000002,
+    "roc_auc": 1.0,
+    "sample_count": 300,
+    "split": "test",
+    "tn": 150,
+    "tp": 150
+  },
+  "warning_threshold": 0.7
+}

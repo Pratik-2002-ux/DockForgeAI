@@ -1,0 +1,3 @@
+from src.validation.adversarial_validation import run_adversarial_validation
+def test_adversarial_entrypoint_is_callable(): assert callable(run_adversarial_validation)
+def test_adversarial_module_is_validation_only(): assert "docking" not in run_adversarial_validation.__module__

@@ -1,0 +1,8 @@
+{
+  "empirical_p_value": 0.009900990099009901,
+  "full_y_scrambling": "diagnostic training-label permutation used; locked labels retained for scoring",
+  "observed_test_pr_auc": 0.9966666666666666,
+  "permutations": 100,
+  "permuted_test_pr_auc_mean": 0.5018578600947715,
+  "permuted_test_pr_auc_std": 0.08811521343574265
+}

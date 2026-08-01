@@ -69,6 +69,8 @@ directories:
   xai_figures: data/processed/xai_figures
   xai_final_reports: data/processed/xai_final_reports
   xai_model_cards: data/processed/xai_model_cards
+  xai_validation: data/processed/xai_validation
+  xai_validation_logs: logs/xai_validation
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"
@@ -203,3 +205,22 @@ xai_modeling:
     include_all_seed_tables: true
     include_local_examples: true
     include_ablation_results: true
+
+xai_validation:
+  dataset_path: data/processed/xai_dataset/hivpr_xai_2000_compounds.csv
+  feature_manifest_path: data/processed/xai_features/feature_manifest.json
+  model_registry_path: data/processed/xai_models/model_registry.json
+  best_model_path: data/processed/xai_benchmarks/best_model.json
+  permutations: 100
+  bootstrap_iterations: 500
+  decoy_seeds: [2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035]
+  similarity_bins: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+  matching:
+    caliper: 0.2
+    replacement: false
+  source_only_warning_auc: 0.70
+  adversarial_warning_auc: 0.70
+  permutation_alpha: 0.05
+  matched_performance_drop_warning: 0.10
+  decoy_metric_std_warning: 0.05
+  explanation_top_k: [10, 20, 30]
