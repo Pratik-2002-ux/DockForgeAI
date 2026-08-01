@@ -1,84 +1,240 @@
+"""Tests for chemically valid export of distinct docked PDBQT poses."""
+
+from __future__ import annotations
+
+import json
 from pathlib import Path
 
 import pytest
+from rdkit import Chem
+from rdkit.Chem import AllChem
 
-from src.docking.pose_exporter import PoseExportError, export_poses
+from src.docking.pose_exporter import (
+    PoseExportError,
+    export_poses,
+)
 
 
-def _write_valid_reference_sdf(tmp_path: Path) -> Path:
-    from rdkit import Chem
-    from rdkit.Chem import AllChem
+def _write_reference_sdf(path: Path) -> None:
+    """Write a deterministic 3D ethanol molecule as an SDF template."""
 
-    reference_mol = Chem.MolFromSmiles("CCO" + "C" * 42)
-    if reference_mol is None:
-        pytest.fail("RDKit could not build a test molecule")
+    molecule = Chem.MolFromSmiles("CCO")
 
-    reference_mol = Chem.AddHs(reference_mol)
-    params = AllChem.ETKDGv3()
-    params.randomSeed = 42
-    if AllChem.EmbedMolecule(reference_mol, params=params) != 0:
-        pytest.fail("RDKit could not embed a test molecule")
+    if molecule is None:
+        raise RuntimeError("Could not create ethanol test molecule.")
+
+    molecule = Chem.AddHs(molecule)
+
+    parameters = AllChem.ETKDGv3()
+    parameters.randomSeed = 2026
+
+    result = AllChem.EmbedMolecule(
+        molecule,
+        parameters,
+    )
+
+    if result != 0:
+        raise RuntimeError("Could not generate ethanol coordinates.")
+
+    AllChem.UFFOptimizeMolecule(molecule)
+
+    molecule = Chem.RemoveHs(molecule)
+    molecule.SetProp("_Name", "ethanol_reference")
+
+    writer = Chem.SDWriter(str(path))
 
     try:
-        mmff_props = AllChem.MMFFGetMoleculeProperties(reference_mol)
-        if mmff_props is not None:
-            AllChem.MMFFOptimizeMolecule(reference_mol, mmffMolProperties=mmff_props)
-        else:
-            AllChem.UFFOptimizeMolecule(reference_mol)
-    except Exception:
-        AllChem.UFFOptimizeMolecule(reference_mol)
+        writer.write(molecule)
+    finally:
+        writer.close()
+
+
+def _atom_line(
+    serial: int,
+    atom_name: str,
+    x: float,
+    y: float,
+    z: float,
+    atom_type: str,
+) -> str:
+    """Create a minimally valid fixed-width PDBQT atom record."""
+
+    return (
+        f"ATOM  {serial:5d} {atom_name:>4s} UNL     1"
+        f"    {x:8.3f}{y:8.3f}{z:8.3f}"
+        f"  1.00  0.00     0.000 {atom_type:<2s}"
+    )
+
+
+def _write_pose_pdbqt(
+    path: Path,
+    coordinates: list[tuple[float, float, float]],
+) -> None:
+    """Write a small Meeko-style ethanol PDBQT pose."""
+
+    if len(coordinates) != 3:
+        raise ValueError("Ethanol fixture requires three heavy atoms.")
+
+    lines = [
+        "REMARK SMILES CCO",
+        "REMARK SMILES IDX 1 1 2 2 3 3",
+        "ROOT",
+        _atom_line(
+            1,
+            "C1",
+            *coordinates[0],
+            "C",
+        ),
+        _atom_line(
+            2,
+            "C2",
+            *coordinates[1],
+            "C",
+        ),
+        _atom_line(
+            3,
+            "O1",
+            *coordinates[2],
+            "OA",
+        ),
+        "ENDROOT",
+        "TORSDOF 0",
+    ]
+
+    path.write_text(
+        "\n".join(lines) + "\n",
+        encoding="utf-8",
+    )
+
+
+def test_export_poses_preserves_distinct_coordinates(
+    tmp_path: Path,
+) -> None:
+    """Different PDBQT poses must remain different in exported SDF."""
 
     reference_sdf = tmp_path / "reference.sdf"
-    writer = Chem.SDWriter(str(reference_sdf))
-    writer.write(reference_mol)
-    writer.close()
-    return reference_sdf
-
-
-def _write_pose_pdbqt(path: Path, model: int, atom_count: int = 45) -> None:
-    lines = [f"MODEL {model}", "REMARK VINA RESULT: -10.000 0.000 0.000"]
-    for index in range(1, atom_count + 1):
-        x = (index % 7) * 0.25
-        y = ((index // 7) % 7) * 0.25
-        z = (index % 5) * 0.25
-        lines.append(f"ATOM {index:5d}  C   UNL     1 {x:8.3f} {y:8.3f} {z:8.3f}  1.00  0.00     0.129 C")
-    lines.append("ENDMDL")
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def test_export_poses_uses_fallback_for_missing_meeko(tmp_path: Path) -> None:
-    reference_sdf = _write_valid_reference_sdf(tmp_path)
+    pose_1 = tmp_path / "pose_001.pdbqt"
+    pose_2 = tmp_path / "pose_002.pdbqt"
     output_sdf = tmp_path / "poses.sdf"
-    report_path = tmp_path / "report.json"
+    report_path = tmp_path / "export_report.json"
 
-    pose_pdbqt_1 = tmp_path / "pose1.pdbqt"
-    _write_pose_pdbqt(pose_pdbqt_1, model=1)
-    pose_pdbqt_2 = tmp_path / "pose2.pdbqt"
-    _write_pose_pdbqt(pose_pdbqt_2, model=2)
+    _write_reference_sdf(reference_sdf)
+
+    _write_pose_pdbqt(
+        pose_1,
+        [
+            (0.0, 0.0, 0.0),
+            (1.5, 0.0, 0.0),
+            (2.8, 0.2, 0.0),
+        ],
+    )
+
+    _write_pose_pdbqt(
+        pose_2,
+        [
+            (1.0, 1.0, 1.0),
+            (2.5, 1.0, 1.0),
+            (3.8, 1.2, 1.0),
+        ],
+    )
 
     report = export_poses(
-        pose_pdbqts=[pose_pdbqt_1, pose_pdbqt_2],
+        pose_pdbqts=[pose_1, pose_2],
         output_sdf=output_sdf,
         reference_sdf=reference_sdf,
         report_path=report_path,
     )
 
-    assert report["pose_count"] == 2
-    assert report["export_method"] in {"meeko", "fallback_rdkit"}
     assert output_sdf.exists()
+    assert output_sdf.stat().st_size > 0
+    assert report_path.exists()
+
+    assert report["export_method"] == "rdkit_meeko_smiles_idx"
+    assert report["pose_count"] == 2
+    assert report["unique_coordinate_sets"] == 2
+    assert report["all_poses_identical"] is False
+
+    saved_report = json.loads(
+        report_path.read_text(encoding="utf-8")
+    )
+
+    assert saved_report["pose_count"] == 2
+    assert saved_report["unique_coordinate_sets"] == 2
+
+    supplier = Chem.SDMolSupplier(
+        str(output_sdf),
+        removeHs=True,
+        sanitize=True,
+    )
+
+    poses = [
+        molecule
+        for molecule in supplier
+        if molecule is not None
+    ]
+
+    assert len(poses) == 2
+    assert poses[0].GetNumHeavyAtoms() == 3
+    assert poses[1].GetNumHeavyAtoms() == 3
+
+    first_conformer = poses[0].GetConformer()
+    second_conformer = poses[1].GetConformer()
+
+    coordinates_differ = any(
+        (
+            abs(
+                first_conformer.GetAtomPosition(index).x
+                - second_conformer.GetAtomPosition(index).x
+            )
+            > 1e-6
+            or abs(
+                first_conformer.GetAtomPosition(index).y
+                - second_conformer.GetAtomPosition(index).y
+            )
+            > 1e-6
+            or abs(
+                first_conformer.GetAtomPosition(index).z
+                - second_conformer.GetAtomPosition(index).z
+            )
+            > 1e-6
+        )
+        for index in range(poses[0].GetNumAtoms())
+    )
+
+    assert coordinates_differ
 
 
-def test_export_poses_rejects_mismatched_pose_count(tmp_path: Path) -> None:
-    reference_sdf = _write_valid_reference_sdf(tmp_path)
+def test_export_poses_rejects_missing_meeko_smiles(
+    tmp_path: Path,
+) -> None:
+    """A PDBQT lacking Meeko chemical mapping must fail clearly."""
+
+    reference_sdf = tmp_path / "reference.sdf"
+    invalid_pose = tmp_path / "invalid_pose.pdbqt"
     output_sdf = tmp_path / "poses.sdf"
     report_path = tmp_path / "report.json"
 
-    pose_path = tmp_path / "pose.pdbqt"
-    _write_pose_pdbqt(pose_path, model=1, atom_count=44)
+    _write_reference_sdf(reference_sdf)
 
-    with pytest.raises(PoseExportError):
+    invalid_pose.write_text(
+        "\n".join(
+            [
+                "ROOT",
+                _atom_line(1, "C1", 0.0, 0.0, 0.0, "C"),
+                "ENDROOT",
+                "TORSDOF 0",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(
+        PoseExportError,
+        match="REMARK SMILES",
+    ):
         export_poses(
-            pose_pdbqts=[pose_path],
+            pose_pdbqts=[invalid_pose],
             output_sdf=output_sdf,
             reference_sdf=reference_sdf,
             report_path=report_path,

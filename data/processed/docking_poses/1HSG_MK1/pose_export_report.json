@@ -1,6 +1,20 @@
 {
-  "export_method": "fallback_rdkit",
+  "export_method": "rdkit_meeko_smiles_idx",
   "output_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/docking_poses/1HSG_MK1/1HSG_MK1_redocked_poses.sdf",
   "pose_count": 10,
-  "reference_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf"
+  "reference_sdf": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/crystallographic_ligands/1HSG_MK1_crystallographic_corrected.sdf",
+  "unique_coordinate_sets": 10,
+  "pose_rmsd_relative_to_pose_1_angstrom": [
+    0.0,
+    11.172166,
+    10.507823,
+    4.315118,
+    4.656352,
+    10.686391,
+    11.045106,
+    4.274045,
+    5.820067,
+    11.019036
+  ],
+  "all_poses_identical": false
 }
