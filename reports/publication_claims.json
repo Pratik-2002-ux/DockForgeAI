@@ -1,0 +1,11 @@
+{
+  "allowed": [
+    "An explainable Ki-regression framework was developed and internally validated."
+  ],
+  "prohibited": [
+    "successful drug discovered",
+    "new inhibitors were discovered",
+    "therapeutic candidate",
+    "clinical candidate"
+  ]
+}

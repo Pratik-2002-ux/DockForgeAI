@@ -43,6 +43,7 @@ from app.components.xai_export import xai_bundle  # noqa: E402
 from app.components.xai_validation import validation_bundle, external_template  # noqa: E402
 from app.components.pubchem_external import DOWNLOAD_KEYS, build_bundle  # noqa: E402
 from app.components.model_v2.pages import render_v2_page  # noqa: E402
+from app.components.model_v2.prospective_pages import PAGES as PROSPECTIVE_PAGES, render as render_prospective_page  # noqa: E402
 
 
 st.set_page_config(
@@ -1951,7 +1952,7 @@ def main() -> None:
             "Virtual screening",
             "Hit prioritization",
             "About",
-        ] + [f"v2 — {name}" for name in v2_pages]
+        ] + [f"v2 — {name}" for name in v2_pages] + [f"Discovery — {name}" for name in PROSPECTIVE_PAGES]
     page = st.sidebar.radio(
         "Navigation",
         navigation,
@@ -1983,6 +1984,8 @@ def main() -> None:
         render_prioritization()
     elif page.startswith("v2 — "):
         render_v2_page(page.removeprefix("v2 — "))
+    elif page.startswith("Discovery — "):
+        render_prospective_page(page.removeprefix("Discovery — "))
     else:
         render_about()
 
