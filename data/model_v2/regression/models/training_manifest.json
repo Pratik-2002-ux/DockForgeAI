@@ -1,5 +1,5 @@
 {
-  "model_id": "ki_rf_morgan_r3_07f71d78",
+  "model_id": "ki_rf_morgan_r3_1af244fa",
   "endpoint": "exact Ki converted to pKi",
   "model_family": "random_forest",
   "feature_set": "morgan_r3",
@@ -12,7 +12,7 @@
   ],
   "dataset_sha256": "8cc76b62c28122c4c098667837477db5c00fa96febccc5fcde707cd9be0d3229",
   "model_sha256": "754f3d0eef06ba64a4c83595efa8e8d5d6cbb02119a54199328d5db0dce599b1",
-  "git_commit": "07f71d7845a66ac5c9b7ee4510c6f00b23b7967d",
+  "git_commit": "1af244fa1ae0913cccd3b6faf13f553f135f1610",
   "python": "3.12.13",
   "platform": "macOS-26.5.2-arm64-arm-64bit",
   "external_benchmark_used_for_selection": false,
