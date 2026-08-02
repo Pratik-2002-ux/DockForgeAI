@@ -75,3 +75,8 @@ data/raw/xai/dude_hivpr/
 data/processed/xai_models/*.joblib
 data/processed/xai_models/*__calibrator.joblib
 data/processed/xai_exclusions/excluded_decoys.csv
+
+# External XAI validation runtime outputs
+data/external/xai_validation_prepared/
+data/external/xai_validation_results/
+data/external/xai_validation/

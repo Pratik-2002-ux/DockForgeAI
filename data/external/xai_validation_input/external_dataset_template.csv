@@ -1,0 +1,3 @@
+compound_id,canonical_smiles,true_label,source_database,assay_id,activity_type,activity_value,activity_units
+EXT001,CCO,active,independent_source,ASSAY001,IC50,100,nM
+EXT002,CCN,inactive,independent_source,ASSAY002,IC50,50000,nM

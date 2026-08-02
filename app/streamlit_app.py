@@ -1790,20 +1790,54 @@ def render_export_center() -> None:
     report_root = PROJECT_ROOT
     tabs = st.tabs(["Final reports", "Tables & JSON", "Images", "Bundles", "Manifest"])
     with tabs[0]:
-        for path in exports["Reports"]:
+        for index, path in enumerate(exports["Reports"]):
             if path.suffix in {".pdf", ".html"}:
-                st.download_button(f"Download {path.name}", path.read_bytes(), path.name, "application/pdf" if path.suffix == ".pdf" else "text/html")
+                st.download_button(
+                    label=f"Download {path.name}",
+                    data=path.read_bytes(),
+                    file_name=path.name,
+                    mime=(
+                        "application/pdf"
+                        if path.suffix == ".pdf"
+                        else "text/html"
+                    ),
+                    key=f"export_report_{index}_{path.as_posix()}",
+                )
     with tabs[1]:
-        for path in exports["Tables"] + exports["Summaries"]:
-            st.download_button(f"Download {path.name}", path.read_bytes(), path.name)
+        for index, path in enumerate(
+            exports["Tables"] + exports["Summaries"]
+        ):
+            st.download_button(
+                label=f"Download {path.name}",
+                data=path.read_bytes(),
+                file_name=path.name,
+                key=f"export_table_{index}_{path.as_posix()}",
+            )
     with tabs[2]:
-        for path in exports["Molecule images"]:
-            st.download_button(f"Download {path.name}", path.read_bytes(), path.name)
+        for index, path in enumerate(exports["Molecule images"]):
+            st.download_button(
+                label=f"Download {path.name}",
+                data=path.read_bytes(),
+                file_name=path.name,
+                key=f"export_image_{index}_{path.as_posix()}",
+            )
     with tabs[3]:
         figure_zip = build_zip_bytes(exports["Figures"], report_root)
         all_zip = build_zip_bytes(sum(exports.values(), []), report_root)
-        st.download_button("Download figure bundle", figure_zip, "DockForgeAI_figures.zip", "application/zip")
-        st.download_button("Download all final outputs", all_zip, "DockForgeAI_final_outputs.zip", "application/zip")
+        st.download_button(
+            "Download figure bundle",
+            figure_zip,
+            "DockForgeAI_figures.zip",
+            "application/zip",
+            key="export_figure_bundle",
+        )
+        st.download_button(
+            "Download all final outputs",
+            all_zip,
+            "DockForgeAI_final_outputs.zip",
+            "application/zip",
+            key="export_all_outputs_bundle",
+        )
     with tabs[4]: st.json(manifest or {"status": "No report manifest is available yet."})
     for warning in manifest.get("warnings", []): st.warning(warning)
     st.info("Docking scores are approximate ranking values. Demo compounds are not validated inhibitors, RDKit descriptors are not full ADMET predictions, and all predictions require experimental validation.")
