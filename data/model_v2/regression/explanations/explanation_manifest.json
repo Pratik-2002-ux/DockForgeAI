@@ -1,5 +1,11 @@
 {
   "describes_model_behavior_only": true,
   "biological_causality": false,
-  "hash_collisions_possible": true
+  "hash_collisions_possible": true,
+  "artifacts": [
+    "feature_importance.csv",
+    "permutation_importance.csv",
+    "shap_values.npz",
+    "nearest_neighbors.csv"
+  ]
 }
