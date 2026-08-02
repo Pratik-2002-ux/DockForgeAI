@@ -80,3 +80,4 @@ data/processed/xai_exclusions/excluded_decoys.csv
 data/external/xai_validation_prepared/
 data/external/xai_validation_results/
 data/external/xai_validation/
+data/raw/pubchem_external_validation/

@@ -71,6 +71,8 @@ directories:
   xai_model_cards: data/processed/xai_model_cards
   xai_validation: data/processed/xai_validation
   xai_validation_logs: logs/xai_validation
+  pubchem_external_raw: data/raw/pubchem_external_validation
+  pubchem_external_validation: data/processed/pubchem_external_validation
 
 rcsb:
   structure_url: "https://files.rcsb.org/download/{pdb_id}.pdb"
