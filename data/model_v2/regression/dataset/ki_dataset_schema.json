@@ -1,0 +1,27 @@
+{
+  "columns": {
+    "compound_id": "str",
+    "canonical_isomeric_smiles": "str",
+    "inchi": "str",
+    "inchikey": "str",
+    "inchikey_connectivity": "str",
+    "murcko_scaffold_smiles": "str",
+    "minimum_ki_nm": "float64",
+    "maximum_ki_nm": "float64",
+    "median_ki_nm": "float64",
+    "median_pki": "float64",
+    "pki_spread": "float64",
+    "measurement_count": "int64",
+    "doi_count": "int64",
+    "institution_count": "int64",
+    "source_record_ids": "str",
+    "publication_year": "float64",
+    "conflict_flag": "bool",
+    "external_exact_smiles_overlap": "bool",
+    "external_inchikey_overlap": "bool",
+    "external_connectivity_overlap": "bool",
+    "locked_external_scaffold_overlap": "bool",
+    "external_overlap_flag": "bool",
+    "dataset_split": "str"
+  }
+}

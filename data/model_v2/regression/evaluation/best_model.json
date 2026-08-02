@@ -1,0 +1,48 @@
+{
+  "selection_uses_external": false,
+  "best_model": "random_forest",
+  "best_feature_set": "morgan_r3",
+  "validation_metrics": {
+    "rmse": 1.1825970606188323,
+    "mae": 0.7564628876185034,
+    "median_ae": 0.5397217574708488,
+    "r2": 0.7142716717505947,
+    "pearson": 0.8536711314438928,
+    "spearman": 0.8817080370832711,
+    "kendall": 0.7111862999082994,
+    "within_0_5": 0.48,
+    "within_1_0": 0.84
+  },
+  "locked_scaffold_test_metrics": {
+    "rmse": 1.0158294323348294,
+    "mae": 0.7189662803616141,
+    "median_ae": 0.48671417291012586,
+    "r2": 0.8269996064453249,
+    "pearson": 0.9523967527912733,
+    "spearman": 0.8792779862128546,
+    "kendall": 0.7124035352189665,
+    "within_0_5": 0.5,
+    "within_1_0": 0.75
+  },
+  "test_rmse_ci95": [
+    0.5581413598783582,
+    1.359600670648817
+  ],
+  "uncertainty": {
+    "ensemble_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "mean_prediction_std": 0.058341327179663616,
+    "conformal_half_width_95": 2.3901613881848354
+  },
+  "applicability_domain": {
+    "in_domain_count": 20,
+    "out_of_domain_count": 0,
+    "threshold_max_tanimoto": 0.3
+  },
+  "model_path": "data/model_v2/regression/models/best_ki_regressor.joblib"
+}

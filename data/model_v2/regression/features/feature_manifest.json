@@ -1,0 +1,12 @@
+{
+  "target_leakage": false,
+  "provenance_features": false,
+  "representations": [
+    "descriptors",
+    "morgan_r2",
+    "morgan_r3",
+    "maccs",
+    "fused_r2",
+    "fused_r3"
+  ]
+}

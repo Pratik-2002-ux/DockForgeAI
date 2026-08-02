@@ -1,0 +1,25 @@
+{
+  "endpoint": "Ki",
+  "ordinary_regression_relations": [
+    "="
+  ],
+  "censored_excluded": true,
+  "locked_external_training_use": false,
+  "stats": {
+    "raw_rows": 614,
+    "exact_measurements": 417,
+    "censored_measurements": 8,
+    "invalid_measurements": 0,
+    "unique_before_exclusion": 200,
+    "conflicting_compounds": 7,
+    "locked_overlap_compounds": 2,
+    "final_compounds": 192,
+    "unique_scaffolds": 94,
+    "split_counts": {
+      "train": 147,
+      "validation": 25,
+      "test": 20
+    },
+    "scaffold_leakage": 0
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "describes_model_behavior_only": true,
+  "biological_causality": false,
+  "hash_collisions_possible": true
+}

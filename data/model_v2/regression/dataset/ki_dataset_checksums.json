@@ -1,0 +1,10 @@
+{
+  "data/model_v2/regression/dataset/ki_regression_dataset.csv": "8cc76b62c28122c4c098667837477db5c00fa96febccc5fcde707cd9be0d3229",
+  "data/model_v2/regression/dataset/ki_regression_dataset.parquet": "5233304b1c1212b5abfb31ecb31c9c69b5de8f10134b83fb9562057a4d409fa3",
+  "data/model_v2/regression/dataset/ki_regression_dataset.sdf": "f067d8ecdb252b963fc03172fb0c3b18d35126e9c397533c36b6020eb6eb1323",
+  "data/model_v2/regression/dataset/ki_measurement_table.csv": "04b43b1f510caa42d6da5d390ce60dcace9830849236dfaea8c3f88546924716",
+  "data/model_v2/regression/dataset/ki_censored_measurements.csv": "9e9e3be78caa9531525456a1cd3e71aa8819a2cc9c9060455095a9bbf94c4a62",
+  "data/model_v2/regression/dataset/ki_conflicting_measurements.csv": "5d0f411ee06e3a7de09677bc571fa921612ef633e58d73fdaa8c52b8417266dd",
+  "data/model_v2/regression/dataset/ki_invalid_structures.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "data/model_v2/regression/dataset/ki_locked_overlap.csv": "4efb07976e362924cf76a509786cb316f1fb604cc012dc213857c890fa2618e7"
+}
