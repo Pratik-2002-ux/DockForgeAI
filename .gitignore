@@ -85,3 +85,12 @@ data/raw/pubchem_external_validation/
 # PubChem assay-discovery cache
 data/processed/pubchem_external_validation/assay_discovery/candidate_assays.json
 data/processed/pubchem_external_validation/assay_discovery/candidate_assays.csv
+
+# DockForgeAI v2 authenticated local source data
+data/model_v2/raw/BindingDB_All.tsv
+data/model_v2/raw/BindingDB_All_202608_tsv.zip
+data/model_v2/raw/bindingdb_hiv1_protease_filtered.csv
+data/model_v2/raw/*.tmp
+data/model_v2/raw/**/bindingdb_cookies.txt
+data/model_v2/raw/**/bindingdb_download.html
+logs/model_v2/
