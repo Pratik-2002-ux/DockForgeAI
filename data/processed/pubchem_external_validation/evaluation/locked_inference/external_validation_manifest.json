@@ -1,0 +1,15 @@
+{
+  "independent_external_validation_complete": false,
+  "input_name": "pubchem_external_validation.csv",
+  "input_sha256": "81cbbd0aba1e7c16dfc6d469af9371a1954d093b45c07071099ef5890221cff3",
+  "locked_artifacts_overwritten": false,
+  "locked_model_id": "logistic_regression__fingerprint__seed2026",
+  "model_retrained": false,
+  "outputs": [
+    "external_applicability_domain.csv",
+    "external_overlap_report.csv",
+    "external_predictions.csv",
+    "external_validation_manifest.json",
+    "external_validation_metrics.json"
+  ]
+}

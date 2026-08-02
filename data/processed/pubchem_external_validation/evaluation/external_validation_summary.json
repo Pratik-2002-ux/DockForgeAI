@@ -1,0 +1,8 @@
+{
+  "adversarial_train_external_roc_auc": 0.8303073770491803,
+  "distribution_shift_warning": true,
+  "applicability_domain_coverage": 0.6038251366120219,
+  "exact_overlap_removed": true,
+  "external_validation_status": "completed_with_caution",
+  "locked_model_preserved": true
+}

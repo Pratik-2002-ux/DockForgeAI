@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.773224043715847,
+  "balanced_accuracy": 0.4516610495907559,
+  "brier_score": 0.17991068206338284,
+  "error_rate": 0.226775956284153,
+  "fn": 54,
+  "fp": 29,
+  "labels_supplied": true,
+  "log_loss": 0.6735375862782804,
+  "mcc": -0.07477485885899493,
+  "mean_confidence": 0.931891027693815,
+  "model_retrained": false,
+  "positive_count": 335,
+  "pr_auc": 0.9418027282746284,
+  "roc_auc": 0.5911892152142513,
+  "sample_count": 366,
+  "threshold_optimized": false,
+  "tn": 2,
+  "tp": 281,
+  "usable_count": 366
+}

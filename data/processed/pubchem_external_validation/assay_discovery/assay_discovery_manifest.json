@@ -1,0 +1,103 @@
+{
+  "retrieval_timestamp": "2026-08-02T04:23:51.900340+00:00",
+  "searches": [
+    {
+      "term": "HIV-1 protease",
+      "reported_count": 2920,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=HIV-1+protease&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV-1 protease\" AND BindingDB",
+      "reported_count": 89,
+      "retrieved_count": 89,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV-1+protease%22+AND+BindingDB&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV-1 protease\" AND ChEMBL",
+      "reported_count": 2827,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV-1+protease%22+AND+ChEMBL&retmode=json&retmax=250"
+    },
+    {
+      "term": "human immunodeficiency virus type 1 protease",
+      "reported_count": 2068,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=human+immunodeficiency+virus+type+1+protease&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"human immunodeficiency virus type 1 protease\" AND BindingDB",
+      "reported_count": 7,
+      "retrieved_count": 7,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22human+immunodeficiency+virus+type+1+protease%22+AND+BindingDB&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"human immunodeficiency virus type 1 protease\" AND ChEMBL",
+      "reported_count": 150,
+      "retrieved_count": 150,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22human+immunodeficiency+virus+type+1+protease%22+AND+ChEMBL&retmode=json&retmax=250"
+    },
+    {
+      "term": "HIV protease inhibition",
+      "reported_count": 831,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=HIV+protease+inhibition&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV protease inhibition\" AND BindingDB",
+      "reported_count": 8,
+      "retrieved_count": 8,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV+protease+inhibition%22+AND+BindingDB&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV protease inhibition\" AND ChEMBL",
+      "reported_count": 34,
+      "retrieved_count": 34,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV+protease+inhibition%22+AND+ChEMBL&retmode=json&retmax=250"
+    },
+    {
+      "term": "HIV-1 protease inhibitor",
+      "reported_count": 1531,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=HIV-1+protease+inhibitor&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV-1 protease inhibitor\" AND BindingDB",
+      "reported_count": 3,
+      "retrieved_count": 3,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV-1+protease+inhibitor%22+AND+BindingDB&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"HIV-1 protease inhibitor\" AND ChEMBL",
+      "reported_count": 550,
+      "retrieved_count": 250,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22HIV-1+protease+inhibitor%22+AND+ChEMBL&retmode=json&retmax=250"
+    },
+    {
+      "term": "retroviral protease inhibition",
+      "reported_count": 130,
+      "retrieved_count": 130,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=retroviral+protease+inhibition&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"retroviral protease inhibition\" AND BindingDB",
+      "reported_count": 0,
+      "retrieved_count": 0,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22retroviral+protease+inhibition%22+AND+BindingDB&retmode=json&retmax=250"
+    },
+    {
+      "term": "\"retroviral protease inhibition\" AND ChEMBL",
+      "reported_count": 127,
+      "retrieved_count": 127,
+      "endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pcassay&term=%22retroviral+protease+inhibition%22+AND+ChEMBL&retmode=json&retmax=250"
+    }
+  ],
+  "candidate_count": 1119,
+  "accepted_count": 12,
+  "rejected_count": 1107,
+  "explicit_exclusion": {
+    "pubchem_aid": 162060,
+    "reason": "ChEMBL depositor; not independent"
+  },
+  "official_services_only": true
+}

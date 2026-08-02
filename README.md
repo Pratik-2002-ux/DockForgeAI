@@ -2,6 +2,8 @@
 
 The completed XAI benchmark includes an offline scientific validation suite covering source bias, adversarial separability, permutation controls, dummy and nearest-neighbour baselines, matched subsets, calibration, decoy sensitivity, stability, and explanation sanity. See [docs/XAI_VALIDATION.md](docs/XAI_VALIDATION.md). Current status is benchmark-supported with cautions; it is not independently externally or experimentally validated.
 
+Independent-model evaluation against audited BindingDB-deposited PubChem BioAssays is documented in [docs/PUBCHEM_EXTERNAL_VALIDATION.md](docs/PUBCHEM_EXTERNAL_VALIDATION.md). The model remains locked, ChEMBL-deposited assays—including AID 162060—are excluded, and sparse inactive outcomes are reported without metric inflation claims.
+
 DockForgeAI is a reproducible, resource-aware molecular docking, virtual-screening, interaction-analysis, and hit-prioritization workflow with an interactive Streamlit dashboard and portable scientific reports.
 
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue) ![Tests](https://img.shields.io/badge/tests-57%20passing-brightgreen) ![License](https://img.shields.io/badge/license-not%20yet%20specified-lightgrey)

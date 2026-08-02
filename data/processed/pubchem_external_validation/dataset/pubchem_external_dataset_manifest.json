@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-08-02T04:41:30.916276+00:00",
+  "official_pubchem_services_only": true,
+  "locked_model_retrained": false,
+  "files": [
+    {
+      "path": "data/processed/pubchem_external_validation/dataset/pubchem_external_validation.csv",
+      "size_bytes": 417842,
+      "sha256": "81cbbd0aba1e7c16dfc6d469af9371a1954d093b45c07071099ef5890221cff3"
+    },
+    {
+      "path": "data/processed/pubchem_external_validation/dataset/pubchem_external_validation.parquet",
+      "size_bytes": 124930,
+      "sha256": "c61d7ac4ea82fe63e2241aa7e62e3185843fd602e6f0c3ecef24b48b65d3b116"
+    },
+    {
+      "path": "data/processed/pubchem_external_validation/dataset/pubchem_external_validation.sdf",
+      "size_bytes": 1340642,
+      "sha256": "6a7d1c4e8747a1db9d58e78bd31d01ec15cc74b4a0ab1ef97015df5a8c90e388"
+    }
+  ],
+  "row_count": 366,
+  "accepted_aids": [
+    1795214,
+    1795260,
+    1795337,
+    1795342,
+    1796344,
+    1796368
+  ],
+  "insufficient_after_curation_aids": [],
+  "model_retrained": false
+}

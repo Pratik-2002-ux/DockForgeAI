@@ -41,6 +41,7 @@ from app.components.export_center import (  # noqa: E402
 from app.components.xai_loaders import load_xai_csv, load_xai_json  # noqa: E402
 from app.components.xai_export import xai_bundle  # noqa: E402
 from app.components.xai_validation import validation_bundle, external_template  # noqa: E402
+from app.components.pubchem_external import DOWNLOAD_KEYS, build_bundle  # noqa: E402
 
 
 st.set_page_config(
@@ -1897,6 +1898,29 @@ def render_xai_validation() -> None:
         st.download_button("Download validation bundle",validation_bundle(PROJECT_ROOT),"DockForgeAI_XAI_validation_bundle.zip","application/zip")
 
 
+def render_pubchem_external_validation() -> None:
+    """Render cached PubChem external-validation results without network calls."""
+    st.header("PubChem External Validation")
+    root="data/processed/pubchem_external_validation"
+    tabs=st.tabs(["Assay discovery","Assay audit","External dataset","Overlap analysis","Locked-model performance","Novel-scaffold performance","Distribution shift","Limitations","Reports"])
+    with tabs[0]: st.dataframe(load_xai_csv(f"{root}/assay_discovery/candidate_assays.csv"),hide_index=True)
+    with tabs[1]: st.dataframe(load_xai_csv(f"{root}/assay_discovery/accepted_assays.csv"),hide_index=True); st.dataframe(load_xai_csv(f"{root}/assay_discovery/rejected_assays.csv"),hide_index=True)
+    dataset=load_xai_csv(f"{root}/dataset/pubchem_external_validation.csv")
+    with tabs[2]: st.dataframe(dataset,hide_index=True)
+    with tabs[3]:
+        if not dataset.empty: st.dataframe(dataset[["compound_id","exact_training_overlap","connectivity_training_overlap","scaffold_training_overlap","maximum_training_tanimoto","independence_class"]],hide_index=True)
+    metrics=load_xai_json(f"{root}/evaluation/external_validation_metrics.json")
+    with tabs[4]: st.json(metrics)
+    with tabs[5]: st.json((metrics.get("groups") or {}).get("novel_scaffold",{}))
+    with tabs[6]: st.dataframe(load_xai_csv(f"{root}/evaluation/distribution_shift.csv"),hide_index=True); st.json(load_xai_json(f"{root}/evaluation/external_validation_summary.json"))
+    with tabs[7]: st.warning("The locked model was not retrained or retuned. PubChem assay outcomes do not establish therapeutic efficacy. BindingDB literature provenance may overlap ChEMBL publications, and sparse inactive classes make several per-assay metrics unstable.")
+    with tabs[8]:
+        paths={"pdf":PROJECT_ROOT/root/"reports/DockForgeAI_PubChem_External_Validation_Report.pdf","html":PROJECT_ROOT/root/"reports/DockForgeAI_PubChem_External_Validation_Report.html","dataset":PROJECT_ROOT/root/"dataset/pubchem_external_validation.csv"}
+        for name,path in paths.items():
+            if path.exists(): st.download_button(f"Download {path.name}",path.read_bytes(),path.name,key=DOWNLOAD_KEYS[name])
+        st.download_button("Download PubChem validation bundle",build_bundle(PROJECT_ROOT),"DockForgeAI_PubChem_external_validation.zip",key=DOWNLOAD_KEYS["bundle"])
+
+
 def main() -> None:
     """Run the Streamlit application."""
 
@@ -1917,6 +1941,7 @@ def main() -> None:
             "Benchmarking",
             "XAI Reports",
             "XAI Validation",
+            "PubChem External Validation",
             "Interactions",
             "Virtual screening",
             "Hit prioritization",
@@ -1939,6 +1964,8 @@ def main() -> None:
         render_xai_page(page)
     elif page == "XAI Validation":
         render_xai_validation()
+    elif page == "PubChem External Validation":
+        render_pubchem_external_validation()
     elif page == "Interactions":
         render_interactions()
     elif page == "Virtual screening":

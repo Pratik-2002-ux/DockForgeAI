@@ -81,3 +81,7 @@ data/external/xai_validation_prepared/
 data/external/xai_validation_results/
 data/external/xai_validation/
 data/raw/pubchem_external_validation/
+
+# PubChem assay-discovery cache
+data/processed/pubchem_external_validation/assay_discovery/candidate_assays.json
+data/processed/pubchem_external_validation/assay_discovery/candidate_assays.csv
