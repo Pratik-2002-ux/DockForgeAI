@@ -1,0 +1,25 @@
+name: dockforge-v2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - joblib
+  - pyarrow
+  - matplotlib
+  - streamlit
+  - altair
+  - shap
+  - rdkit
+  - pyyaml
+  - tqdm
+  - pydantic
+  - reportlab
+  - pypdf
+  - pytest
+  # Optional modelling, graph, and export backends are deliberately omitted
+  # from the base solve. Install them only after compatibility validation;
+  # the application reports each missing backend explicitly.

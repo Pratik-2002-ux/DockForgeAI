@@ -1,0 +1,23 @@
+# Generated from the verified dockforge environment on 2026-08-02.
+# Optional v2 packages are intentionally recorded as unavailable until the
+# isolated environment resolves them successfully.
+altair==6.2.2
+joblib==1.5.3
+matplotlib==3.10.9
+numpy==2.4.6
+pandas==3.0.5
+pyarrow==24.0.0
+pypdf==6.14.2
+pydantic==2.13.4
+pyyaml==6.0.3
+rdkit==2025.9.5
+reportlab==5.0.0
+scikit-learn==1.9.0
+scipy==1.18.0
+shap==0.52.0
+streamlit==1.60.0
+tqdm==4.70.0
+
+# Optional backends unavailable in the verified environment:
+# xgboost, lightgbm, catboost, torch, torch-geometric, onnx, onnxruntime,
+# skl2onnx

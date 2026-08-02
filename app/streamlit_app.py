@@ -42,6 +42,7 @@ from app.components.xai_loaders import load_xai_csv, load_xai_json  # noqa: E402
 from app.components.xai_export import xai_bundle  # noqa: E402
 from app.components.xai_validation import validation_bundle, external_template  # noqa: E402
 from app.components.pubchem_external import DOWNLOAD_KEYS, build_bundle  # noqa: E402
+from app.components.model_v2.pages import render_v2_page  # noqa: E402
 
 
 st.set_page_config(
@@ -1926,9 +1927,13 @@ def main() -> None:
 
     st.sidebar.title("DockForgeAI")
 
-    page = st.sidebar.radio(
-        "Navigation",
-        [
+    v2_pages = [
+        "Overview", "Dataset", "Feature Engineering", "Model Training",
+        "Model Comparison", "Explainability", "Uncertainty", "Calibration",
+        "Applicability Domain", "Locked External Validation",
+        "v1 vs v2 Comparison", "Reports", "System Readiness",
+    ]
+    navigation = [
             "Home",
             "Redocking",
             "3D viewer",
@@ -1946,7 +1951,11 @@ def main() -> None:
             "Virtual screening",
             "Hit prioritization",
             "About",
-        ],
+        ] + [f"v2 — {name}" for name in v2_pages]
+    page = st.sidebar.radio(
+        "Navigation",
+        navigation,
+        key="dockforge_main_navigation",
     )
 
     st.sidebar.markdown("---")
@@ -1972,6 +1981,8 @@ def main() -> None:
         render_screening()
     elif page == "Hit prioritization":
         render_prioritization()
+    elif page.startswith("v2 — "):
+        render_v2_page(page.removeprefix("v2 — "))
     else:
         render_about()
 

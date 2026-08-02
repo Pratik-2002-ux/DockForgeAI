@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-02T08:13:43.029852+00:00",
+  "offline": true,
+  "training_allowed": false,
+  "status": "readiness_only",
+  "approved_training_sources": [
+    "ChEMBL"
+  ],
+  "locked_external": {
+    "path": "data/processed/pubchem_external_validation/dataset/pubchem_external_validation.csv",
+    "exists": true,
+    "training_use_forbidden": true
+  },
+  "bindingdb_training_exports": [],
+  "chembl_preliminary_audit": {
+    "raw_records": 9257,
+    "active": 3941,
+    "inactive": 227,
+    "valid_records": 5787,
+    "invalid": 2868,
+    "ambiguous": 602,
+    "conflicting": 90,
+    "duplicates": 1529
+  },
+  "dependencies": {
+    "numpy": {
+      "available": true,
+      "version": "2.4.6"
+    },
+    "pandas": {
+      "available": true,
+      "version": "3.0.5"
+    },
+    "scipy": {
+      "available": true,
+      "version": "1.18.0"
+    },
+    "scikit-learn": {
+      "available": true,
+      "version": "1.9.0"
+    },
+    "joblib": {
+      "available": true,
+      "version": "1.5.3"
+    },
+    "pyarrow": {
+      "available": true,
+      "version": "24.0.0"
+    },
+    "matplotlib": {
+      "available": true,
+      "version": "3.10.9"
+    },
+    "streamlit": {
+      "available": true,
+      "version": "1.60.0"
+    },
+    "altair": {
+      "available": true,
+      "version": "6.2.2"
+    },
+    "shap": {
+      "available": true,
+      "version": "0.52.0"
+    },
+    "rdkit": {
+      "available": true,
+      "version": "2025.9.5"
+    },
+    "pyyaml": {
+      "available": true,
+      "version": "6.0.3"
+    },
+    "tqdm": {
+      "available": true,
+      "version": "4.70.0"
+    },
+    "pydantic": {
+      "available": true,
+      "version": "2.13.4"
+    },
+    "reportlab": {
+      "available": true,
+      "version": "5.0.0"
+    },
+    "pypdf": {
+      "available": true,
+      "version": "6.14.2"
+    },
+    "xgboost": {
+      "available": false,
+      "version": null
+    },
+    "lightgbm": {
+      "available": false,
+      "version": null
+    },
+    "catboost": {
+      "available": false,
+      "version": null
+    },
+    "torch": {
+      "available": false,
+      "version": null
+    },
+    "torch-geometric": {
+      "available": false,
+      "version": null
+    },
+    "onnx": {
+      "available": false,
+      "version": null
+    },
+    "onnxruntime": {
+      "available": false,
+      "version": null
+    },
+    "skl2onnx": {
+      "available": false,
+      "version": null
+    }
+  },
+  "blockers": [
+    "No approved local BindingDB training export is present.",
+    "The local PubChem data are the locked external benchmark and are excluded from training.",
+    "Only 227 preliminary ChEMBL inactives exist; locked-overlap curation may reduce the final class below 200.",
+    "A scientifically suitable multi-source training dataset cannot be constructed from current approved local files."
+  ],
+  "required_next_input": "An explicitly approved, local experimental inactive dataset with complete assay provenance from an independent source."
+}
