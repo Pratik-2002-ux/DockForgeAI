@@ -1,0 +1,16 @@
+{
+  "required_columns": [
+    "compound_id",
+    "canonical_isomeric_smiles",
+    "inchikey_connectivity",
+    "murcko_scaffold_smiles",
+    "binary_label",
+    "source_databases",
+    "source_assay_ids",
+    "source_publication_ids",
+    "dataset_split_scaffold",
+    "dataset_split_source"
+  ],
+  "allowed_labels": ["active", "inactive"],
+  "computational_decoys_allowed": false
+}

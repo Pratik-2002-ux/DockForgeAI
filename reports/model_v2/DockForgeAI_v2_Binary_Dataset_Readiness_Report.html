@@ -1,0 +1,81 @@
+<!doctype html><h1>TRAINING BLOCKED</h1><p>Binary data development only; no binary model was fitted.</p><pre>{
+  "bindingdb_rows_used": 618,
+  "chembl_rows_used": 6779,
+  "pubchem_rows_used": 0,
+  "source_counts": {
+    "BindingDB": {
+      "measurement_rows": 618,
+      "active": 554,
+      "inactive": 27,
+      "ambiguous": 37,
+      "unique_structures": 373,
+      "assays": 614,
+      "publications": 19
+    },
+    "ChEMBL": {
+      "measurement_rows": 6779,
+      "active": 5609,
+      "inactive": 417,
+      "ambiguous": 753,
+      "unique_structures": 4441,
+      "assays": 612,
+      "publications": 344
+    }
+  },
+  "final_active_count": 3556,
+  "final_inactive_count": 278,
+  "ambiguous_count": 465,
+  "conflicting_count": 189,
+  "unique_compound_count": 3834,
+  "unique_scaffold_count": 1889,
+  "source_count": 2,
+  "assay_count": 1226,
+  "publication_count": 363,
+  "exact_external_overlap_count": 162,
+  "connectivity_external_overlap_count": 40,
+  "scaffold_external_overlap_count": 123,
+  "locked_external_overlap_count": 0,
+  "duplicate_measurement_count": 0,
+  "split_counts": {
+    "dataset_split_scaffold": {
+      "test": 612,
+      "train": 2691,
+      "validation": 531
+    },
+    "dataset_split_source": {
+      "train": 3701,
+      "test": 133
+    },
+    "dataset_split_assay": {
+      "train": 2572,
+      "test": 571,
+      "validation": 691
+    },
+    "dataset_split_time": {
+      "train": 2740,
+      "test": 547,
+      "validation": 547
+    }
+  },
+  "source_shortcut_risk": true,
+  "classical_training_ready": false,
+  "gnn_training_ready": false,
+  "blockers": [
+    "One source contributes more than 80% of a class."
+  ],
+  "training_allowed": false,
+  "status": "readiness_only",
+  "approved_training_sources": [
+    "BindingDB",
+    "ChEMBL"
+  ],
+  "locked_external": {
+    "path": "data/processed/pubchem_external_validation/dataset/pubchem_external_validation.csv",
+    "exists": true,
+    "training_use_forbidden": true
+  },
+  "warnings": [
+    "The locked PubChem/BindingDB benchmark was exclusion-only and never merged as training data."
+  ],
+  "required_next_action": "Do not train; obtain approved independent measured inactive records."
+}</pre>
