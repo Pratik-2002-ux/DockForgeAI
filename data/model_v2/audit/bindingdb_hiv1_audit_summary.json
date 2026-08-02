@@ -1,0 +1,29 @@
+{
+  "raw_rows": 614,
+  "parsed_measurements": 618,
+  "invalid_or_missing_structure_measurements": 0,
+  "unique_valid_compounds": 384,
+  "measurement_type_counts": {
+    "Ki": 425,
+    "EC50": 135,
+    "IC50": 58
+  },
+  "measurement_label_counts": {
+    "active": 554,
+    "ambiguous": 37,
+    "inactive": 27
+  },
+  "compound_status_counts": {
+    "active": 337,
+    "ambiguous_only": 29,
+    "inactive": 18
+  },
+  "unique_doi_count": 18,
+  "training_readiness_rule": {
+    "minimum_active_compounds": 200,
+    "minimum_inactive_compounds": 200,
+    "minimum_total_compounds_for_gnn": 500
+  },
+  "preliminary_training_ready": false,
+  "preliminary_gnn_ready": false
+}

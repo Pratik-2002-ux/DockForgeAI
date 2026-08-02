@@ -1,0 +1,4 @@
+source_databases,active,inactive
+BindingDB,189,1
+BindingDB;ChEMBL,121,12
+ChEMBL,3246,265
