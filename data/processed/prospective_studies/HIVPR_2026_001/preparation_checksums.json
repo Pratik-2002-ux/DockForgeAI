@@ -1,0 +1,10 @@
+{
+  "candidate_pool.csv": "4feaacfc5c1d99c16f46bbc52eb11f57b6317b7d7d24f13730fe2f3f59894fbe",
+  "prepared_library.csv": "f6e9d7af72b66117c491cbe5d04957cb4c60ba763267549ef5d42d6016a66dae",
+  "excluded_compounds.csv": "c58c8dd7f3146ce2fe85fa420faf7cd4f37995f2b54be78c9fb2f4788f789bdd",
+  "structure_overlaps.csv": "2cb028848a425bf31afd3f4b297d214176e6b7f18ac9d0da7ff5f712cbfbb37e",
+  "descriptor_summary.csv": "2b73c637e276d2e7203207d9fe5b5107f53753f651d8b6d818d3b9bcd67acea9",
+  "preparation_manifest.json": "929d95999f0ed855c8e081800a556fb2795c3ff276903ad5551e1c23aba8c2f9",
+  "preparation_schema.json": "11b8f644d8e54e5ca5423d21ef415f4abd1349af376e79703fc95e8da43b3eee",
+  "preparation_summary.md": "f72d1a7225b31c7198e8f4e7a743b675e026e1ab8c8e28b5df916d6af8d8eb21"
+}

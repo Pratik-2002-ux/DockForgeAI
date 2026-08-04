@@ -1,0 +1,9 @@
+metric,value
+prediction_count,10096.0
+in_domain_count,53.0
+borderline_count,0.0
+out_of_domain_count,10043.0
+predicted_pki_min,5.274873701696441
+predicted_pki_max,9.664939767238607
+predicted_ki_nm_min,0.21630184942494318
+predicted_ki_nm_max,5310.388545629071

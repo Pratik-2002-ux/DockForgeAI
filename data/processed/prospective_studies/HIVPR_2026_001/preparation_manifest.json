@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "study_id": "HIVPR_2026_001",
+  "source_library": "Mcule Bioactivity Economy In Stock Library",
+  "source_file": "mcule_bioactivity_economy_library_260509.csv.gz",
+  "supplier": "Mcule",
+  "library_release": "2026-05-09",
+  "availability_interpretation": "Listed in the downloaded in-stock snapshot; current stock is not guaranteed.",
+  "input_count": 10099,
+  "invalid_structure_count": 2,
+  "duplicate_id_count": 0,
+  "duplicate_structure_count": 0,
+  "track1_exact_overlap_count": 0,
+  "track1_connectivity_overlap_count": 1,
+  "locked_external_exact_overlap_count": 0,
+  "locked_external_connectivity_overlap_count": 0,
+  "track1_scaffold_overlap_count": 0,
+  "locked_external_scaffold_overlap_count": 329,
+  "structural_alert_counts": {
+    "pains_flag": 1435,
+    "brenk_flag": 4869,
+    "extreme_molecular_weight_flag": 22,
+    "extreme_logp_flag": 36,
+    "extreme_tpsa_flag": 7,
+    "excessive_rotatable_bonds_flag": 0,
+    "unusual_formal_charge_flag": 0
+  },
+  "final_usable_count": 10096,
+  "input_checksum": "4feaacfc5c1d99c16f46bbc52eb11f57b6317b7d7d24f13730fe2f3f59894fbe",
+  "output_checksums": {
+    "candidate_pool.csv": "4feaacfc5c1d99c16f46bbc52eb11f57b6317b7d7d24f13730fe2f3f59894fbe",
+    "prepared_library.csv": "f6e9d7af72b66117c491cbe5d04957cb4c60ba763267549ef5d42d6016a66dae",
+    "excluded_compounds.csv": "c58c8dd7f3146ce2fe85fa420faf7cd4f37995f2b54be78c9fb2f4788f789bdd",
+    "structure_overlaps.csv": "2cb028848a425bf31afd3f4b297d214176e6b7f18ac9d0da7ff5f712cbfbb37e",
+    "descriptor_summary.csv": "2b73c637e276d2e7203207d9fe5b5107f53753f651d8b6d818d3b9bcd67acea9"
+  },
+  "git_commit": "4fab3edaf1efb2fb002f3902cb7b3fd4c468a726",
+  "generated_timestamp": "2026-08-04T14:10:18.003265+00:00",
+  "warnings": [
+    "Supplier availability means listed in the downloaded snapshot and does not guarantee current stock.",
+    "Structural alerts are review cautions, not toxicity conclusions.",
+    "No ML inference, docking, or shortlist generation was performed."
+  ],
+  "screening_ready": true
+}

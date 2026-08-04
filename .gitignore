@@ -94,3 +94,18 @@ data/model_v2/raw/*.tmp
 data/model_v2/raw/**/bindingdb_cookies.txt
 data/model_v2/raw/**/bindingdb_download.html
 logs/model_v2/
+
+# Licensed/local prospective supplier libraries
+data/prospective_libraries/
+
+# Large prospective-study outputs
+data/processed/prospective_studies/*/candidate_pool.csv
+data/processed/prospective_studies/*/prepared_library.csv
+data/processed/prospective_studies/*/excluded_compounds.csv
+data/processed/prospective_studies/*/structure_overlaps.csv
+data/processed/prospective_studies/*/ml_screening/prospective_predictions.csv
+data/processed/prospective_studies/*/ml_screening/in_domain_candidates.csv
+data/processed/prospective_studies/*/ml_screening/borderline_candidates.csv
+data/processed/prospective_studies/*/ml_screening/out_of_domain_candidates.csv
+data/processed/prospective_studies/*/ml_screening/high_uncertainty_candidates.csv
+data/processed/prospective_studies/*/ml_screening/structural_alert_review.csv

@@ -1,0 +1,15 @@
+{
+  "feature_representation": "morgan_r3",
+  "generator": "RDKit MorganGenerator",
+  "radius": 3,
+  "n_bits": 2048,
+  "use_chirality": false,
+  "feature_order": "bit indices 0..2047",
+  "preprocessing": "none",
+  "model_n_features": 2048,
+  "schema_checksum": "a54c3b3ac6e135b52d3df6c5e6bf0e57a16c135ea38496fc4ae627c61671b1b1",
+  "matches_frozen_model": true,
+  "training_feature_artifact": "data/model_v2/regression/features/morgan_r3.npz",
+  "training_feature_artifact_checksum": "6fc05cbadc0522a1d21cfda59795a2b8bb78e8f4aea0ee046e279a22ede7b599",
+  "training_feature_rows_validated": 192
+}
