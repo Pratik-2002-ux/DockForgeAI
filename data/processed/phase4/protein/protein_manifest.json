@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "module": "4.1_protein_preparation",
+  "pdb_id": "1HSG",
+  "source_path": "data/raw/proteins/1HSG.pdb",
+  "source_checksum": "d430675c358060808ef614002cfdcfcfa824714d89f1240adf5749d2ba60fed2",
+  "validation": {
+    "chains": [
+      "A",
+      "B"
+    ],
+    "catalytic_residues": [
+      "A:25",
+      "B:25"
+    ],
+    "atom_count": 3122,
+    "residue_count": 198
+  },
+  "repair": {
+    "path": "/Users/pratikramchandrachaudhari/DockForgeAI/data/processed/phase4/protein/receptor_repaired.pdb",
+    "method": "curated_cached_structure_no_coordinate_invention",
+    "atoms_added": 0
+  },
+  "protonation": {
+    "method": "validated_cached_meeko_default_templates",
+    "assumption": "standard Asp carboxylate templates; protonation was not experimentally assigned"
+  },
+  "generated_timestamp": "2026-08-04T14:41:50.202179+00:00",
+  "git_commit": "2d3be68108b4d24e6c811b5dcfbe927db718e36c",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python_version": "3.12.13",
+  "random_seed": 2026,
+  "output_checksums": {
+    "receptor_clean.pdb": "9239303e7825640d24d2178bbd9629115fc44961f17777a35d298d4c7580ce33",
+    "receptor_repaired.pdb": "9239303e7825640d24d2178bbd9629115fc44961f17777a35d298d4c7580ce33",
+    "receptor_prepared.pdb": "43dd06373239800fd78d1c9d47b78fbde5a5b8ad449fbdd12b3decd856f198fd",
+    "receptor_prepared.pdbqt": "90223af54e6d2ee0314c087a16d993d4d9f4dc87af69e30bc0191513afbbcca1",
+    "protein_report.html": "042dd16890dcb3d9252b33dc435887ccf2661f365142db00ecd2e3df4a3b4083",
+    "protein_report.pdf": "304796bdf30a558a064054c457448c7fca1fd12fa564a98796a8f2c830003eab"
+  }
+}
