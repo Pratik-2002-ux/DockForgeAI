@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "module": "4.4_pose_analysis",
+  "method": "deterministic distance and PDBQT atom-type rules",
+  "limitations": [
+    "Hydrogen-bond geometry does not include donor-H-acceptor angles.",
+    "Pi interactions use atom-level aromatic proximity rather than ring-plane geometry.",
+    "Counts are computational annotations, not experimental interactions."
+  ],
+  "pose_count": 30,
+  "interaction_count": 598,
+  "contact_count": 5486,
+  "thresholds_angstrom": {
+    "hydrogen_bond": 3.5,
+    "hydrophobic": 4.0,
+    "salt_bridge": 4.0,
+    "pi": 5.5,
+    "metal": 3.0
+  },
+  "generated_timestamp": "2026-08-04T14:52:10.410034+00:00",
+  "git_commit": "d69a431e92f511235fc058d3d220a0ef18341af8",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python_version": "3.12.13",
+  "random_seed": 2026,
+  "output_checksums": {
+    "interaction_table.csv": "ad3c7926de1d62b03052aabbec95c5ac90584ff31147ee8dddeff92c93c169b4",
+    "pose_summary.csv": "7b852076231dfc204640cd5c4129d31f9cfd93ca06a92d02bda436c53ca6e89a",
+    "protein_ligand_contacts.csv": "fabf69eb7040efa45d02863f5739d92be54ca5db34fca701aca9eafef61ee8d6",
+    "pose_analysis_report.html": "810c36619b386be499e75c97153148b820f4a1d20b48b9cc9709206da70eb858",
+    "pose_analysis_report.pdf": "a5e9107153511b8073cc1b7a986289742fef792f44311fad231ee7f956b5dc64"
+  }
+}
