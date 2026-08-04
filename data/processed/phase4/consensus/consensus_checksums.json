@@ -1,0 +1,16 @@
+{
+  "top10_consensus_candidates.csv": "0c8975eacee5c818ae404833060c428455c1936e1f843e450b8730568055ba07",
+  "top5_high_confidence_candidates.csv": "1484096c7e88c82d7bd05a2d6b65a8cb2302e2fe405092f1d7fd25c02b68b65e",
+  "ranking_sensitivity.csv": "17f9a5214a4f520adb01314cbe3367cffd8605ff41ed856cf95afeb76eecfc4c",
+  "incomplete_evidence_candidates.csv": "e509908b331e3a0a20e0b7139c40683c8b279e94a2bd6995d0cbbb5bab1ee345",
+  "consensus_manifest.json": "7e026bf65e9558165f802d9459ade7bc8c2761bdaa1d985b9fe8ed7da7576aca",
+  "structural_alert_review.csv": "bc09a95dd52c3feec11a28aa004fa5dc0a5f7c0aee114dad6d3a0be83799e59d",
+  "top10_diverse_candidates.csv": "0c8975eacee5c818ae404833060c428455c1936e1f843e450b8730568055ba07",
+  "component_scores.csv": "b1d42e43266b8286f20d5c20109d94021083ccbe8d73bf2195d301c0d7de99f5",
+  "consensus_schema.json": "494d42c1264b2375cfa59270e6ee7584c170b1610de48fb402702c13f5e7eff3",
+  "top15_review_pool.csv": "b7021af98c2d7ab6001c6ab1648dc13fc3971f0026024261e6b6a68cf09e6cee",
+  "rank_correlation.csv": "b1dd2edd97a9b2ea784fd49b97614004424ab857b4df9b4c5f5366c273d6ac23",
+  "final_ranked_candidates.csv": "fe55e55db6f2173dfc46511ed4c26a6ecef08ba2c59908f345a8e96475109e75",
+  "out_of_domain_candidates.csv": "e509908b331e3a0a20e0b7139c40683c8b279e94a2bd6995d0cbbb5bab1ee345",
+  "scenario_weights.csv": "4bfd1a549e480af5815373786a4880d1e3e529fc484bc41f65a4cd924a1c6341"
+}

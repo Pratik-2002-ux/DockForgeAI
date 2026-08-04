@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "study_id": "HIVPR_2026_001",
+  "candidate_count": 30,
+  "complete_evidence_count": 30,
+  "incomplete_evidence_count": 0,
+  "in_domain_count": 30,
+  "borderline_count": 0,
+  "out_of_domain_count": 0,
+  "uncertainty_available": true,
+  "default_weights": {
+    "predicted_pki_component": 0.25,
+    "docking_component": 0.2,
+    "applicability_component": 0.15,
+    "pose_quality_component": 0.15,
+    "interaction_component": 0.1,
+    "uncertainty_component": 0.05,
+    "structural_alert_component": 0.05,
+    "diversity_component": 0.03,
+    "supplier_component": 0.02
+  },
+  "sensitivity_scenarios": [
+    "balanced_default",
+    "ml_emphasis",
+    "docking_emphasis",
+    "domain_quality_emphasis",
+    "equal_weight"
+  ],
+  "top10_candidate_ids": [
+    "MCULE-2304697456",
+    "MCULE-1302802546",
+    "MCULE-5294193665",
+    "MCULE-4176465450",
+    "MCULE-9039812338",
+    "MCULE-9732499929",
+    "MCULE-1964400770",
+    "MCULE-3016593002",
+    "MCULE-8156707158",
+    "MCULE-3976648728"
+  ],
+  "top5_high_confidence_ids": [
+    "MCULE-2304697456",
+    "MCULE-1302802546",
+    "MCULE-5294193665",
+    "MCULE-4176465450",
+    "MCULE-9039812338"
+  ],
+  "input_paths": {
+    "screening": "data/processed/prospective_studies/HIVPR_2026_001/ml_screening/top_30_diverse_review_pool.csv",
+    "docking": "data/processed/phase4/docking/docking_results.csv",
+    "pose_summary": "data/processed/phase4/analysis/pose_summary.csv"
+  },
+  "input_checksums": {
+    "data/processed/prospective_studies/HIVPR_2026_001/ml_screening/top_30_diverse_review_pool.csv": "3c53cbca678f1be36c47235f3b90322483e1e6b328fe9acffbc451dd82b89ff0",
+    "data/processed/phase4/docking/docking_results.csv": "e623d4e225c3f41b682f9bbb2395b07855de5b3816ba1f8d6379667e76e99cce",
+    "data/processed/phase4/analysis/pose_summary.csv": "7b852076231dfc204640cd5c4129d31f9cfd93ca06a92d02bda436c53ca6e89a"
+  },
+  "output_checksums": {
+    "final_ranked_candidates.csv": "fe55e55db6f2173dfc46511ed4c26a6ecef08ba2c59908f345a8e96475109e75",
+    "component_scores.csv": "b1d42e43266b8286f20d5c20109d94021083ccbe8d73bf2195d301c0d7de99f5",
+    "top15_review_pool.csv": "b7021af98c2d7ab6001c6ab1648dc13fc3971f0026024261e6b6a68cf09e6cee",
+    "top10_consensus_candidates.csv": "0c8975eacee5c818ae404833060c428455c1936e1f843e450b8730568055ba07",
+    "top5_high_confidence_candidates.csv": "1484096c7e88c82d7bd05a2d6b65a8cb2302e2fe405092f1d7fd25c02b68b65e",
+    "top10_diverse_candidates.csv": "0c8975eacee5c818ae404833060c428455c1936e1f843e450b8730568055ba07",
+    "structural_alert_review.csv": "bc09a95dd52c3feec11a28aa004fa5dc0a5f7c0aee114dad6d3a0be83799e59d",
+    "out_of_domain_candidates.csv": "e509908b331e3a0a20e0b7139c40683c8b279e94a2bd6995d0cbbb5bab1ee345",
+    "incomplete_evidence_candidates.csv": "e509908b331e3a0a20e0b7139c40683c8b279e94a2bd6995d0cbbb5bab1ee345",
+    "ranking_sensitivity.csv": "17f9a5214a4f520adb01314cbe3367cffd8605ff41ed856cf95afeb76eecfc4c",
+    "scenario_weights.csv": "4bfd1a549e480af5815373786a4880d1e3e529fc484bc41f65a4cd924a1c6341",
+    "rank_correlation.csv": "b1dd2edd97a9b2ea784fd49b97614004424ab857b4df9b4c5f5366c273d6ac23"
+  },
+  "git_commit": "59ade5da61243ce6037791da0ec4d78f71b1a232",
+  "generated_timestamp": "2026-08-04T17:22:25.039718+00:00",
+  "warnings": [
+    "Consensus ranking is computational prioritization only.",
+    "Vina scores are approximate ranking values.",
+    "PAINS and Brenk flags are review cautions, not toxicity conclusions.",
+    "Supplier stock must be reconfirmed before purchase."
+  ],
+  "phase4_complete": true,
+  "phase5_ready": true
+}
