@@ -1,0 +1,14 @@
+{
+  "phase": "Phase 6 comparative MD validation",
+  "reference_candidate": "MCULE-2304697456",
+  "reference_simulation_ns": 5.0,
+  "prospective_pilot_ns_per_candidate": 1.0,
+  "candidate_count": 4,
+  "selection_source": "data/processed/phase4/consensus/top10_consensus_candidates.csv",
+  "selection_rule": "Completed Phase 5 reference plus the next three highest-ranked unsimulated consensus candidates.",
+  "warnings": [
+    "The shortlist is computational prioritization only.",
+    "A 1 ns MD run is a technical stability pilot.",
+    "No experimental affinity or inhibition claim is made."
+  ]
+}
