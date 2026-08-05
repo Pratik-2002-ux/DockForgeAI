@@ -109,3 +109,18 @@ data/processed/prospective_studies/*/ml_screening/borderline_candidates.csv
 data/processed/prospective_studies/*/ml_screening/out_of_domain_candidates.csv
 data/processed/prospective_studies/*/ml_screening/high_uncertainty_candidates.csv
 data/processed/prospective_studies/*/ml_screening/structural_alert_review.csv
+
+# Phase 5 molecular-dynamics intermediates
+data/processed/phase5/**/system/
+data/processed/phase5/**/topology_check/
+data/processed/phase5/**/parameters_old_mapping/
+data/processed/phase5/**/complex/
+data/processed/phase5/**/input/
+data/processed/phase5/selection/
+
+# ACPYPE temporary/generated files not retained as validated artifacts
+data/processed/phase5/**/parameters_pose/LIG.acpype/*
+!data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_GMX.itp
+!data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_GMX.gro
+!data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_AC.frcmod
+!data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_bcc_gaff2.mol2
