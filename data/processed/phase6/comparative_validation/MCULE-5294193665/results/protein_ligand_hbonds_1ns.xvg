@@ -1,0 +1,126 @@
+# This file was created Thu Aug  6 13:50:46 2026
+# Created by:
+#              :-) GROMACS - gmx hbond-legacy, 2026.3-Homebrew (-:
+# 
+# Executable:   /opt/homebrew/bin/../Cellar/gromacs/2026.3/bin/gmx
+# Data prefix:  /opt/homebrew/bin/../Cellar/gromacs/2026.3
+# Working dir:  /Users/pratikramchandrachaudhari/DockForgeAI/data/processed/phase6/comparative_validation/MCULE-5294193665/system
+# Command line:
+#   gmx hbond-legacy -s protein_lig_1ns.tpr -f md_1ns_complex_fit.xtc -n complex_subset.ndx -num protein_ligand_hbonds_1ns.xvg -r 0.35 -a 30
+# gmx hbond-legacy is part of G R O M A C S:
+#
+# Gromacs Runs One Microsecond At Cannonball Speeds
+#
+@    title "Hydrogen Bonds"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Number"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Hydrogen bonds"
+@ s1 legend "Pairs within 0.35 nm"
+         0           3           3
+        10           3           1
+        20           2           3
+        30           1           3
+        40           3           1
+        50           3           1
+        60           4           1
+        70           4           1
+        80           1           0
+        90           3           1
+       100           2           1
+       110           1           3
+       120           1           1
+       130           1           3
+       140           2           3
+       150           1           2
+       160           1           0
+       170           1           1
+       180           1           1
+       190           1           2
+       200           1           2
+       210           3           0
+       220           2           1
+       230           2           0
+       240           1           0
+       250           1           2
+       260           2           1
+       270           3           2
+       280           3           3
+       290           2           3
+       300           1           2
+       310           4           0
+       320           3           3
+       330           2           2
+       340           2           0
+       350           3           4
+       360           2           0
+       370           2           1
+       380           4           3
+       390           3           2
+       400           3           1
+       410           1           2
+       420           1           2
+       430           2           1
+       440           1           1
+       450           2           1
+       460           3           0
+       470           1           0
+       480           1           2
+       490           2           0
+       500           2           2
+       510           2           1
+       520           1           0
+       530           1           0
+       540           1           0
+       550           1           0
+       560           2           0
+       570           1           0
+       580           1           1
+       590           2           0
+       600           0           2
+       610           1           0
+       620           1           0
+       630           1           0
+       640           1           0
+       650           2           0
+       660           0           0
+       670           1           0
+       680           2           0
+       690           1           0
+       700           2           1
+       710           1           1
+       720           1           0
+       730           2           1
+       740           2           0
+       750           1           0
+       760           1           0
+       770           1           1
+       780           0           0
+       790           1           1
+       800           1           0
+       810           1           1
+       820           3           0
+       830           3           1
+       840           3           2
+       850           2           1
+       860           3           2
+       870           3           0
+       880           3           3
+       890           3           2
+       900           2           2
+       910           4           2
+       920           2           0
+       930           2           2
+       940           3           1
+       950           4           0
+       960           5           1
+       970           2           1
+       980           2           2
+       990           3           1
+      1000           2           1
