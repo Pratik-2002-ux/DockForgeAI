@@ -124,3 +124,14 @@ data/processed/phase5/**/parameters_pose/LIG.acpype/*
 !data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_GMX.gro
 !data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_AC.frcmod
 !data/processed/phase5/**/parameters_pose/LIG.acpype/LIG_bcc_gaff2.mol2
+
+# Phase 6 comparative MD intermediates
+data/processed/phase6/comparative_validation/**/system/
+data/processed/phase6/comparative_validation/**/complex/
+
+# ACPYPE temporary/generated files not retained as compact evidence
+data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/*
+!data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_GMX.itp
+!data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_GMX.gro
+!data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_AC.frcmod
+!data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_bcc_gaff2.mol2
