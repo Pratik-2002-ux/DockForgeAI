@@ -135,3 +135,6 @@ data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/*
 !data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_GMX.gro
 !data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_AC.frcmod
 !data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/LIG_bcc_gaff2.mol2
+
+# DockForgeAI automated pipeline run artifacts
+runs/

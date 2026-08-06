@@ -1,0 +1,57 @@
+pipeline_name: DockForgeAI v1.0
+
+project_root: ~/DockForgeAI
+output_root: runs
+
+variables:
+  python_env: dockforge-v2
+  md_env: dockforge-md
+
+environment:
+  PYTHONUNBUFFERED: "1"
+
+stages:
+
+  - name: repository_check
+    enabled: true
+    working_directory: "{project_root}"
+    commands:
+      - git status --short
+      - git log --oneline -10
+
+  - name: phase6_shortlist_check
+    enabled: true
+    working_directory: "{project_root}"
+    commands:
+      - test -f data/processed/phase6/comparative_validation/phase6_candidate_shortlist.csv
+      - python -c "import pandas as pd; p='data/processed/phase6/comparative_validation/phase6_candidate_shortlist.csv'; d=pd.read_csv(p); print(d[['consensus_rank','compound_id','phase6_role','md_status']].to_string(index=False))"
+
+  - name: reference_checksums
+    enabled: true
+    working_directory: "{project_root}/data/processed/phase5/pilot/MCULE-2304697456/results"
+    commands:
+      - shasum -a 256 -c phase5_checksums.sha256
+
+  - name: candidate_1302802546_checksums
+    enabled: true
+    working_directory: "{project_root}/data/processed/phase6/comparative_validation/MCULE-1302802546/results"
+    commands:
+      - shasum -a 256 -c phase6_candidate_checksums.sha256
+
+  - name: candidate_5294193665_checksums
+    enabled: true
+    working_directory: "{project_root}/data/processed/phase6/comparative_validation/MCULE-5294193665/results"
+    commands:
+      - shasum -a 256 -c phase6_candidate_checksums.sha256
+
+  - name: candidate_4176465450_checksums
+    enabled: true
+    working_directory: "{project_root}/data/processed/phase6/comparative_validation/MCULE-4176465450/results"
+    commands:
+      - shasum -a 256 -c phase6_candidate_checksums.sha256
+
+  - name: final_repository_status
+    enabled: true
+    working_directory: "{project_root}"
+    commands:
+      - git status
