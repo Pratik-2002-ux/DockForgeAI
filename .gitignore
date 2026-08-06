@@ -138,3 +138,6 @@ data/processed/phase6/comparative_validation/**/parameters_pose/LIG.acpype/*
 
 # DockForgeAI automated pipeline run artifacts
 runs/
+
+# Local Streamlit backups
+app_basic_backup.py
