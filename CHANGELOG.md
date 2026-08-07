@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.1] - 2026-08-07
+
+### Added
+- MIT open-source license
+- Application dependency specification
+- GitHub-ready repository documentation
+- Interactive platform screenshots
+- Dashboard, workflow, candidate explorer, comparative MD, and 3D viewer previews
+
+### Changed
+- Improved public repository presentation
+- Prepared stable portfolio release for GitHub
+
+
 All notable changes to DockForgeAI are documented here.
 
 ## [1.0.0] - 2026-08-07
