@@ -172,13 +172,37 @@ The strong benchmark separation must be interpreted cautiously because ChEMBL ac
 
 ## Citation
 
-A formal citation and archival DOI have not yet been assigned. Until then, cite the repository name, version, commit hash, and access date.
+If you use DockForgeAI in your research, please cite:
+
+**Pratik Ramchandra Chaudhari.**  
+*DockForgeAI: An Open and Reproducible AI-Assisted Computational Drug Discovery Platform.*  
+Version 1.0.1, 2026.  
+GitHub: https://github.com/Pratik-2002-ux/DockForgeAI
+
+A permanent archival DOI may be added in a future release.
 
 ## License
 
-No license has yet been specified. Do not assume redistribution or commercial-use rights until a license file is added.
+DockForgeAI is released under the **MIT License**.
+
+See [LICENSE](LICENSE) for the complete license terms.
+
+## Disclaimer
+
+DockForgeAI is intended for **research and educational use**.
+
+Machine-learning predictions, docking scores, consensus rankings, molecular-dynamics results, and other computational outputs should not be interpreted as experimental validation, clinical evidence, or proof of therapeutic efficacy.
+
+Experimental validation is required before biological or therapeutic conclusions are made.
+
+## Author
+
+**Pratik Ramchandra Chaudhari**
+
+Computational Biology • Bioinformatics • AI-Assisted Drug Discovery • Scientific Software Development
 
 ## Contributing
+
 
 Read the [developer guide](docs/DEVELOPER_GUIDE.md), keep changes scoped, add tests, preserve the 0.518 Å reference result, and run the full compile/test commands before proposing changes.
 
