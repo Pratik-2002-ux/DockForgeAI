@@ -175,7 +175,7 @@ wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_178277172106
 webcolors @ file:///home/conda/feedstock_root/build_artifacts/webcolors_1761899299899/work
 webencodings @ file:///home/conda/feedstock_root/build_artifacts/webencodings_1733236011802/work
 websocket-client @ file:///home/conda/feedstock_root/build_artifacts/websocket-client_1759928050786/work
-websockets==16.1.1
+websockets==17.0.1
 wheel==0.47.0
 widgetsnbextension @ file:///home/conda/feedstock_root/build_artifacts/widgetsnbextension_1762040310212/work
 zipp @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_zipp_1779159948/work
