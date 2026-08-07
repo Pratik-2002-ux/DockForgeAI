@@ -169,7 +169,7 @@ tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1783704
 unicodedata2 @ file:///Users/runner/miniforge3/conda-bld/unicodedata2_1770909247161/work
 uri-template @ file:///home/conda/feedstock_root/build_artifacts/uri-template_1733323593477/work/dist
 urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1778188571305/work
-uvicorn==0.52.0
+uvicorn==0.52.1
 vina==1.2.7
 wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1782771721065/work
 webcolors @ file:///home/conda/feedstock_root/build_artifacts/webcolors_1761899299899/work
