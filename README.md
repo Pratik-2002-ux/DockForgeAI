@@ -1,5 +1,9 @@
 # DockForgeAI
-
+![Version](https://img.shields.io/badge/version-v1.0.2-success)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
+![GitHub last commit](https://img.shields.io/github/last-commit/Pratik-2002-ux/DockForgeAI)
 
 [![Release](https://img.shields.io/github/v/release/Pratik-2002-ux/DockForgeAI)](https://github.com/Pratik-2002-ux/DockForgeAI/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
