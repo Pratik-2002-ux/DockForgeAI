@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use DockForgeAI, please cite this software."
+title: "DockForgeAI: An Open and Reproducible AI-Assisted Computational Drug Discovery Platform"
+type: software
+authors:
+  - family-names: "Chaudhari"
+    given-names: "Pratik Ramchandra"
+version: "1.0.1"
+date-released: "2026-08-07"
+repository-code: "https://github.com/Pratik-2002-ux/DockForgeAI"
+license: "MIT"
+keywords:
+  - drug discovery
+  - computational biology
+  - bioinformatics
+  - cheminformatics
+  - molecular docking
+  - molecular dynamics
+  - machine learning
