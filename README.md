@@ -24,6 +24,34 @@ DockForgeAI does not turn docking scores into experimental claims. Vina scores a
 - Interactive py3Dmol pose viewer and RDKit 2D molecule rendering
 - Offline PDF/HTML reports, manifest, download bundles, Docker packaging, and CI
 
+
+## Platform Preview
+
+### Dashboard
+Interactive overview of shortlisted candidates, consensus ranking, docking predictions, and molecular-dynamics status.
+
+![DockForgeAI Dashboard](docs/images/dashboard.png)
+
+### Workflow
+End-to-end computational workflow from molecular input through prediction, docking, consensus ranking, and molecular-dynamics validation.
+
+![DockForgeAI Workflow](docs/images/workflow.png)
+
+### Candidate Explorer
+Candidate-specific molecular structure, descriptors, RMSD, hydrogen bonds, contacts, and scientific interpretation.
+
+![DockForgeAI Candidate Explorer](docs/images/candidate_explorer.png)
+
+### Comparative Molecular Dynamics
+Interactive comparison of shortlisted compounds using ligand RMSD, hydrogen-bond persistence, contacts, and distance metrics.
+
+![DockForgeAI MD Comparison](docs/images/md_comparison.png)
+
+### Interactive 3D Viewer
+Browser-based visualization of representative and final protein-ligand structures.
+
+![DockForgeAI 3D Viewer](docs/images/viewer_3d.png)
+
 ## Architecture and workflow
 
 ```text
