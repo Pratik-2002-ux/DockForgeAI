@@ -1,5 +1,13 @@
 # DockForgeAI
 
+
+[![Release](https://img.shields.io/github/v/release/Pratik-2002-ux/DockForgeAI)](https://github.com/Pratik-2002-ux/DockForgeAI/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg)](https://streamlit.io/)
+[![Docker](https://img.shields.io/badge/Docker-supported-blue.svg)](Dockerfile)
+
+
 The completed XAI benchmark includes an offline scientific validation suite covering source bias, adversarial separability, permutation controls, dummy and nearest-neighbour baselines, matched subsets, calibration, decoy sensitivity, stability, and explanation sanity. See [docs/XAI_VALIDATION.md](docs/XAI_VALIDATION.md). Current status is benchmark-supported with cautions; it is not independently externally or experimentally validated.
 
 Independent-model evaluation against audited BindingDB-deposited PubChem BioAssays is documented in [docs/PUBCHEM_EXTERNAL_VALIDATION.md](docs/PUBCHEM_EXTERNAL_VALIDATION.md). The model remains locked, ChEMBL-deposited assays—including AID 162060—are excluded, and sparse inactive outcomes are reported without metric inflation claims.
