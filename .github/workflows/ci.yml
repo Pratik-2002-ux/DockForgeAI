@@ -39,13 +39,13 @@ jobs:
         shell: bash -el {0}
         run: python scripts/generate_final_report.py --html-only --overwrite --output-prefix ci_smoke
       - name: Upload HTML smoke report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: dockforge-html-smoke-report
           path: data/processed/final_reports/html/ci_smoke.html
       - name: Upload test log on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: pytest-failure-log
           path: pytest.log
